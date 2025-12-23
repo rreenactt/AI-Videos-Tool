@@ -1,0 +1,1 @@
+대화 시작, 엘리베이터 내부, 윤호와 노인이 마주 보고 서 있다.. characters: 윤호, 노인. background: 엘리베이터 내부의 조용한 분위기.. dialogues: 윤호: 몇 층이신가요?; 노인: 1층이요.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting

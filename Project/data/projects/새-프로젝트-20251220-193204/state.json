@@ -1,0 +1,170 @@
+{
+  "title": "가천대 21학번 이야기",
+  "story": "가천대 21학번 이야기. 내가 1학년 입학해서 게임배우고 군대 고성으로 가고 포병 통신병 전역하고 언리얼 공부했는데, 유니티 게임회사가고 나와서 AI 공부하다 졸업하는 이야기",
+  "min_shots_per_scene": 8,
+  "prompts": [
+    "입학식, 정면에서 학생들이 모여 있는 모습, 주인공이 중앙에 서 있음. characters: 주인공, 친구들. background: 학교 강당, 환호하는 학생들, 축제 분위기. dialogues: 주인공: 드디어 대학에 입학했다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "군대 입대, 군대 훈련소 앞, 주인공이 짐을 들고 서 있음, 후면에서 카메라 촬영. characters: 주인공, 동기들. background: 군대 훈련소, 긴장된 분위기, 군복을 입은 다른 병사들. dialogues: 주인공: 이제 군 생활이 시작이구나.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "전역 후, 주인공이 전역증을 들고 있는 모습, 카메라는 주인공의 얼굴을 클로즈업. characters: 주인공, 가족. background: 전역식장, 축하하는 분위기, 가족들이 응원하는 모습. dialogues: 주인공: 드디어 자유다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "언리얼 공부, 주인공이 컴퓨터 앞에서 언리얼 엔진을 공부하는 모습, 측면에서 촬영. characters: 주인공. background: 조용한 방, 컴퓨터 화면에 언리얼 엔진이 켜져 있음. dialogues: 주인공: 이제 언리얼 엔진을 마스터해야겠다.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "유니티 게임 회사, 주인공이 게임 회사 사무실에서 동료들과 회의하는 모습, 전면에서 촬영. characters: 주인공, 동료들. background: 게임 회사 사무실, 활기찬 분위기, 화이트보드에 아이디어가 적혀 있음. dialogues: 주인공: 우리 게임을 이렇게 발전시켜보자!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "AI 공부, 주인공이 도서관에서 AI 관련 서적을 읽고 있는 모습, 측면에서 촬영. characters: 주인공, 학생들. background: 도서관, 조용한 분위기, 책장이 가득한 모습. dialogues: 주인공: AI 기술은 정말 흥미롭다.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "졸업식, 졸업식장에서 주인공이 졸업장을 받는 모습, 정면에서 촬영. characters: 주인공, 친구들, 가족. background: 졸업식, 축하하는 분위기, 친구들과 가족들이 박수를 친다.. dialogues: 주인공: 이 모든 과정을 마쳤다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "입학식",
+      "composition": "정면에서 학생들이 모여 있는 모습, 주인공이 중앙에 서 있음",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "드디어 대학에 입학했다!",
+          "emotion": "기쁨"
+        }
+      ],
+      "background": "학교 강당, 환호하는 학생들, 축제 분위기",
+      "actions": [
+        "주인공이 주변 친구들과 이야기를 나눈다.",
+        "학생들이 환호하며 박수를 친다."
+      ],
+      "characters": [
+        "주인공",
+        "친구들"
+      ]
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "군대 입대",
+      "composition": "군대 훈련소 앞, 주인공이 짐을 들고 서 있음, 후면에서 카메라 촬영",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "이제 군 생활이 시작이구나.",
+          "emotion": "결의"
+        }
+      ],
+      "background": "군대 훈련소, 긴장된 분위기, 군복을 입은 다른 병사들",
+      "actions": [
+        "주인공이 군복을 입고 대열에 서 있다.",
+        "주변 동기들과 인사를 나눈다."
+      ],
+      "characters": [
+        "주인공",
+        "동기들"
+      ]
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "전역 후",
+      "composition": "주인공이 전역증을 들고 있는 모습, 카메라는 주인공의 얼굴을 클로즈업",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "드디어 자유다!",
+          "emotion": "해방감"
+        }
+      ],
+      "background": "전역식장, 축하하는 분위기, 가족들이 응원하는 모습",
+      "actions": [
+        "주인공이 전역증을 들고 기뻐한다.",
+        "가족과 포옹한다."
+      ],
+      "characters": [
+        "주인공",
+        "가족"
+      ]
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "언리얼 공부",
+      "composition": "주인공이 컴퓨터 앞에서 언리얼 엔진을 공부하는 모습, 측면에서 촬영",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "이제 언리얼 엔진을 마스터해야겠다.",
+          "emotion": "결심"
+        }
+      ],
+      "background": "조용한 방, 컴퓨터 화면에 언리얼 엔진이 켜져 있음",
+      "actions": [
+        "주인공이 집중해서 화면을 바라본다.",
+        "메모를 하며 공부한다."
+      ],
+      "characters": [
+        "주인공"
+      ]
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "유니티 게임 회사",
+      "composition": "주인공이 게임 회사 사무실에서 동료들과 회의하는 모습, 전면에서 촬영",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "우리 게임을 이렇게 발전시켜보자!",
+          "emotion": "열정"
+        }
+      ],
+      "background": "게임 회사 사무실, 활기찬 분위기, 화이트보드에 아이디어가 적혀 있음",
+      "actions": [
+        "주인공이 아이디어를 설명한다.",
+        "동료들이 고개를 끄덕이며 듣는다."
+      ],
+      "characters": [
+        "주인공",
+        "동료들"
+      ]
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "AI 공부",
+      "composition": "주인공이 도서관에서 AI 관련 서적을 읽고 있는 모습, 측면에서 촬영",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "AI 기술은 정말 흥미롭다.",
+          "emotion": "호기심"
+        }
+      ],
+      "background": "도서관, 조용한 분위기, 책장이 가득한 모습",
+      "actions": [
+        "주인공이 책을 읽으며 메모를 한다.",
+        "주변 학생들이 조용히 공부하고 있다."
+      ],
+      "characters": [
+        "주인공",
+        "학생들"
+      ]
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "졸업식",
+      "composition": "졸업식장에서 주인공이 졸업장을 받는 모습, 정면에서 촬영",
+      "dialogues": [
+        {
+          "speaker": "주인공",
+          "text": "이 모든 과정을 마쳤다!",
+          "emotion": "자랑스러움"
+        }
+      ],
+      "background": "졸업식, 축하하는 분위기, 친구들과 가족들이 박수를 친다.",
+      "actions": [
+        "주인공이 졸업장을 들고 기뻐한다.",
+        "친구들과 함께 사진을 찍는다."
+      ],
+      "characters": [
+        "주인공",
+        "친구들",
+        "가족"
+      ]
+    }
+  ],
+  "saved_results": [],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "error",
+    "progress": 0,
+    "message": "Cannot load model gpt-image-1: model is not cached locally and an error occurred while trying to fetch metadata from the Hub. Please check out the root cause in the stacktrace above."
+  }
+}

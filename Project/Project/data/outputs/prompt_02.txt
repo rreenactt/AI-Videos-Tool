@@ -1,0 +1,1 @@
+엘리베이터 문 열림, 엘리베이터 문이 열리며 노인이 서 있는 모습이 보인다.. characters: 윤호, 노인. background: 엘리베이터 내부의 조명이 켜져 있고, 정적이 흐른다.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting
