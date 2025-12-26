@@ -1,0 +1,134 @@
+{
+  "title": "주차장의 빌런, 가로막기 대장",
+  "story": "\"주차장의 빌런, 가로막기 대장\"\n피곤한 몸을 이끌고 퇴근한 G씨. 아파트 주차장은 이미 만석이라 이중 주차를 할 수밖에 없었습니다. 다음 날 아침, 출근을 위해 차를 빼려는데 앞을 가로막은 차가 중립(N) 기어가 아닌 사이드 브레이크를 꽉 채워놓은 상태입니다.\n\n디테일: 전화를 걸었더니 5번 만에 잠이 덜 깬 목소리로 받습니다. \"아... 금방 내려갈게요.\" 하지만 '금방'은 15분이 넘게 걸렸고, 내려온 차주는 사과 한마디 없이 하품을 하며 차에 올라타 유유히 사라집니다.\n\n분노 포인트: 지각 위기에 처한 내 사정은 안중에도 없는 그 여유로운 하품과, 마치 내가 자기 잠을 깨운 게 잘못이라는 듯한 귀찮은 표정.",
+  "min_shots_per_scene": 4,
+  "prompts": [
+    "G's Arrival at the Parking Lot, Wide shot of the parking lot, showing G getting out of the car, looking tired.. characters: G. background: Evening atmosphere, dim lights in the parking lot, faint sounds of cars in the distance.. dialogues: Narration: 피곤한 몸을 이끌고 퇴근한 G씨.. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "Blocked by Another Car, Close-up shot of G's frustrated face as he sees the car blocking his way.. characters: G. background: Tense atmosphere, sounds of G's sighs and the engine idling.. dialogues: Narration: 아파트 주차장은 이미 만석이라 이중 주차를 할 수밖에 없었습니다.. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "Making the Call, Medium shot of G on the phone, looking impatient.. characters: G, Other Driver. background: Quiet atmosphere, sound of G's voice and the faint ringing of the phone.. dialogues: G: 여보세요? 차 좀 빼주세요.; Other Driver: 아... 금방 내려갈게요.. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Driver Finally Arrives, Wide shot of the parking lot as the other driver arrives, yawning.. characters: G, Other Driver. background: Frustrating atmosphere, sound of the other driver yawning and starting the car.. dialogues: Narration: 하지만 '금방'은 15분이 넘게 걸렸고.; Other Driver: 하품을 하며 차에 올라타 유유히 사라집니다.. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "G's Frustration, Close-up of G's face showing anger and disbelief.. characters: G. background: Tense atmosphere, sounds of G's heavy breathing and the distant sound of cars.. dialogues: Narration: 지각 위기에 처한 내 사정은 안중에도 없는 그 여유로운 하품과.. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "G's Arrival at the Parking Lot",
+      "composition": "Wide shot of the parking lot, showing G getting out of the car, looking tired.",
+      "dialogues": [
+        {
+          "speaker": "Narration",
+          "text": "피곤한 몸을 이끌고 퇴근한 G씨.",
+          "emotion": null
+        }
+      ],
+      "background": "Evening atmosphere, dim lights in the parking lot, faint sounds of cars in the distance.",
+      "actions": [
+        "G gets out of the car",
+        "G looks around the parking lot"
+      ],
+      "characters": [
+        "G"
+      ]
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "Blocked by Another Car",
+      "composition": "Close-up shot of G's frustrated face as he sees the car blocking his way.",
+      "dialogues": [
+        {
+          "speaker": "Narration",
+          "text": "아파트 주차장은 이미 만석이라 이중 주차를 할 수밖에 없었습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Tense atmosphere, sounds of G's sighs and the engine idling.",
+      "actions": [
+        "G stares at the blocking car",
+        "G shakes his head in disbelief"
+      ],
+      "characters": [
+        "G"
+      ]
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "Making the Call",
+      "composition": "Medium shot of G on the phone, looking impatient.",
+      "dialogues": [
+        {
+          "speaker": "G",
+          "text": "여보세요? 차 좀 빼주세요.",
+          "emotion": "frustrated"
+        },
+        {
+          "speaker": "Other Driver",
+          "text": "아... 금방 내려갈게요.",
+          "emotion": "sleepy"
+        }
+      ],
+      "background": "Quiet atmosphere, sound of G's voice and the faint ringing of the phone.",
+      "actions": [
+        "G taps his foot impatiently",
+        "G looks at his watch"
+      ],
+      "characters": [
+        "G",
+        "Other Driver"
+      ]
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "The Driver Finally Arrives",
+      "composition": "Wide shot of the parking lot as the other driver arrives, yawning.",
+      "dialogues": [
+        {
+          "speaker": "Narration",
+          "text": "하지만 '금방'은 15분이 넘게 걸렸고.",
+          "emotion": null
+        },
+        {
+          "speaker": "Other Driver",
+          "text": "하품을 하며 차에 올라타 유유히 사라집니다.",
+          "emotion": "indifferent"
+        }
+      ],
+      "background": "Frustrating atmosphere, sound of the other driver yawning and starting the car.",
+      "actions": [
+        "Other Driver yawns",
+        "Other Driver gets into the car and drives away"
+      ],
+      "characters": [
+        "G",
+        "Other Driver"
+      ]
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "G's Frustration",
+      "composition": "Close-up of G's face showing anger and disbelief.",
+      "dialogues": [
+        {
+          "speaker": "Narration",
+          "text": "지각 위기에 처한 내 사정은 안중에도 없는 그 여유로운 하품과.",
+          "emotion": null
+        }
+      ],
+      "background": "Tense atmosphere, sounds of G's heavy breathing and the distant sound of cars.",
+      "actions": [
+        "G clenches his fists",
+        "G looks at the departing car with anger"
+      ],
+      "characters": [
+        "G"
+      ]
+    }
+  ],
+  "saved_results": [],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "",
+    "progress": 0,
+    "message": ""
+  },
+  "style_key": "surreal"
+}

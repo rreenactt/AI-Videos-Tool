@@ -1,0 +1,280 @@
+{
+  "title": "Proof of Sphere",
+  "story": "『구의 증명』 스토리 요약 (스포일러 포함)\n\n소설은 ‘구’가 이미 죽은 상태에서 시작한다. 화자인 ‘나’는 구의 죽음 이후, 그 사실을 받아들이지 못한 채 구와 함께했던 시간을 계속해서 떠올린다. 현재의 시간은 거의 움직이지 않고, 이야기는 과거 회상과 현재의 애도 상태를 오가며 전개된다.\n\n1. ‘나’와 ‘구’의 만남과 관계\n\n‘나’와 ‘구’는 모두 삶에 균열이 있는 인물들이다. 둘은 사회적으로 안정된 인생을 살고 있지 않고, 각자 결핍과 불안을 안고 있다. 그럼에도 불구하고 서로에게 끌리고, 결국 함께 살게 된다.\n\n둘의 사랑은 밝고 경쾌하기보다는,\n\n서로의 고통을 조심스럽게 다루고\n\n상대의 불안정함을 “있는 그대로” 견디려는\n매우 조용하고 밀착된 관계로 그려진다.\n\n‘구’는 특히 삶에 대한 피로와 죽음 충동을 내면에 품고 있는 인물로 묘사되고, ‘나’는 그런 구를 붙잡고 지켜야 할 존재처럼 느낀다.\n\n2. 불안의 축적과 예고된 파국\n\n시간이 흐르면서 ‘구’의 상태는 점점 불안정해진다.\n\n삶에 대한 무기력,\n\n계속되는 자기 혐오,\n\n죽음에 대한 생각들이 반복적으로 드러난다.\n\n‘나’는 구를 사랑하기 때문에 곁에 머물고, 함께 버티려 하지만,\n\n구의 고통을 완전히 대신해줄 수는 없고\n\n결국 구의 내면 깊숙한 절망까지 막아내지는 못한다.\n\n소설은 이 시점에서 구의 죽음이 돌발적 사건이 아니라, 서서히 다가온 선택이었음을 암시한다.\n\n3. 구의 죽음\n\n결국 구는 스스로 생을 마감한다.\n\n구체적인 방법이나 장면은 자극적으로 묘사되지 않지만, 그 죽음은 분명한 자살로 제시된다. ‘나’는 이 죽음을 예견했음에도, 혹은 예견했다고 믿기 때문에, 더 큰 죄책감에 사로잡힌다.\n\n“내가 조금만 더 잘했다면”\n\n“그날 그 말을 하지 않았다면”\n\n“곁에 있었더라면”\n\n같은 가정들이 끊임없이 반복된다.\n\n4. 죽음 이후, 남겨진 ‘나’의 상태\n\n구의 죽음 이후 ‘나’는 정상적인 애도 과정을 밟지 못한다.\n\n구의 흔적을 치우지 못하고\n\n구의 물건, 냄새, 말투를 계속 붙잡고\n\n구가 아직 살아 있는 것처럼 느끼려 한다.\n\n특히 소설 후반부에서 드러나는 가장 충격적인 설정은,\n\n‘나’가 **구의 시신 일부(살)**를 먹는다는 사실이다.\n\n이 행위는 충격을 주기 위한 장치라기보다는,\n\n구를 완전히 잃지 않기 위한 극단적인 방식,\n\n구를 ‘내 안에 남기려는’ 집착적인 애도의 형태로 제시된다.\n\n5. ‘증명’의 의미와 현재 시점\n\n‘나’에게 이 모든 행동은 광기가 아니라 사랑의 연장이다.\n구가 이 세상에 분명히 존재했고,\n자신의 삶을 바꿨으며,\n지금도 여전히 자신의 일부라는 것을 증명하려는 시도다.\n\n소설의 끝에서 ‘나’는 완전히 회복되거나, 구를 떠나보내지 않는다.\n다만,\n\n구의 죽음 이후에도 삶이 계속되고 있다는 사실,\n\n그 삶이 결코 이전으로 돌아갈 수 없다는 점\n을 받아들이는 상태에 가까워진다.",
+  "min_shots_per_scene": 8,
+  "prompts": [
+    "Introduction to Death, Close-up on the narrator's face, reflecting sorrow and disbelief.. characters: Narrator. background: Somber atmosphere, soft piano music playing in the background.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "Memories of 'Gu', Flashback scenes with soft focus, showing moments of happiness and pain.. characters: Narrator, Gu. background: Warm, nostalgic music with a hint of melancholy.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Struggles, Wide shot of 'Gu' sitting alone, looking lost and troubled.. characters: Gu. background: Heavy silence, punctuated by distant sounds of the city.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Relationship, Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.. characters: Narrator, Gu. background: Intimate atmosphere, soft lighting.. dialogues: Narrator: 나는 너를 지켜야 해.; Gu: 내가 괜찮아질 수 있을까?. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Descent, Close-up on 'Gu's face, showing despair and hopelessness.. characters: Narrator, Gu. background: Dark, oppressive atmosphere with low, dissonant music.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Inevitable Choice, Wide shot of 'Gu' standing alone in a dark room.. characters: Gu. background: Heavy silence, the sound of a clock ticking.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Death, Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.. characters: Narrator, Gu. background: Eerie silence, a haunting melody plays softly.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Guilt, Close-up on the narrator's face, filled with regret and sorrow.. characters: Narrator. background: Somber atmosphere, echoing silence.. dialogues: Narrator: 내가 조금만 더 잘했더라면.... cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Obsession, Intense close-up of the narrator's hands as they hold 'Gu's belongings.. characters: Narrator. background: Tense atmosphere, heartbeat sound effect.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Extreme Act, Dark, surreal imagery as the narrator engages in the shocking act.. characters: Narrator. background: Disturbing, dissonant music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "The Acceptance, Wide shot of the narrator standing alone, looking out at the horizon.. characters: Narrator. background: Hopeful yet melancholic music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "Introduction to Death",
+      "composition": "Close-up on the narrator's face, reflecting sorrow and disbelief.",
+      "dialogues": [],
+      "background": "Somber atmosphere, soft piano music playing in the background.",
+      "actions": [
+        "The narrator stares blankly at a photo of 'Gu'.",
+        "Tears well up in the narrator's eyes."
+      ],
+      "characters": [
+        "Narrator"
+      ]
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "Memories of 'Gu'",
+      "composition": "Flashback scenes with soft focus, showing moments of happiness and pain.",
+      "dialogues": [],
+      "background": "Warm, nostalgic music with a hint of melancholy.",
+      "actions": [
+        "The narrator reminisces about their time together.",
+        "Images of laughter and quiet moments flash by."
+      ],
+      "characters": [
+        "Narrator",
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "The Struggles",
+      "composition": "Wide shot of 'Gu' sitting alone, looking lost and troubled.",
+      "dialogues": [],
+      "background": "Heavy silence, punctuated by distant sounds of the city.",
+      "actions": [
+        "'Gu' stares out the window, lost in thought.",
+        "'Gu' clutches their head in despair."
+      ],
+      "characters": [
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "The Relationship",
+      "composition": "Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.",
+      "dialogues": [
+        {
+          "speaker": "Narrator",
+          "text": "나는 너를 지켜야 해.",
+          "emotion": "determined"
+        },
+        {
+          "speaker": "Gu",
+          "text": "내가 괜찮아질 수 있을까?",
+          "emotion": "anxious"
+        }
+      ],
+      "background": "Intimate atmosphere, soft lighting.",
+      "actions": [
+        "The narrator holds 'Gu's hand tightly.",
+        "'Gu' looks down, unsure."
+      ],
+      "characters": [
+        "Narrator",
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "The Descent",
+      "composition": "Close-up on 'Gu's face, showing despair and hopelessness.",
+      "dialogues": [],
+      "background": "Dark, oppressive atmosphere with low, dissonant music.",
+      "actions": [
+        "'Gu' expresses self-hatred and hopelessness.",
+        "The narrator looks on, helpless."
+      ],
+      "characters": [
+        "Narrator",
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "The Inevitable Choice",
+      "composition": "Wide shot of 'Gu' standing alone in a dark room.",
+      "dialogues": [],
+      "background": "Heavy silence, the sound of a clock ticking.",
+      "actions": [
+        "'Gu' contemplates their life choices.",
+        "'Gu' takes a deep breath."
+      ],
+      "characters": [
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "The Death",
+      "composition": "Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.",
+      "dialogues": [],
+      "background": "Eerie silence, a haunting melody plays softly.",
+      "actions": [
+        "The narrator gasps in shock.",
+        "The narrator collapses to the floor."
+      ],
+      "characters": [
+        "Narrator",
+        "Gu"
+      ]
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "The Guilt",
+      "composition": "Close-up on the narrator's face, filled with regret and sorrow.",
+      "dialogues": [
+        {
+          "speaker": "Narrator",
+          "text": "내가 조금만 더 잘했더라면...",
+          "emotion": "guilty"
+        }
+      ],
+      "background": "Somber atmosphere, echoing silence.",
+      "actions": [
+        "The narrator clutches their head in despair.",
+        "The narrator looks at 'Gu's belongings scattered around."
+      ],
+      "characters": [
+        "Narrator"
+      ]
+    },
+    {
+      "cut_id": 9,
+      "cut_name": "The Obsession",
+      "composition": "Intense close-up of the narrator's hands as they hold 'Gu's belongings.",
+      "dialogues": [],
+      "background": "Tense atmosphere, heartbeat sound effect.",
+      "actions": [
+        "The narrator clings to 'Gu's items.",
+        "The narrator's hands tremble."
+      ],
+      "characters": [
+        "Narrator"
+      ]
+    },
+    {
+      "cut_id": 10,
+      "cut_name": "The Extreme Act",
+      "composition": "Dark, surreal imagery as the narrator engages in the shocking act.",
+      "dialogues": [],
+      "background": "Disturbing, dissonant music plays.",
+      "actions": [
+        "The narrator consumes part of 'Gu's remains.",
+        "The narrator's expression is a mix of anguish and desperation."
+      ],
+      "characters": [
+        "Narrator"
+      ]
+    },
+    {
+      "cut_id": 11,
+      "cut_name": "The Acceptance",
+      "composition": "Wide shot of the narrator standing alone, looking out at the horizon.",
+      "dialogues": [],
+      "background": "Hopeful yet melancholic music plays.",
+      "actions": [
+        "The narrator takes a deep breath.",
+        "The narrator looks determined yet sad."
+      ],
+      "characters": [
+        "Narrator"
+      ]
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "Introduction to Death, Close-up on the narrator's face, reflecting sorrow and disbelief.. characters: Narrator. background: Somber atmosphere, soft piano music playing in the background.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01b/VhYb3beXws1_b6KeyNfXB.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "Memories of 'Gu', Flashback scenes with soft focus, showing moments of happiness and pain.. characters: Narrator, Gu. background: Warm, nostalgic music with a hint of melancholy.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01c/eiaHTdQ8XPcwehmqLAQR9.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "The Struggles, Wide shot of 'Gu' sitting alone, looking lost and troubled.. characters: Gu. background: Heavy silence, punctuated by distant sounds of the city.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01c/BLCPukRSl3JOM5bieU4-g.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "The Relationship, Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.. characters: Narrator, Gu. background: Intimate atmosphere, soft lighting.. dialogues: Narrator: 나는 너를 지켜야 해.; Gu: 내가 괜찮아질 수 있을까?. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01c/5-3crkSFM8buOvjTi7Tpa.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "The Descent, Close-up on 'Gu's face, showing despair and hopelessness.. characters: Narrator, Gu. background: Dark, oppressive atmosphere with low, dissonant music.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01d/RpiPDNEDgscD2Zg3Al_nj.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "The Inevitable Choice, Wide shot of 'Gu' standing alone in a dark room.. characters: Gu. background: Heavy silence, the sound of a clock ticking.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01d/iNqQfHg7LXhfD45TK5hwk.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "The Death, Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.. characters: Narrator, Gu. background: Eerie silence, a haunting melody plays softly.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01d/a6qfL8MJxWjMPZGm3qPbx.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "The Guilt, Close-up on the narrator's face, filled with regret and sorrow.. characters: Narrator. background: Somber atmosphere, echoing silence.. dialogues: Narrator: 내가 조금만 더 잘했더라면.... cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01e/cNZdYMky1_6-_ondAg5wH.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_08.png",
+      "message": ""
+    },
+    {
+      "index": 8,
+      "prompt": "The Obsession, Intense close-up of the narrator's hands as they hold 'Gu's belongings.. characters: Narrator. background: Tense atmosphere, heartbeat sound effect.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01e/-Are-NX3sDNfVw9oeI9-Z.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_09.png",
+      "message": ""
+    },
+    {
+      "index": 9,
+      "prompt": "The Extreme Act, Dark, surreal imagery as the narrator engages in the shocking act.. characters: Narrator. background: Disturbing, dissonant music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01e/SwSmb-QJ_CE0j_ME2ldd1.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_10.png",
+      "message": ""
+    },
+    {
+      "index": 10,
+      "prompt": "The Acceptance, Wide shot of the narrator standing alone, looking out at the horizon.. characters: Narrator. background: Hopeful yet melancholic music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a87d01f/UxHCznQkgUm9t-cHSSMkh.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_11.png",
+      "message": ""
+    }
+  ],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
+  }
+}

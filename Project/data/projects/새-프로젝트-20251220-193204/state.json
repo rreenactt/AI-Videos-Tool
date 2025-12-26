@@ -160,11 +160,61 @@
       ]
     }
   ],
-  "saved_results": [],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "입학식, 정면에서 학생들이 모여 있는 모습, 주인공이 중앙에 서 있음. characters: 주인공, 친구들. background: 학교 강당, 환호하는 학생들, 축제 분위기. dialogues: 주인공: 드디어 대학에 입학했다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775ef/dv8Z93Aw34lv4jIWz5uwh.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "군대 입대, 군대 훈련소 앞, 주인공이 짐을 들고 서 있음, 후면에서 카메라 촬영. characters: 주인공, 동기들. background: 군대 훈련소, 긴장된 분위기, 군복을 입은 다른 병사들. dialogues: 주인공: 이제 군 생활이 시작이구나.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f0/WZ7zQzG7n1an7H8uBlwOP.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "전역 후, 주인공이 전역증을 들고 있는 모습, 카메라는 주인공의 얼굴을 클로즈업. characters: 주인공, 가족. background: 전역식장, 축하하는 분위기, 가족들이 응원하는 모습. dialogues: 주인공: 드디어 자유다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f0/Y8Ae9CIiPYQ7R-kYbG31T.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "언리얼 공부, 주인공이 컴퓨터 앞에서 언리얼 엔진을 공부하는 모습, 측면에서 촬영. characters: 주인공. background: 조용한 방, 컴퓨터 화면에 언리얼 엔진이 켜져 있음. dialogues: 주인공: 이제 언리얼 엔진을 마스터해야겠다.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f0/dMuj8oTf94EzUpbll4bV5.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "유니티 게임 회사, 주인공이 게임 회사 사무실에서 동료들과 회의하는 모습, 전면에서 촬영. characters: 주인공, 동료들. background: 게임 회사 사무실, 활기찬 분위기, 화이트보드에 아이디어가 적혀 있음. dialogues: 주인공: 우리 게임을 이렇게 발전시켜보자!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f1/kW5D8IKhl4Y_R_GwVYTOD.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "AI 공부, 주인공이 도서관에서 AI 관련 서적을 읽고 있는 모습, 측면에서 촬영. characters: 주인공, 학생들. background: 도서관, 조용한 분위기, 책장이 가득한 모습. dialogues: 주인공: AI 기술은 정말 흥미롭다.. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f1/8PpGeiVV0caOmFlnjoQSK.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "졸업식, 졸업식장에서 주인공이 졸업장을 받는 모습, 정면에서 촬영. characters: 주인공, 친구들, 가족. background: 졸업식, 축하하는 분위기, 친구들과 가족들이 박수를 친다.. dialogues: 주인공: 이 모든 과정을 마쳤다!. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8775f1/WAJgxxEJSWZ5Wq22Tljib.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_07.png",
+      "message": ""
+    }
+  ],
   "image_job_id": "",
   "image_progress": {
-    "status": "error",
-    "progress": 0,
-    "message": "Cannot load model gpt-image-1: model is not cached locally and an error occurred while trying to fetch metadata from the Hub. Please check out the root cause in the stacktrace above."
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
   }
 }

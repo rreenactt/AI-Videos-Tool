@@ -29,6 +29,7 @@ tiktoken==0.7.0
 python-dotenv==1.0.1
 requests==2.32.3
 tqdm==4.66.5
+fal-client==0.4.0
 
 # === Video / Image IO ===
 moviepy==1.0.3

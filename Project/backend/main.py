@@ -13,7 +13,7 @@ import copy
 from backend.services.script_adjuster import adjust_script
 from backend.services.character_extractor import extract_characters
 from backend.services.prompt_generator import generate_prompts
-from backend.services.image_generator import generate_images, generate_images_with_progress
+from backend.services.image_generator import generate_images, generate_images_with_progress, regenerate_single_image
 from backend.services.video_composer import compose_video
 from backend.services.storyboard_generator import generate_storyboard_from_story
 from openai import OpenAI
@@ -37,13 +37,14 @@ class StoryRequest(BaseModel):
 	title: Optional[str] = None
 	story: str
 	min_shots_per_scene: Optional[int] = 1
+	style_key: Optional[str] = "surreal"
 
 
 class ImageJobRequest(BaseModel):
 	project_id: Optional[str] = None
 	prompts: List[str]
-	model: Optional[str] = "gpt-image-1"
-	size: Optional[str] = "1024x1024"
+	model: Optional[str] = "fal-ai/flux/dev"
+	size: Optional[str] = "portrait_16_9"
 	output_dir: Optional[str] = "../data/outputs"
 
 
@@ -52,6 +53,15 @@ class VideoJobRequest(BaseModel):
 	fps: Optional[int] = 24
 	audio_path: Optional[str] = None
 	output_path: Optional[str] = "../data/outputs/final.mp4"
+
+
+class RegenerateImageRequest(BaseModel):
+	project_id: str
+	prompt: str
+	index: int
+	model: Optional[str] = "fal-ai/flux/dev"
+	size: Optional[str] = "portrait_16_9"
+	output_dir: Optional[str] = "../data/outputs"
 
 
 class NewProjectRequest(BaseModel):
@@ -68,6 +78,7 @@ class ProjectStateUpdate(BaseModel):
 	saved_results: Optional[List[str]] = None
 	image_job_id: Optional[str] = None
 	image_progress: Optional[Dict[str, Any]] = None
+	style_key: Optional[str] = None
 
 
 BASE_DIR = os.path.dirname(__file__)
@@ -84,7 +95,41 @@ DEFAULT_STATE = {
 	"saved_results": [],
 	"image_job_id": "",
 	"image_progress": {"status": "", "progress": 0, "message": ""},
+	"style_key": "surreal",
 }
+
+
+def get_style_prompt_text(style_key: str) -> str:
+	"""스타일 키에 해당하는 프롬프트 스타일 텍스트 반환"""
+	style_map = {
+		"surreal": "surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+		"real": "photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+		"future": "futuristic, sci-fi, cyberpunk, neon lights, advanced technology, cinematic, detailed, dramatic lighting",
+		"simple3d": "3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+		"ghibli": "Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+		"dark": "dark fantasy, gothic, moody atmosphere, dramatic shadows, mysterious, cinematic, detailed illustration, high contrast",
+	}
+	return style_map.get(style_key, style_map["surreal"])
+
+
+def _normalize_saved_results(saved_results: Any, prompts: List[str]) -> list[dict]:
+	"""문자/구조 혼재된 saved_results를 통일된 dict 리스트로 정규화"""
+	normalized: list[dict] = []
+	if not isinstance(saved_results, list):
+		return normalized
+	for i, item in enumerate(saved_results):
+		if isinstance(item, str):
+			normalized.append({"index": i, "prompt": prompts[i] if i < len(prompts) else "", "url": item, "path": item})
+		elif isinstance(item, dict):
+			url = item.get("url") or item.get("path") or ""
+			normalized.append({
+				"index": item.get("index", i),
+				"prompt": item.get("prompt") or (prompts[i] if i < len(prompts) else ""),
+				"url": url,
+				"path": item.get("path", url),
+				"message": item.get("message", "")
+			})
+	return normalized
 
 
 def _get_project_dir(project_id: str, *, require: bool = True) -> Optional[str]:
@@ -130,6 +175,7 @@ def _load_project_state(project_id: str, *, require: bool = True) -> Dict[str, A
 					state["image_progress"] = {**state["image_progress"], **loaded["image_progress"]}
 		except Exception:
 			pass
+	state["saved_results"] = _normalize_saved_results(state.get("saved_results", []), state.get("prompts", []))
 	return state
 
 
@@ -137,6 +183,8 @@ def _save_project_state(project_id: str, state: Dict[str, Any], *, require: bool
 	proj_dir = _get_project_dir(project_id, require=require)
 	if not proj_dir:
 		return
+	# 저장 전에 결과 구조 정규화
+	state["saved_results"] = _normalize_saved_results(state.get("saved_results", []), state.get("prompts", []))
 	state_path = os.path.join(proj_dir, "state.json")
 	with open(state_path, "w", encoding="utf-8") as f:
 		json.dump(state, f, ensure_ascii=False, indent=2)
@@ -264,14 +312,18 @@ async def api_storyboard(payload: StoryRequest):
 		adjusted = adjust_script(payload.story)
 		
 		# GPT로 컷별 요소 추출
+		min_shots = payload.min_shots_per_scene or 1
 		storyboard = generate_storyboard_from_story(
 			client=openai_client,
 			story_text=adjusted,
 			title=payload.title,
-			model="gpt-4o-mini"
+			model="gpt-4o-mini",
+			min_shots_per_scene=min_shots
 		)
 		
 		# 각 컷에서 프롬프트 생성 (이미지 생성용)
+		style_key = payload.style_key or "surreal"
+		style_text = get_style_prompt_text(style_key)
 		prompts = []
 		for cut in storyboard.cuts:
 			characters_str = ", ".join(cut.characters) if cut.characters else "characters"
@@ -281,7 +333,7 @@ async def api_storyboard(payload: StoryRequest):
 				f"characters: {characters_str}. "
 				f"background: {cut.background}. "
 				f"dialogues: {dialogues_str}. "
-				f"cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+				f"{style_text}"
 			)
 			prompts.append(prompt)
 		
@@ -291,6 +343,8 @@ async def api_storyboard(payload: StoryRequest):
 			state["title"] = storyboard.title or state.get("title") or (payload.title or "")
 			if payload.min_shots_per_scene:
 				state["min_shots_per_scene"] = payload.min_shots_per_scene
+			if payload.style_key:
+				state["style_key"] = payload.style_key
 			state["cuts"] = [cut.model_dump() for cut in storyboard.cuts]
 			state["prompts"] = prompts
 			state["saved_results"] = []
@@ -312,6 +366,11 @@ async def api_storyboard(payload: StoryRequest):
 
 def run_image_generation(job_id: str, prompts: List[str], model: str, size: str, output_dir: str, project_id: Optional[str] = None):
 	"""백그라운드에서 이미지 생성 실행"""
+	# 상대 경로를 backend 기준 절대 경로로 변환
+	target_output_dir = output_dir
+	if output_dir and not os.path.isabs(output_dir):
+		target_output_dir = os.path.normpath(os.path.join(BASE_DIR, output_dir))
+
 	def progress_callback(status: str, progress: float, message: str):
 		progress_store[job_id] = {
 			"status": status,
@@ -337,14 +396,14 @@ def run_image_generation(job_id: str, prompts: List[str], model: str, size: str,
 			progress_callback=progress_callback,
 			model=model,
 			size=size,
-			output_dir=output_dir
+			output_dir=target_output_dir
 		)
 		progress_store[job_id]["results"] = results
 		progress_store[job_id]["status"] = "completed"
 		if project_id:
 			try:
 				state = _load_project_state(project_id, require=False)
-				state["saved_results"] = results
+				state["saved_results"] = _normalize_saved_results(results, prompts)
 				state["image_job_id"] = ""
 				state["image_progress"] = {"status": "completed", "progress": 100.0, "message": "모든 이미지 생성 완료"}
 				_save_project_state(project_id, state, require=False)
@@ -389,6 +448,51 @@ async def api_images(payload: ImageJobRequest, background_tasks: BackgroundTasks
 			payload.project_id
 		)
 		return {"job_id": job_id}
+	except Exception as e:
+		raise HTTPException(500, detail=str(e))
+
+
+@app.post("/api/images/regenerate")
+async def api_regenerate_image(payload: RegenerateImageRequest):
+	"""단일 프롬프트만 다시 생성 (fal.ai 기반)"""
+	try:
+		target_output_dir = payload.output_dir
+		if target_output_dir and not os.path.isabs(target_output_dir):
+			target_output_dir = os.path.normpath(os.path.join(BASE_DIR, target_output_dir))
+
+		result = regenerate_single_image(
+			prompt=payload.prompt,
+			index=payload.index,
+			model=payload.model or "fal-ai/flux/dev",
+			size=payload.size or "portrait_16_9",
+			output_dir=target_output_dir or OUTPUTS_DIR
+		)
+
+		if payload.project_id:
+			state = _load_project_state(payload.project_id, require=False)
+			prompts = state.get("prompts", [])
+			if payload.index < len(prompts):
+				prompts[payload.index] = payload.prompt
+			else:
+				# 부족한 인덱스는 빈 값으로 채우고 append
+				while len(prompts) < payload.index:
+					prompts.append("")
+				prompts.append(payload.prompt)
+
+			saved = _normalize_saved_results(state.get("saved_results", []), prompts)
+			if payload.index < len(saved):
+				saved[payload.index] = result
+			else:
+				while len(saved) < payload.index:
+					saved.append({})
+				saved.append(result)
+
+			state["prompts"] = prompts
+			state["saved_results"] = saved
+			state["image_progress"] = {"status": "completed", "progress": 100.0, "message": "단일 이미지 재생성 완료"}
+			_save_project_state(payload.project_id, state, require=False)
+
+		return {"result": result}
 	except Exception as e:
 		raise HTTPException(500, detail=str(e))
 

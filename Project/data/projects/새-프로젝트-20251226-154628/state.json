@@ -1,0 +1,491 @@
+{
+  "title": "The Journey of Lee Sin",
+  "story": "천재적인 재능과 치명적인 실수\n리 신은 어릴 적부터 아이오니아의 쇼진 사원에서 촉망받는 제자였습니다. 그는 남들보다 훨씬 빠르게 마법 실력을 키웠고, 자신의 재능에 자만하게 됩니다.\n\n결국 그는 금기시되던 '소환 마법'에 손을 댔고, 역병 정글의 괴수를 소환하려다 실수로 한 어린아이를 소환하게 됩니다. 하지만 소환된 아이는 형체를 유지하지 못하고 고통 속에 죽어갔고, 이 사건으로 마을 전체가 파괴되는 비극이 발생합니다.\n\n2. 방랑과 속죄의 길\n자신의 오만이 불러온 비극에 절망한 리 신은 사원을 떠나 평생을 속죄하며 살기로 결심합니다. 그는 수년 동안 전 세계를 방랑하며 자신의 실수를 되새겼고, 무력이 아닌 정신 수양에 매진했습니다.\n\n3. 아이오니아 침공과 위대한 희생\n그러던 중, 녹서스 군대가 아이오니아를 침공했습니다. 리 신은 고통받는 동포들을 외면할 수 없었습니다. 그는 녹서스의 점령에 항의하기 위해 **자신의 몸에 불을 붙여 공양(Self-immolation)**하는 극단적인 결단을 내립니다.\n\n\"내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.\"\n\n그는 불길 속에서도 비명 하나 지르지 않고 버텼습니다. 이 사건으로 그는 시력을 영원히 잃게 되었지만, 동시에 내면의 **'용의 정신'**을 깨우게 됩니다. 그의 희생은 아이오니아인들에게 큰 용기를 주었고, 결국 녹서스군을 몰아내는 기폭제가 되었습니다.\n\n4. 용의 눈을 뜬 수도승\n현재 리 신은 시각 대신 모든 감각이 초월적으로 발달한 상태입니다. 그는 단순히 눈이 먼 것이 아니라, 세상의 흐름과 기운을 읽는 능력을 갖게 되었습니다. 이제 그는 쇼진 사원의 마스터로서, 자신의 힘을 과시하는 대신 아이오니아의 균형을 지키는 진정한 수호자로 살아가고 있습니다.",
+  "min_shots_per_scene": 20,
+  "prompts": [
+    "Young Lee Sin at Shojin Temple, Wide shot of Shojin Temple with young Lee Sin practicing magic in the foreground.. characters: Lee Sin. background: Bright and serene atmosphere, sounds of nature and chanting.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Lee Sin's Pride, Close-up of Lee Sin's face, showing a proud expression.. characters: Lee Sin. background: Intense music builds up, highlighting his arrogance.. dialogues: Lee Sin: I am destined for greatness!. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Forbidden Magic, Medium shot of Lee Sin looking at a forbidden book.. characters: Lee Sin. background: Dark and ominous, with flickering candlelight.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Summoning, Over-the-shoulder shot of Lee Sin casting a spell.. characters: Lee Sin. background: Tension-filled atmosphere, whispers of the wind.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Mistake, Close-up of Lee Sin's shocked face as the spell backfires.. characters: Lee Sin. background: Sudden silence followed by a loud crash.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Summoned Child, Wide shot of the summoned child appearing in a burst of light.. characters: Lee Sin, Summoned Child. background: Bright and chaotic, with echoes of a child's cry.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Tragic End, Close-up of the child's face, fading away.. characters: Lee Sin, Summoned Child. background: Somber music plays, heavy silence.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Destruction of the Village, Wide shot of the village in chaos, buildings collapsing.. characters: characters. background: Sounds of destruction and cries of despair.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Lee Sin's Despair, Close-up of Lee Sin kneeling in the ruins, tears in his eyes.. characters: Lee Sin. background: Dark and heavy atmosphere, echoing silence.. dialogues: Lee Sin: What have I done?. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Decision to Leave, Medium shot of Lee Sin standing at the temple gate, looking back.. characters: Lee Sin. background: Dawn breaking, a sense of new beginnings.. dialogues: Lee Sin: I must atone for my sins.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Wandering the World, Wide shot of Lee Sin traveling through various landscapes.. characters: Lee Sin. background: Varied environments, sounds of nature and distant towns.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Years of Reflection, Close-up of Lee Sin meditating in a serene location.. characters: Lee Sin. background: Calm and peaceful, soft wind sounds.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Invasion Begins, Wide shot of the Noxian army approaching Ionia.. characters: characters. background: Tense atmosphere, sounds of marching soldiers.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "Lee Sin's Resolve, Close-up of Lee Sin's determined face.. characters: Lee Sin. background: Intense music builds up, highlighting his determination.. dialogues: Lee Sin: I cannot stand by any longer.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Self-Immolation, Wide shot of Lee Sin engulfed in flames.. characters: Lee Sin. background: Dramatic and fiery, sounds of crackling flames.. dialogues: Lee Sin: My body may burn, but Ionia's spirit will live on!. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Pain and Sacrifice, Close-up of Lee Sin's face as he endures the flames.. characters: Lee Sin. background: Heavy silence, the crackling of fire fills the air.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Awakening, Medium shot of Lee Sin surrounded by a glowing aura.. characters: Lee Sin. background: Bright and ethereal, sounds of mystical energy.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Spirit of the Dragon, Close-up of Lee Sin's eyes, now filled with wisdom.. characters: Lee Sin. background: Calm and powerful, a sense of enlightenment.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "The Guardian of Ionia, Wide shot of Lee Sin standing proudly at the temple.. characters: Lee Sin. background: Majestic and serene, sounds of nature returning.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "A New Purpose, Close-up of Lee Sin smiling softly, a sense of peace.. characters: Lee Sin. background: Hopeful and bright, sounds of birds chirping.. dialogues: Lee Sin: I will protect this land with my life.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "Young Lee Sin at Shojin Temple",
+      "composition": "Wide shot of Shojin Temple with young Lee Sin practicing magic in the foreground.",
+      "dialogues": [],
+      "background": "Bright and serene atmosphere, sounds of nature and chanting.",
+      "actions": [
+        "Lee Sin practices magic",
+        "Other students watch in awe"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "Lee Sin's Pride",
+      "composition": "Close-up of Lee Sin's face, showing a proud expression.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "I am destined for greatness!",
+          "emotion": "proud"
+        }
+      ],
+      "background": "Intense music builds up, highlighting his arrogance.",
+      "actions": [
+        "Lee Sin smirks",
+        "He raises his hands in confidence"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "Forbidden Magic",
+      "composition": "Medium shot of Lee Sin looking at a forbidden book.",
+      "dialogues": [],
+      "background": "Dark and ominous, with flickering candlelight.",
+      "actions": [
+        "Lee Sin opens the book",
+        "He looks around nervously"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "The Summoning",
+      "composition": "Over-the-shoulder shot of Lee Sin casting a spell.",
+      "dialogues": [],
+      "background": "Tension-filled atmosphere, whispers of the wind.",
+      "actions": [
+        "Lee Sin chants incantations",
+        "Magic swirls around him"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "The Mistake",
+      "composition": "Close-up of Lee Sin's shocked face as the spell backfires.",
+      "dialogues": [],
+      "background": "Sudden silence followed by a loud crash.",
+      "actions": [
+        "Lee Sin gasps",
+        "He stumbles back"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "The Summoned Child",
+      "composition": "Wide shot of the summoned child appearing in a burst of light.",
+      "dialogues": [],
+      "background": "Bright and chaotic, with echoes of a child's cry.",
+      "actions": [
+        "The child appears",
+        "Lee Sin reaches out in horror"
+      ],
+      "characters": [
+        "Lee Sin",
+        "Summoned Child"
+      ]
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "The Tragic End",
+      "composition": "Close-up of the child's face, fading away.",
+      "dialogues": [],
+      "background": "Somber music plays, heavy silence.",
+      "actions": [
+        "The child screams",
+        "Lee Sin watches helplessly"
+      ],
+      "characters": [
+        "Lee Sin",
+        "Summoned Child"
+      ]
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "Destruction of the Village",
+      "composition": "Wide shot of the village in chaos, buildings collapsing.",
+      "dialogues": [],
+      "background": "Sounds of destruction and cries of despair.",
+      "actions": [
+        "Villagers run in panic",
+        "Smoke rises from the ruins"
+      ],
+      "characters": []
+    },
+    {
+      "cut_id": 9,
+      "cut_name": "Lee Sin's Despair",
+      "composition": "Close-up of Lee Sin kneeling in the ruins, tears in his eyes.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "What have I done?",
+          "emotion": "despair"
+        }
+      ],
+      "background": "Dark and heavy atmosphere, echoing silence.",
+      "actions": [
+        "Lee Sin cries",
+        "He clutches his head in regret"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 10,
+      "cut_name": "The Decision to Leave",
+      "composition": "Medium shot of Lee Sin standing at the temple gate, looking back.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "I must atone for my sins.",
+          "emotion": "determined"
+        }
+      ],
+      "background": "Dawn breaking, a sense of new beginnings.",
+      "actions": [
+        "Lee Sin turns away from the temple",
+        "He walks into the distance"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 11,
+      "cut_name": "Wandering the World",
+      "composition": "Wide shot of Lee Sin traveling through various landscapes.",
+      "dialogues": [],
+      "background": "Varied environments, sounds of nature and distant towns.",
+      "actions": [
+        "Lee Sin walks through forests",
+        "He climbs mountains"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 12,
+      "cut_name": "Years of Reflection",
+      "composition": "Close-up of Lee Sin meditating in a serene location.",
+      "dialogues": [],
+      "background": "Calm and peaceful, soft wind sounds.",
+      "actions": [
+        "Lee Sin meditates",
+        "He breathes deeply"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 13,
+      "cut_name": "The Invasion Begins",
+      "composition": "Wide shot of the Noxian army approaching Ionia.",
+      "dialogues": [],
+      "background": "Tense atmosphere, sounds of marching soldiers.",
+      "actions": [
+        "Noxian soldiers advance",
+        "Villagers look on in fear"
+      ],
+      "characters": []
+    },
+    {
+      "cut_id": 14,
+      "cut_name": "Lee Sin's Resolve",
+      "composition": "Close-up of Lee Sin's determined face.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "I cannot stand by any longer.",
+          "emotion": "resolved"
+        }
+      ],
+      "background": "Intense music builds up, highlighting his determination.",
+      "actions": [
+        "Lee Sin clenches his fists",
+        "He stands tall"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 15,
+      "cut_name": "The Self-Immolation",
+      "composition": "Wide shot of Lee Sin engulfed in flames.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "My body may burn, but Ionia's spirit will live on!",
+          "emotion": "heroic"
+        }
+      ],
+      "background": "Dramatic and fiery, sounds of crackling flames.",
+      "actions": [
+        "Lee Sin sets himself on fire",
+        "He stands firm amidst the flames"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 16,
+      "cut_name": "The Pain and Sacrifice",
+      "composition": "Close-up of Lee Sin's face as he endures the flames.",
+      "dialogues": [],
+      "background": "Heavy silence, the crackling of fire fills the air.",
+      "actions": [
+        "Lee Sin grits his teeth",
+        "He remains silent"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 17,
+      "cut_name": "The Awakening",
+      "composition": "Medium shot of Lee Sin surrounded by a glowing aura.",
+      "dialogues": [],
+      "background": "Bright and ethereal, sounds of mystical energy.",
+      "actions": [
+        "Lee Sin's aura glows",
+        "He opens his eyes"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 18,
+      "cut_name": "The Spirit of the Dragon",
+      "composition": "Close-up of Lee Sin's eyes, now filled with wisdom.",
+      "dialogues": [],
+      "background": "Calm and powerful, a sense of enlightenment.",
+      "actions": [
+        "Lee Sin looks around with new perception"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 19,
+      "cut_name": "The Guardian of Ionia",
+      "composition": "Wide shot of Lee Sin standing proudly at the temple.",
+      "dialogues": [],
+      "background": "Majestic and serene, sounds of nature returning.",
+      "actions": [
+        "Lee Sin stands tall",
+        "He surveys the land"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    },
+    {
+      "cut_id": 20,
+      "cut_name": "A New Purpose",
+      "composition": "Close-up of Lee Sin smiling softly, a sense of peace.",
+      "dialogues": [
+        {
+          "speaker": "Lee Sin",
+          "text": "I will protect this land with my life.",
+          "emotion": "hopeful"
+        }
+      ],
+      "background": "Hopeful and bright, sounds of birds chirping.",
+      "actions": [
+        "Lee Sin nods confidently",
+        "He looks towards the horizon"
+      ],
+      "characters": [
+        "Lee Sin"
+      ]
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "Young Lee Sin at Shojin Temple, Wide shot of Shojin Temple with young Lee Sin practicing magic in the foreground.. characters: Lee Sin. background: Bright and serene atmosphere, sounds of nature and chanting.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d322/z8-xnhrPDWwW8tzCGjIuo.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "Lee Sin's Pride, Close-up of Lee Sin's face, showing a proud expression.. characters: Lee Sin. background: Intense music builds up, highlighting his arrogance.. dialogues: Lee Sin: I am destined for greatness!. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d322/6IGsvbnMjsDLmNZX0gDkJ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "Forbidden Magic, Medium shot of Lee Sin looking at a forbidden book.. characters: Lee Sin. background: Dark and ominous, with flickering candlelight.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d322/x8NobSND_-5TGpUC2m2Q-.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "The Summoning, Over-the-shoulder shot of Lee Sin casting a spell.. characters: Lee Sin. background: Tension-filled atmosphere, whispers of the wind.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d323/bTE3ReUFDYrPz7TaCeB6a.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "The Mistake, Close-up of Lee Sin's shocked face as the spell backfires.. characters: Lee Sin. background: Sudden silence followed by a loud crash.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d323/x19Um_vtyZqdfPYOGRyal.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "The Summoned Child, Wide shot of the summoned child appearing in a burst of light.. characters: Lee Sin, Summoned Child. background: Bright and chaotic, with echoes of a child's cry.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d324/0R1LWQb1UGxwY5ks35IKm.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "The Tragic End, Close-up of the child's face, fading away.. characters: Lee Sin, Summoned Child. background: Somber music plays, heavy silence.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d324/mp1U0cktIn3ThNx7KzwTw.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "Destruction of the Village, Wide shot of the village in chaos, buildings collapsing.. characters: characters. background: Sounds of destruction and cries of despair.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d324/6Tg9N0BtakpHWGXG3nW-_.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_08.png",
+      "message": ""
+    },
+    {
+      "index": 8,
+      "prompt": "Lee Sin's Despair, Close-up of Lee Sin kneeling in the ruins, tears in his eyes.. characters: Lee Sin. background: Dark and heavy atmosphere, echoing silence.. dialogues: Lee Sin: What have I done?. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d325/pPAcj6Z7qqx9EWD_B1MlS.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_09.png",
+      "message": ""
+    },
+    {
+      "index": 9,
+      "prompt": "The Decision to Leave, Medium shot of Lee Sin standing at the temple gate, looking back.. characters: Lee Sin. background: Dawn breaking, a sense of new beginnings.. dialogues: Lee Sin: I must atone for my sins.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d325/JAPVAGmpxBkrQxiix8gp_.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_10.png",
+      "message": ""
+    },
+    {
+      "index": 10,
+      "prompt": "Wandering the World, Wide shot of Lee Sin traveling through various landscapes.. characters: Lee Sin. background: Varied environments, sounds of nature and distant towns.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d325/qSPGqlk093DYZpmX_3Klp.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_11.png",
+      "message": ""
+    },
+    {
+      "index": 11,
+      "prompt": "Years of Reflection, Close-up of Lee Sin meditating in a serene location.. characters: Lee Sin. background: Calm and peaceful, soft wind sounds.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d326/S7akVdfmQ0d_6GVpDc1yX.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_12.png",
+      "message": ""
+    },
+    {
+      "index": 12,
+      "prompt": "The Invasion Begins, Wide shot of the Noxian army approaching Ionia.. characters: characters. background: Tense atmosphere, sounds of marching soldiers.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d326/DdtCk3teiYTfCTu34uGKe.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_13.png",
+      "message": ""
+    },
+    {
+      "index": 13,
+      "prompt": "Lee Sin's Resolve, Close-up of Lee Sin's determined face.. characters: Lee Sin. background: Intense music builds up, highlighting his determination.. dialogues: Lee Sin: I cannot stand by any longer.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d327/Hv93gScGD6qJRcYBfjeay.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_14.png",
+      "message": ""
+    },
+    {
+      "index": 14,
+      "prompt": "The Self-Immolation, Wide shot of Lee Sin engulfed in flames.. characters: Lee Sin. background: Dramatic and fiery, sounds of crackling flames.. dialogues: Lee Sin: My body may burn, but Ionia's spirit will live on!. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d327/ZHugdelhdZkJVuQnv6oQV.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_15.png",
+      "message": ""
+    },
+    {
+      "index": 15,
+      "prompt": "The Pain and Sacrifice, Close-up of Lee Sin's face as he endures the flames.. characters: Lee Sin. background: Heavy silence, the crackling of fire fills the air.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d327/LoKI7JuuR0RK4wiRg_fDv.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_16.png",
+      "message": ""
+    },
+    {
+      "index": 16,
+      "prompt": "The Awakening, Medium shot of Lee Sin surrounded by a glowing aura.. characters: Lee Sin. background: Bright and ethereal, sounds of mystical energy.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d328/WCuecWREu0jXdH5JlFEOR.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_17.png",
+      "message": ""
+    },
+    {
+      "index": 17,
+      "prompt": "The Spirit of the Dragon, Close-up of Lee Sin's eyes, now filled with wisdom.. characters: Lee Sin. background: Calm and powerful, a sense of enlightenment.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d328/vxUjJuvEtAo5SyiAP-v81.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_18.png",
+      "message": ""
+    },
+    {
+      "index": 18,
+      "prompt": "The Guardian of Ionia, Wide shot of Lee Sin standing proudly at the temple.. characters: Lee Sin. background: Majestic and serene, sounds of nature returning.. dialogues: . photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d329/NPcba9DyY6BztyA5XhyRB.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_19.png",
+      "message": ""
+    },
+    {
+      "index": 19,
+      "prompt": "A New Purpose, Close-up of Lee Sin smiling softly, a sense of peace.. characters: Lee Sin. background: Hopeful and bright, sounds of birds chirping.. dialogues: Lee Sin: I will protect this land with my life.. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a87d329/gVmCwCa6l8tULX4vfNlXZ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_20.png",
+      "message": ""
+    }
+  ],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
+  },
+  "style_key": "real"
+}

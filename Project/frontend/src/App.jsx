@@ -63,14 +63,8 @@ export default function App() {
         </div>
       )}
 
-      <header className="header">
-        <div className="brand">
-          <img src="/auto-shorts-logo.png" alt="AUTO Shorts" style={{width:120,height:120,objectFit:'contain'}} />
-          <div style={{fontWeight:700}}>AIVideos · Projects</div>
-        </div>
-        <div className="actions">
-          <button className="btn primary" onClick={startProject}>프로젝트 시작하기</button>
-        </div>
+      <header className="header-logo">
+        <img src="/auto-shorts-logo.png" alt="AUTO Shorts" className="main-logo" />
       </header>
 
       <div className="shell">

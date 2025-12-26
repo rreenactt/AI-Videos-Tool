@@ -10,6 +10,26 @@ body{margin:0;background:radial-gradient(900px 600px at 80% -20%, rgba(2,6,23,0.
 
 /* Header */
 .header{display:flex;align-items:center;justify-content:space-between;padding:4px 24px}
+.header-logo {
+      display: flex;
+      /* 위아래 여백을 4px 정도로 줄이고, 좌우 여백은 그대로 유지 */
+      padding: 4px 24px; 
+      
+      /* 이미지가 위로 쏠려 보이지 않게 중앙 정렬로 변경 권장 */
+      align-items: center; 
+      
+      position: relative;
+      
+      /* 만약 그래도 높이가 높다면 line-height를 0으로 설정 */
+      line-height: 0;
+    }
+    
+    .header-logo img {
+      /* 이미지 크기는 명시적으로 고정하여 부모 패딩 변경에 영향받지 않게 함 */
+      height: auto; 
+      max-height: 100%; /* 부모 영역을 넘지 않는 선에서 원래 크기 유지 */
+    }
+.main-logo{width:auto;height:120px;object-fit:contain;max-width:280px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-mark{width:18px;height:18px;border-radius:4px;background:linear-gradient(135deg,var(--primary),var(--primary2))}
 .actions{display:flex;gap:8px}
@@ -45,3 +65,22 @@ body{margin:0;background:radial-gradient(900px 600px at 80% -20%, rgba(2,6,23,0.
 .input-sm{padding:10px 12px}
 textarea.input{width:100%;min-height:120px;padding:12px;resize:vertical}
 .help{color:var(--muted);font-size:12px}
+
+/* Image preview grid */
+.image-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.image-card{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+.image-preview{width:100%;height:200px;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#e2e8f0}
+.image-actions{display:flex;gap:8;flex-wrap:wrap;margin-top:8}
+
+/* Style selector */
+.style-header{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}
+.style-selected{display:flex;align-items:center;gap:8}
+.style-thumb{width:36px;height:36px;border-radius:10px;object-fit:cover;border:1px solid var(--border);background:#f8fafc}
+.style-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:12px}
+.style-tile{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8;align-items:center;cursor:pointer;transition:all .12s ease}
+.style-tile:hover{box-shadow:0 8px 18px rgba(0,0,0,.08);transform:translateY(-1px)}
+.style-tile.active{border:2px solid var(--primary);box-shadow:0 8px 18px rgba(37,99,235,.18)}
+.style-thumb-lg{width:100%;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--border);background:#f8fafc}
+.style-label{font-weight:600}
+.chevron{transition:transform .15s ease;font-size:18px}
+.chevron.collapsed{transform:rotate(-90deg)}

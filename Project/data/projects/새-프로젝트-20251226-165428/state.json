@@ -1,0 +1,15 @@
+{
+  "title": "새 프로젝트",
+  "story": "",
+  "min_shots_per_scene": 1,
+  "prompts": [],
+  "cuts": [],
+  "saved_results": [],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "",
+    "progress": 0,
+    "message": ""
+  },
+  "style_key": "surreal"
+}
