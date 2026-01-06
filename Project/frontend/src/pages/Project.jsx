@@ -45,6 +45,8 @@ export default function Project(){
   const [projectLoaded, setProjectLoaded] = useState(false)
   const [lastSavedDraft, setLastSavedDraft] = useState({title:'', story:'', minShots:2, styleKey: 'surreal'})
   const [regenIndex, setRegenIndex] = useState(null)
+  const [videoGenerating, setVideoGenerating] = useState(false)
+  const [videoPath, setVideoPath] = useState('')
   const selectedStyle = useMemo(() => stylePresets.find(s => s.key === selectedStyleKey) || stylePresets[0], [stylePresets, selectedStyleKey])
 
   const disabledGen = useMemo(() => loading || !story.trim(), [loading, story])
@@ -77,6 +79,7 @@ export default function Project(){
         setSaved(normalizeSavedResults(state.saved_results ?? [], loadedPrompts))
         setImageProgress(state.image_progress ?? {status:'',progress:0,message:''})
         setImageJobId(state.image_job_id ?? '')
+        setVideoPath(state.video_path || '')
         setLastSavedDraft({
           title: state.title ?? data.meta?.title ?? '',
           story: state.story ?? '',
@@ -237,7 +240,61 @@ export default function Project(){
 
   const handleResetSaved = async () => {
     setSaved([])
-    await saveProjectState({ saved_results: [] })
+    setVideoPath('')
+    await saveProjectState({ saved_results: [], video_path: '' })
+  }
+
+  const generateVideo = async () => {
+    if(saved.length === 0){
+      setError('생성된 이미지가 없습니다. 먼저 이미지를 생성해주세요.')
+      return
+    }
+    
+    // 모든 이미지 경로 추출
+    const imagePaths = saved
+      .map(s => s.path || s.url)
+      .filter(path => path && path.trim())
+    
+    if(imagePaths.length === 0){
+      setError('유효한 이미지 경로가 없습니다.')
+      return
+    }
+    
+    setVideoGenerating(true)
+    setError('')
+    
+    try{
+      const res = await fetch(`${API_BASE}/api/video`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          project_id: id,
+          image_paths: imagePaths,
+          fps: 24
+        })
+      })
+      
+      if(!res.ok){
+        const errorData = await res.json().catch(() => ({detail: `Video generation failed (${res.status})`}))
+        throw new Error(errorData.detail || `Video generation failed (${res.status})`)
+      }
+      
+      const data = await res.json()
+      setVideoPath(data.output || data.metadata?.output_path || '')
+      
+      // 프로젝트 상태 업데이트
+      await saveProjectState({
+        video_path: data.output || data.metadata?.output_path || '',
+        video_clips: data.metadata?.clip_paths || [],
+        audio_paths: data.metadata?.audio_paths || [],
+        video_duration: data.metadata?.total_duration || 0
+      })
+      
+    }catch(e){
+      setError(e?.message || '영상 생성 중 오류가 발생했습니다')
+    }finally{
+      setVideoGenerating(false)
+    }
   }
 
   const deleteProject = async () => {
@@ -362,29 +419,64 @@ export default function Project(){
             )}
 
             {saved.length>0 && (
-              <div className="card project-card" style={{marginTop:12}}>
-                <div className="section-title">생성된 이미지 미리보기</div>
-                <div className="help" style={{marginBottom:8}}>각 이미지 아래 프롬프트를 수정하고 해당 컷만 다시 생성할 수 있습니다.</div>
-                <div className="image-grid">
-                  {saved.map((s,i)=> (
-                    <div className="image-card" key={i}>
-                      <div className="image-preview">
-                        {(s.url || s.path) ? (
-                          <img src={s.url || s.path} alt={`컷 ${i+1}`} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:12}} />
-                        ) : (
-                          <div className="help" style={{textAlign:'center'}}>이미지가 없습니다</div>
-                        )}
+              <>
+                <div className="card project-card" style={{marginTop:12}}>
+                  <div className="section-title">생성된 이미지 미리보기</div>
+                  <div className="help" style={{marginBottom:8}}>각 이미지 아래 프롬프트를 수정하고 해당 컷만 다시 생성할 수 있습니다.</div>
+                  <div className="image-grid">
+                    {saved.map((s,i)=> (
+                      <div className="image-card" key={i}>
+                        <div className="image-preview">
+                          {(s.url || s.path) ? (
+                            <img src={s.url || s.path} alt={`컷 ${i+1}`} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:12}} />
+                          ) : (
+                            <div className="help" style={{textAlign:'center'}}>이미지가 없습니다</div>
+                          )}
+                        </div>
+                        <div className="help" style={{margin:'8px 0 4px'}}>프롬프트</div>
+                        <textarea className="input" style={{minHeight:90}} value={s.prompt || prompts[i] || ''} onChange={e=>handleSavedPromptChange(i, e.target.value)} />
+                        <div className="image-actions">
+                          <button className="btn primary" onClick={()=>regenerateImage(i)} disabled={regenIndex===i || loading}>{regenIndex===i ? '재생성 중…' : '이 프롬프트로 다시 생성'}</button>
+                          {(s.url || s.path) && <a className="btn ghost" href={s.url || s.path} target="_blank" rel="noreferrer" style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}>원본 열기</a>}
+                        </div>
                       </div>
-                      <div className="help" style={{margin:'8px 0 4px'}}>프롬프트</div>
-                      <textarea className="input" style={{minHeight:90}} value={s.prompt || prompts[i] || ''} onChange={e=>handleSavedPromptChange(i, e.target.value)} />
-                      <div className="image-actions">
-                        <button className="btn primary" onClick={()=>regenerateImage(i)} disabled={regenIndex===i || loading}>{regenIndex===i ? '재생성 중…' : '이 프롬프트로 다시 생성'}</button>
-                        {(s.url || s.path) && <a className="btn ghost" href={s.url || s.path} target="_blank" rel="noreferrer" style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}>원본 열기</a>}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+                
+                <div className="card project-card" style={{marginTop:12}}>
+                  <div className="section-title">영상 생성</div>
+                  <div className="help" style={{marginBottom:8}}>생성된 이미지들로 자막과 TTS가 포함된 영상을 만듭니다.</div>
+                  <div className="actions" style={{display:'flex', gap:8, alignItems:'center'}}>
+                    <button 
+                      className="btn primary" 
+                      onClick={generateVideo} 
+                      disabled={videoGenerating || saved.length === 0 || saved.some(s => !s.path && !s.url)}
+                    >
+                      {videoGenerating ? '영상 생성 중…' : '영상 생성 (자막 + TTS)'}
+                    </button>
+                    {videoPath && (
+                      <>
+                        <a 
+                          className="btn ghost" 
+                          href={videoPath} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}
+                        >
+                          영상 보기
+                        </a>
+                        <div className="help" style={{margin:0}}>✅ 영상 생성 완료</div>
+                      </>
+                    )}
+                  </div>
+                  {videoGenerating && (
+                    <div className="help" style={{marginTop:8,color:'#2563eb'}}>
+                      영상을 생성하는 중입니다. TTS 생성과 영상 합성에 시간이 걸릴 수 있습니다...
+                    </div>
+                  )}
+                </div>
+              </>
             )}
           </>
         ) : (

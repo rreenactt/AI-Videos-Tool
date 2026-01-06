@@ -50,6 +50,7 @@ class ImageJobRequest(BaseModel):
 
 class VideoJobRequest(BaseModel):
 	image_paths: List[str]
+	project_id: Optional[str] = None
 	fps: Optional[int] = 24
 	audio_path: Optional[str] = None
 	output_path: Optional[str] = "../data/outputs/final.mp4"
@@ -249,6 +250,14 @@ async def api_new_project(payload: NewProjectRequest):
 	slug = f"{_slugify(title)}-{ts}"
 	proj_dir = os.path.join(PROJECTS_DIR, slug)
 	os.makedirs(proj_dir, exist_ok=True)
+	
+	# 프로젝트별 폴더 구조 생성
+	os.makedirs(os.path.join(proj_dir, "images"), exist_ok=True)
+	os.makedirs(os.path.join(proj_dir, "videos"), exist_ok=True)
+	os.makedirs(os.path.join(proj_dir, "videos", "clips"), exist_ok=True)
+	os.makedirs(os.path.join(proj_dir, "audio"), exist_ok=True)
+	os.makedirs(os.path.join(proj_dir, "prompts"), exist_ok=True)
+	
 	mode = payload.mode or "story"
 	if mode not in ("fusion", "story"):
 		mode = "story"
@@ -312,13 +321,14 @@ async def api_storyboard(payload: StoryRequest):
 		adjusted = adjust_script(payload.story)
 		
 		# GPT로 컷별 요소 추출
-		min_shots = payload.min_shots_per_scene or 1
+		# min_shots_per_scene을 목표 영상 시간(초)으로 사용
+		target_duration = float(payload.min_shots_per_scene or 30)
 		storyboard = generate_storyboard_from_story(
 			client=openai_client,
 			story_text=adjusted,
 			title=payload.title,
 			model="gpt-4o-mini",
-			min_shots_per_scene=min_shots
+			target_duration=target_duration
 		)
 		
 		# 각 컷에서 프롬프트 생성 (이미지 생성용)
@@ -328,11 +338,13 @@ async def api_storyboard(payload: StoryRequest):
 		for cut in storyboard.cuts:
 			characters_str = ", ".join(cut.characters) if cut.characters else "characters"
 			dialogues_str = "; ".join([f"{d.speaker}: {d.text}" for d in cut.dialogues[:3]])
+			duration = getattr(cut, 'duration', 3.0)  # 기본값 3초
 			prompt = (
 				f"{cut.cut_name}, {cut.composition}. "
 				f"characters: {characters_str}. "
 				f"background: {cut.background}. "
 				f"dialogues: {dialogues_str}. "
+				f"duration: {duration} seconds. "
 				f"{style_text}"
 			)
 			prompts.append(prompt)
@@ -366,10 +378,31 @@ async def api_storyboard(payload: StoryRequest):
 
 def run_image_generation(job_id: str, prompts: List[str], model: str, size: str, output_dir: str, project_id: Optional[str] = None):
 	"""백그라운드에서 이미지 생성 실행"""
-	# 상대 경로를 backend 기준 절대 경로로 변환
-	target_output_dir = output_dir
-	if output_dir and not os.path.isabs(output_dir):
-		target_output_dir = os.path.normpath(os.path.join(BASE_DIR, output_dir))
+	# progress_store에 초기 상태 설정 (없으면 생성)
+	if job_id not in progress_store:
+		progress_store[job_id] = {
+			"status": "starting",
+			"progress": 0.0,
+			"message": "작업 시작 중...",
+			"updated_at": datetime.now().isoformat()
+		}
+	
+	# 프로젝트별 폴더에 저장
+	if project_id:
+		proj_dir = _get_project_dir(project_id, require=False)
+		if proj_dir:
+			target_output_dir = os.path.join(proj_dir, "images")
+			os.makedirs(target_output_dir, exist_ok=True)
+		else:
+			# 프로젝트가 없으면 기본 경로 사용
+			target_output_dir = output_dir
+			if output_dir and not os.path.isabs(output_dir):
+				target_output_dir = os.path.normpath(os.path.join(BASE_DIR, output_dir))
+	else:
+		# 상대 경로를 backend 기준 절대 경로로 변환
+		target_output_dir = output_dir
+		if output_dir and not os.path.isabs(output_dir):
+			target_output_dir = os.path.normpath(os.path.join(BASE_DIR, output_dir))
 
 	def progress_callback(status: str, progress: float, message: str):
 		progress_store[job_id] = {
@@ -426,18 +459,28 @@ def run_image_generation(job_id: str, prompts: List[str], model: str, size: str,
 async def api_images(payload: ImageJobRequest, background_tasks: BackgroundTasks):
 	try:
 		job_id = str(uuid.uuid4())
+		# progress_store에 즉시 등록
 		progress_store[job_id] = {
 			"status": "queued",
 			"progress": 0.0,
 			"message": "작업 대기 중...",
 			"updated_at": datetime.now().isoformat()
 		}
+		
 		if payload.project_id:
-			state = _load_project_state(payload.project_id)
-			state["image_job_id"] = job_id
-			state["image_progress"] = progress_store[job_id]
-			state["saved_results"] = []
-			_save_project_state(payload.project_id, state)
+			try:
+				state = _load_project_state(payload.project_id, require=False)
+				if not state:
+					state = copy.deepcopy(DEFAULT_STATE)
+				state["image_job_id"] = job_id
+				state["image_progress"] = progress_store[job_id].copy()
+				state["saved_results"] = []
+				_save_project_state(payload.project_id, state, require=False)
+			except Exception as e:
+				print(f"프로젝트 상태 저장 실패: {e}")
+				# 프로젝트 상태 저장 실패해도 작업은 계속 진행
+		
+		# 백그라운드 작업 시작
 		background_tasks.add_task(
 			run_image_generation,
 			job_id,
@@ -447,8 +490,18 @@ async def api_images(payload: ImageJobRequest, background_tasks: BackgroundTasks
 			payload.output_dir,
 			payload.project_id
 		)
+		
 		return {"job_id": job_id}
 	except Exception as e:
+		# 예외 발생 시에도 job_id가 있으면 progress_store에 에러 상태 저장
+		if 'job_id' in locals():
+			progress_store[job_id] = {
+				"status": "error",
+				"progress": 0.0,
+				"message": f"작업 시작 실패: {str(e)}",
+				"error": str(e),
+				"updated_at": datetime.now().isoformat()
+			}
 		raise HTTPException(500, detail=str(e))
 
 
@@ -500,20 +553,100 @@ async def api_regenerate_image(payload: RegenerateImageRequest):
 @app.get("/api/images/progress/{job_id}")
 async def api_images_progress(job_id: str):
 	"""이미지 생성 진행 상황 조회"""
-	if job_id not in progress_store:
-		raise HTTPException(404, detail="작업을 찾을 수 없습니다")
-	return progress_store[job_id]
+	# progress_store에서 먼저 확인
+	if job_id in progress_store:
+		return progress_store[job_id]
+	
+	# progress_store에 없으면 프로젝트 상태에서 찾기
+	# 모든 프로젝트를 확인하여 해당 job_id를 가진 프로젝트 찾기
+	import glob
+	projects = glob.glob(os.path.join(PROJECTS_DIR, "*"))
+	for proj_path in projects:
+		if not os.path.isdir(proj_path):
+			continue
+		try:
+			state = _load_project_state(os.path.basename(proj_path), require=False)
+			if state.get("image_job_id") == job_id:
+				# 프로젝트 상태의 image_progress 반환
+				progress = state.get("image_progress", {
+					"status": "unknown",
+					"progress": 0.0,
+					"message": "상태를 확인할 수 없습니다"
+				})
+				# progress_store에도 복원
+				progress_store[job_id] = {
+					**progress,
+					"updated_at": datetime.now().isoformat()
+				}
+				return progress_store[job_id]
+		except Exception:
+			continue
+	
+	# 찾을 수 없으면 기본값 반환 (404 대신)
+	return {
+		"status": "not_found",
+		"progress": 0.0,
+		"message": "작업을 찾을 수 없습니다. 작업이 완료되었거나 취소되었을 수 있습니다.",
+		"updated_at": datetime.now().isoformat()
+	}
 
 
 @app.post("/api/video")
 async def api_video(payload: VideoJobRequest):
 	try:
-		output = compose_video(image_paths=payload.image_paths, fps=payload.fps, audio_path=payload.audio_path, output_path=payload.output_path)
-		return {"output": output}
+		# 프로젝트에서 cuts 정보 가져오기
+		cuts = None
+		output_path = payload.output_path
+		
+		if payload.project_id:
+			state = _load_project_state(payload.project_id, require=False)
+			cuts = state.get("cuts", [])
+			
+			# 프로젝트별 출력 경로 설정
+			proj_dir = _get_project_dir(payload.project_id, require=False)
+			if proj_dir:
+				videos_dir = os.path.join(proj_dir, "videos")
+				os.makedirs(videos_dir, exist_ok=True)
+				output_path = os.path.join(videos_dir, "final.mp4")
+		
+		result = compose_video(
+			image_paths=payload.image_paths,
+			cuts=cuts,
+			fps=payload.fps,
+			audio_path=payload.audio_path,
+			output_path=output_path,
+			project_id=payload.project_id,
+			use_tts=True,
+			tts_voice="alloy"
+		)
+		
+		# 프로젝트 상태에 영상 정보 저장
+		if payload.project_id:
+			state = _load_project_state(payload.project_id, require=False)
+			state["video_path"] = result["output_path"]
+			state["video_clips"] = result.get("clip_paths", [])
+			state["audio_paths"] = result.get("audio_paths", [])
+			state["video_duration"] = result.get("total_duration", 0)
+			_save_project_state(payload.project_id, state, require=False)
+		
+		return {"output": result["output_path"], "metadata": result}
 	except Exception as e:
 		raise HTTPException(500, detail=str(e))
 
 
 if __name__ == "__main__":
 	import uvicorn
-	uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=True)
+	import logging
+	
+	# uvicorn 리로드 관련 예외 로그 필터링
+	logging.getLogger("uvicorn.lifespan.on").setLevel(logging.WARNING)
+	logging.getLogger("asyncio").setLevel(logging.WARNING)
+	
+	uvicorn.run(
+		"backend.main:app",
+		host="0.0.0.0",
+		port=8000,
+		reload=True,
+		log_level="info",
+		access_log=True
+	)

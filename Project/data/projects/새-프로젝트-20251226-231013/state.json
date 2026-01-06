@@ -1,0 +1,309 @@
+{
+  "title": "박용찬의 이야기",
+  "story": "박용찬은 언제나 성실했다. 아침 여섯 시면 어김없이 일어나 좁은 방 한켠에서 책을 펼쳤고, 밤이 되면 하루를 반성하며 내일의 계획을 적었다. 공부가 인생을 바꿀 수 있다고 믿었기 때문이다. 비록 가정형편은 넉넉하지 않았고, 부모님은 일찍부터 생계를 걱정해야 했지만, 그는 “조금만 더 버티면 된다”는 말을 스스로에게 되뇌며 버텼다.\n\n고등학교에 입학했을 때, 용찬은 누구보다 의욕적이었다. 수업 시간에는 늘 앞자리에 앉아 교사의 말을 놓치지 않으려 애썼고, 쉬는 시간에는 문제집을 붙잡았다. 친구들이 놀러 가자고 불러도 그는 대부분 거절했다. 미래를 위해 지금을 희생해야 한다고 믿었기 때문이다. 하지만 현실은 생각보다 가혹했다. 아버지의 사업이 무너지고, 집안의 빚이 늘어나면서 용찬은 방과 후마다 아르바이트를 해야 했다.\n\n처음에는 단순히 잠을 줄이면 될 일이라고 생각했다. 그러나 체력은 쉽게 바닥났고, 집중력은 점점 흐려졌다. 시험 성적은 조금씩 내려갔고, 선생님들의 기대 섞인 시선은 어느새 안타까움으로 바뀌었다. 그럼에도 그는 포기하지 않았다. 지하철에서 서서 교과서를 읽고, 새벽까지 문제를 풀었다. 노력은 배신하지 않는다는 말을 굳게 믿었기 때문이다.\n\n결정적인 순간은 수능을 앞둔 겨울이었다. 어머니가 병원에 실려 갔고, 용찬은 병원비와 생활비를 동시에 감당해야 했다. 책상 앞에 앉아 있어도 머릿속에는 계산서와 걱정뿐이었다. 시험 당일, 그는 최선을 다했지만 결과는 냉정했다. 재수나 진학을 고민할 여유조차 없었다. 당장 돈을 벌어야 했기 때문이다.\n\n결국 박용찬의 학력은 고졸로 멈췄다. 그는 공장에서 일했고, 물류창고에서 밤을 새웠다. 손에는 굳은살이 박였고, 허리는 늘 쑤셨다. 가끔 퇴근길에 대학 캠퍼스를 지나칠 때면, 젊은 학생들의 웃음소리가 유난히 크게 들렸다. 그때마다 마음 한켠이 조용히 무너졌다. “조금만 더 상황이 달랐다면”이라는 생각이 떠올랐지만, 그는 그 생각을 오래 붙잡지 않았다.\n\n용찬은 스스로를 실패자라고 부르지 않았다. 최선을 다했음을 누구보다 잘 알고 있었기 때문이다. 다만 세상은 노력만으로 넘어갈 수 없는 벽이 있다는 사실을 일찍 배웠을 뿐이었다. 그의 인생은 화려하지 않았고, 학력으로 평가받는 자리에서 늘 뒤로 밀려났다. 그럼에도 그는 오늘도 성실하게 일하며 하루를 살아냈다.\n\n박용찬의 이야기는 성공담도, 극적인 반전도 없다. 노력했지만 생은 고졸로 끝난 한 사람의 기록일 뿐이다. 그러나 그 기록 속에는 포기하지 않으려 애쓴 시간과, 감당해야 했던 무게가 고스란히 남아 있다. 그리고 어쩌면, 그 조용한 무게야말로 그의 인생을 가장 정확하게 설명하는 말일지도 모른다.",
+  "min_shots_per_scene": 55,
+  "prompts": [
+    "아침의 시작, Close-up of 박용찬 sitting at a small desk, books scattered around.. characters: 박용찬. background: Soft morning light coming through the window, quiet ambiance.. dialogues: 박용찬: 오늘도 열심히 공부해야지.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "학교 생활, Wide shot of the classroom with 박용찬 sitting at the front, teacher at the blackboard.. characters: 박용찬, 교사. background: Classroom sounds, chalk on the blackboard.. dialogues: 교사: 여러분, 오늘은 중요한 내용을 다룹니다.; 박용찬: 네, 열심히 듣겠습니다!. duration: 7.333333333333334 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "아르바이트, Medium shot of 박용찬 working at a part-time job in a convenience store.. characters: 박용찬. background: Sounds of a cash register, faint music in the background.. dialogues: 박용찬: 이 일로 돈을 벌어야 해.. duration: 4.888888888888889 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "시험 준비, Close-up of 박용찬 studying late at night, tired eyes.. characters: 박용찬. background: Dim light from a desk lamp, ticking clock sound.. dialogues: 박용찬: 조금만 더, 포기하지 말자.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "어머니의 병원, Medium shot of 박용찬 sitting in a hospital waiting room, looking worried.. characters: 박용찬. background: Hospital sounds, distant beeping of machines.. dialogues: 박용찬: 어머니, 괜찮으실까요?. duration: 7.333333333333334 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "시험 당일, Wide shot of a school exam room, students seated at desks.. characters: 박용찬. background: Quiet atmosphere, rustling of papers.. dialogues: 박용찬: 최선을 다해야 해.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "일상으로 돌아가기, Medium shot of 박용찬 working in a factory, looking exhausted.. characters: 박용찬. background: Sounds of machinery, faint chatter of workers.. dialogues: 박용찬: 이것이 내 인생이구나.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "대학 캠퍼스, Wide shot of a university campus, students laughing and walking.. characters: 박용찬. background: Lively campus sounds, laughter and chatter.. dialogues: 박용찬: 조금만 더 상황이 달랐다면.... duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+    "마지막 결심, Close-up of 박용찬's face, looking determined.. characters: 박용찬. background: Quiet, introspective atmosphere.. dialogues: 박용찬: 나는 실패자가 아니다.. duration: 4.888888888888889 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "아침의 시작",
+      "composition": "Close-up of 박용찬 sitting at a small desk, books scattered around.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "오늘도 열심히 공부해야지.",
+          "emotion": "determined"
+        }
+      ],
+      "background": "Soft morning light coming through the window, quiet ambiance.",
+      "actions": [
+        "박용찬이 책을 펼친다.",
+        "그가 집중해서 읽기 시작한다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "학교 생활",
+      "composition": "Wide shot of the classroom with 박용찬 sitting at the front, teacher at the blackboard.",
+      "dialogues": [
+        {
+          "speaker": "교사",
+          "text": "여러분, 오늘은 중요한 내용을 다룹니다.",
+          "emotion": null
+        },
+        {
+          "speaker": "박용찬",
+          "text": "네, 열심히 듣겠습니다!",
+          "emotion": "eager"
+        }
+      ],
+      "background": "Classroom sounds, chalk on the blackboard.",
+      "actions": [
+        "박용찬이 손을 들고 대답한다.",
+        "그가 필기를 한다."
+      ],
+      "characters": [
+        "박용찬",
+        "교사"
+      ],
+      "duration": 7.333333333333334
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "아르바이트",
+      "composition": "Medium shot of 박용찬 working at a part-time job in a convenience store.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "이 일로 돈을 벌어야 해.",
+          "emotion": "resolute"
+        }
+      ],
+      "background": "Sounds of a cash register, faint music in the background.",
+      "actions": [
+        "박용찬이 물건을 정리한다.",
+        "고객을 응대한다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 4.888888888888889
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "시험 준비",
+      "composition": "Close-up of 박용찬 studying late at night, tired eyes.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "조금만 더, 포기하지 말자.",
+          "emotion": "determined"
+        }
+      ],
+      "background": "Dim light from a desk lamp, ticking clock sound.",
+      "actions": [
+        "박용찬이 교과서를 읽는다.",
+        "그가 문제를 푼다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "어머니의 병원",
+      "composition": "Medium shot of 박용찬 sitting in a hospital waiting room, looking worried.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "어머니, 괜찮으실까요?",
+          "emotion": "worried"
+        }
+      ],
+      "background": "Hospital sounds, distant beeping of machines.",
+      "actions": [
+        "박용찬이 손을 주먹 쥐고 있다.",
+        "그가 초조하게 주변을 살핀다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 7.333333333333334
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "시험 당일",
+      "composition": "Wide shot of a school exam room, students seated at desks.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "최선을 다해야 해.",
+          "emotion": "nervous"
+        }
+      ],
+      "background": "Quiet atmosphere, rustling of papers.",
+      "actions": [
+        "박용찬이 시험지를 바라본다.",
+        "그가 깊게 숨을 쉰다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "일상으로 돌아가기",
+      "composition": "Medium shot of 박용찬 working in a factory, looking exhausted.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "이것이 내 인생이구나.",
+          "emotion": "resigned"
+        }
+      ],
+      "background": "Sounds of machinery, faint chatter of workers.",
+      "actions": [
+        "박용찬이 기계에서 일한다.",
+        "그가 잠시 멈추고 주변을 바라본다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "대학 캠퍼스",
+      "composition": "Wide shot of a university campus, students laughing and walking.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "조금만 더 상황이 달랐다면...",
+          "emotion": "nostalgic"
+        }
+      ],
+      "background": "Lively campus sounds, laughter and chatter.",
+      "actions": [
+        "박용찬이 캠퍼스를 지나친다.",
+        "그가 잠시 멈춰서 학생들을 바라본다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 9,
+      "cut_name": "마지막 결심",
+      "composition": "Close-up of 박용찬's face, looking determined.",
+      "dialogues": [
+        {
+          "speaker": "박용찬",
+          "text": "나는 실패자가 아니다.",
+          "emotion": "confident"
+        }
+      ],
+      "background": "Quiet, introspective atmosphere.",
+      "actions": [
+        "박용찬이 고개를 들어 결심한다.",
+        "그가 주먹을 쥐고 있다."
+      ],
+      "characters": [
+        "박용찬"
+      ],
+      "duration": 4.888888888888889
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "아침의 시작, Close-up of 박용찬 sitting at a small desk, books scattered around.. characters: 박용찬. background: Soft morning light coming through the window, quiet ambiance.. dialogues: 박용찬: 오늘도 열심히 공부해야지.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f4/F9Hz9g9KBf8arcxn_4RvV.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "학교 생활, Wide shot of the classroom with 박용찬 sitting at the front, teacher at the blackboard.. characters: 박용찬, 교사. background: Classroom sounds, chalk on the blackboard.. dialogues: 교사: 여러분, 오늘은 중요한 내용을 다룹니다.; 박용찬: 네, 열심히 듣겠습니다!. duration: 7.333333333333334 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f5/c9fvzOjMhUV3i2ZEbxgoX.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "아르바이트, Medium shot of 박용찬 working at a part-time job in a convenience store.. characters: 박용찬. background: Sounds of a cash register, faint music in the background.. dialogues: 박용찬: 이 일로 돈을 벌어야 해.. duration: 4.888888888888889 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f5/zjlWqzeB6GgVKoY2gaz5e.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "시험 준비, Close-up of 박용찬 studying late at night, tired eyes.. characters: 박용찬. background: Dim light from a desk lamp, ticking clock sound.. dialogues: 박용찬: 조금만 더, 포기하지 말자.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f5/DTm-ooHZ2_64ePPV7leS3.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "어머니의 병원, Medium shot of 박용찬 sitting in a hospital waiting room, looking worried.. characters: 박용찬. background: Hospital sounds, distant beeping of machines.. dialogues: 박용찬: 어머니, 괜찮으실까요?. duration: 7.333333333333334 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f6/wWz0Yz57n4BmD4nrhGTw4.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "시험 당일, Wide shot of a school exam room, students seated at desks.. characters: 박용찬. background: Quiet atmosphere, rustling of papers.. dialogues: 박용찬: 최선을 다해야 해.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f6/bH5EnHCnM8vDc5Ft6Sujn.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "일상으로 돌아가기, Medium shot of 박용찬 working in a factory, looking exhausted.. characters: 박용찬. background: Sounds of machinery, faint chatter of workers.. dialogues: 박용찬: 이것이 내 인생이구나.. duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f6/xrtFZl-Lh_QnDJ-MPWGPM.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "대학 캠퍼스, Wide shot of a university campus, students laughing and walking.. characters: 박용찬. background: Lively campus sounds, laughter and chatter.. dialogues: 박용찬: 조금만 더 상황이 달랐다면.... duration: 6.111111111111112 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f6/0skhc9JW4p0y76YPq8f8M.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_08.png",
+      "message": ""
+    },
+    {
+      "index": 8,
+      "prompt": "마지막 결심, Close-up of 박용찬's face, looking determined.. characters: 박용찬. background: Quiet, introspective atmosphere.. dialogues: 박용찬: 나는 실패자가 아니다.. duration: 4.888888888888889 seconds. 3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
+      "url": "https://v3b.fal.media/files/b/0a88c8f7/bUF7u9aPJ9iJk6jBrsahU.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\images\\image_09.png",
+      "message": ""
+    }
+  ],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
+  },
+  "style_key": "simple3d",
+  "video_path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\final.mp4",
+  "video_clips": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_000.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_001.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_002.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_003.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_004.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_005.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_006.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_007.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\videos\\clips\\clip_008.mp4"
+  ],
+  "audio_paths": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_000.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_001.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_002.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_003.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_004.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_005.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_006.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_007.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-231013\\audio\\audio_008.mp3"
+  ],
+  "video_duration": 55.25000000000001
+}
