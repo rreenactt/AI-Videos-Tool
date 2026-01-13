@@ -1,15 +1,270 @@
 {
-  "title": "새 프로젝트",
-  "story": "",
-  "min_shots_per_scene": 1,
-  "prompts": [],
-  "cuts": [],
-  "saved_results": [],
+  "title": "사기꾼과의 대결",
+  "story": "🎣 1단계: 너무 완벽해서 수상한 미끼\n평소 갖고 싶던 고가의 IT 기기(예: 최신형 아이패드나 그래픽카드)가 중고 장터에 올라왔습니다. 시세보다 20만 원은 저렴한데, 사진은 너무 깨끗하고 설명도 친절합니다.\n\n빌런의 수법: \"아기가 자고 있어서 전화는 힘들어요. 채팅이나 카톡으로 대화해요.\" (전화번호 노출 회피)\n\n나의 직감: '이거 냄새가 나는데?' 싶지만, 일단 낚인 척 대화를 시작합니다.\n\n🕸️ 2단계: \"안전결제로 하시죠\"라는 덫\n직거래를 제안하자 사기꾼은 교묘하게 거절합니다. \"지금 출장 중이라... 대신 제가 수수료 부담할 테니 네이버 페이 안전결제로 하시죠.\"라며 링크를 하나 보냅니다.\n\n링크 확인: naver-safe-pay.payment.com 같은 괴상한 주소입니다. 들어가 보니 네이버랑 똑같이 생겼지만, 로그인을 유도해 아이디와 비번을 탈취하려는 피싱 사이트였죠.\n\n⚡ 3단계: 참교육의 시작 (역공)\n여기서 그냥 차단하면 재미없죠. 개발자 지망생 혹은 IT에 밝은 사람의 면모를 보여줄 때입니다.\n\n가짜 정보 입력: 로그인창에 아이디는 scammer_die, 비번은 police_is_coming 같은 식으로 입력합니다. (사기꾼은 자기 DB에 데이터가 들어오니 신나서 확인하겠죠?)\n\n주소지 입력의 묘미: 배송지 입력란에 사기꾼이 좋아할 법한 가짜 이름을 적고, 주소는 'OO경찰서 사이버수사팀' 주소를 입력합니다.\n\n결제 완료 스크린샷 조작: 대충 그림판으로 '결제 완료' 버튼을 조작하거나, 인터넷에 떠도는 결제 완료 이미지를 보내며 \"입금했어요! 확인해 보세요.\"라고 말합니다.\n\n🔥 4단계: 사기꾼의 멘붕과 '사이다' 엔딩\n사기꾼은 자기 가짜 관리자 페이지에 돈이 안 들어오니 당황하기 시작합니다.\n\n빌런: \"어? 입금이 안 잡히는데요? 다시 해보셔야 할 것 같아요.\"\n\n나: \"어라? 제 화면엔 입금 완료라고 뜨는데요? 아, 혹시 제가 보낸 주소 확인하셨어요? 거기 지금 제가 도착해 있는 곳이거든요.\"\n\n빌런: \"네? 그게 무슨...\"\n\n나: \"거기 주소 검색해 봐요. OO경찰서 앞이죠? 지금 수사관님이랑 같이 그쪽이 보낸 피싱 사이트 소스 코드 분석 중인데, 서버 위치 금방 나오겠는데요? 님 IP도 이미 땄고요.\"\n\n결과: 사기꾼은 '읽씹' 후 광속으로 잠수를 타거나 계정을 탈퇴합니다. 하지만 이미 신고는 완료된 상태! 나중에 경찰에서 \"덕분에 결정적인 증거(피싱 사이트 주소 및 대화 내용)를 확보했다\"는 연락까지 받으면 완벽한 참교육 성공입니다.",
+  "min_shots_per_scene": 55,
+  "prompts": [
+    "완벽한 미끼 발견, Close-up of the phone screen showing the listing of the IT device, with the protagonist's hand hovering over it.. characters: 주인공. background: A cozy room with soft lighting, a hint of excitement in the air as the protagonist contemplates the deal.. dialogues: 나레이션: 평소 갖고 싶던 고가의 IT 기기가 중고 장터에 올라왔습니다. 가격은 시세보다 20만 원이나 저렴합니다. 이건 너무 완벽해서 수상한 느낌이 드네요.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "의심의 시작, Medium shot of the protagonist, looking skeptical while reading the chat messages.. characters: 주인공. background: The room's atmosphere shifts to a more tense vibe, with a clock ticking in the background.. dialogues: 나레이션: 사기꾼은 전화 통화를 피하고 채팅으로만 대화하자고 합니다. '아기가 자고 있어서 전화는 힘들어요.' 이건 분명히 이상한 점이죠.. duration: 4.888888888888889 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "안전결제의 덫, Close-up of the phone screen showing the suspicious payment link sent by the scammer.. characters: 주인공. background: The tension rises as ominous music plays softly in the background.. dialogues: 나레이션: 직거래를 제안하자 사기꾼은 '지금 출장 중이라...'며 안전결제로 하자고 합니다. 링크를 확인해보니, naver-safe-pay.payment.com 같은 괴상한 주소입니다.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "역공의 시작, Wide shot of the protagonist sitting at a desk, confidently typing on the laptop.. characters: 주인공. background: The atmosphere is now filled with determination, with upbeat music playing.. dialogues: 나레이션: 여기서 그냥 차단하면 재미없죠. 개발자 지망생인 저는 가짜 정보를 입력하기로 결심합니다. 아이디는 'scammer_die', 비밀번호는 'police_is_coming'으로 설정합니다.. duration: 7.333333333333334 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "주소지 입력의 묘미, Close-up of the laptop screen as the protagonist fills out the shipping address.. characters: 주인공. background: The room is filled with a sense of triumph as the protagonist executes their plan.. dialogues: 나레이션: 배송지 입력란에 사기꾼이 좋아할 법한 가짜 이름과 'OO경찰서 사이버수사팀' 주소를 입력합니다. 이건 정말 기분이 좋네요.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "결제 완료 조작, Medium shot of the protagonist manipulating an image on the screen, pretending to show a payment confirmation.. characters: 주인공. background: The atmosphere is filled with suspense as the protagonist prepares to deliver the final blow.. dialogues: 나레이션: 결제 완료 스크린샷을 조작하거나 인터넷에서 찾은 이미지를 보내며 '입금했어요! 확인해 보세요.'라고 말합니다.. duration: 7.333333333333334 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "사기꾼의 멘붕, Close-up of the scammer's reaction on the phone screen, showing confusion and panic.. characters: 주인공, 빌런. background: Tension peaks as the scammer realizes something is wrong.. dialogues: 빌런: 어? 입금이 안 잡히는데요? 다시 해보셔야 할 것 같아요.; 나: 어라? 제 화면엔 입금 완료라고 뜨는데요? 아, 혹시 제가 보낸 주소 확인하셨어요? 거기 지금 제가 도착해 있는 곳이거든요.. duration: 8.555555555555557 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+    "사이다 엔딩, Wide shot of the protagonist celebrating their victory, with a phone in hand.. characters: 주인공. background: The room is filled with a sense of victory and relief, with uplifting music playing.. dialogues: 나레이션: 사기꾼은 '읽씹' 후 광속으로 잠수를 타거나 계정을 탈퇴합니다. 하지만 이미 신고는 완료된 상태! 경찰에서 연락이 오고, 결정적인 증거를 확보했다는 소식을 듣습니다.. duration: 8.555555555555557 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "완벽한 미끼 발견",
+      "composition": "Close-up of the phone screen showing the listing of the IT device, with the protagonist's hand hovering over it.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "평소 갖고 싶던 고가의 IT 기기가 중고 장터에 올라왔습니다. 가격은 시세보다 20만 원이나 저렴합니다. 이건 너무 완벽해서 수상한 느낌이 드네요.",
+          "emotion": null
+        }
+      ],
+      "background": "A cozy room with soft lighting, a hint of excitement in the air as the protagonist contemplates the deal.",
+      "actions": [
+        "Protagonist scrolls through the listing, eyes widening in interest."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "의심의 시작",
+      "composition": "Medium shot of the protagonist, looking skeptical while reading the chat messages.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "사기꾼은 전화 통화를 피하고 채팅으로만 대화하자고 합니다. '아기가 자고 있어서 전화는 힘들어요.' 이건 분명히 이상한 점이죠.",
+          "emotion": null
+        }
+      ],
+      "background": "The room's atmosphere shifts to a more tense vibe, with a clock ticking in the background.",
+      "actions": [
+        "Protagonist frowns, typing a response in the chat."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 4.888888888888889
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "안전결제의 덫",
+      "composition": "Close-up of the phone screen showing the suspicious payment link sent by the scammer.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "직거래를 제안하자 사기꾼은 '지금 출장 중이라...'며 안전결제로 하자고 합니다. 링크를 확인해보니, naver-safe-pay.payment.com 같은 괴상한 주소입니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The tension rises as ominous music plays softly in the background.",
+      "actions": [
+        "Protagonist examines the link with a suspicious look."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "역공의 시작",
+      "composition": "Wide shot of the protagonist sitting at a desk, confidently typing on the laptop.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "여기서 그냥 차단하면 재미없죠. 개발자 지망생인 저는 가짜 정보를 입력하기로 결심합니다. 아이디는 'scammer_die', 비밀번호는 'police_is_coming'으로 설정합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The atmosphere is now filled with determination, with upbeat music playing.",
+      "actions": [
+        "Protagonist types rapidly on the laptop, a smirk on their face."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 7.333333333333334
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "주소지 입력의 묘미",
+      "composition": "Close-up of the laptop screen as the protagonist fills out the shipping address.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "배송지 입력란에 사기꾼이 좋아할 법한 가짜 이름과 'OO경찰서 사이버수사팀' 주소를 입력합니다. 이건 정말 기분이 좋네요.",
+          "emotion": null
+        }
+      ],
+      "background": "The room is filled with a sense of triumph as the protagonist executes their plan.",
+      "actions": [
+        "Protagonist chuckles softly while typing the address."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 6.111111111111112
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "결제 완료 조작",
+      "composition": "Medium shot of the protagonist manipulating an image on the screen, pretending to show a payment confirmation.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "결제 완료 스크린샷을 조작하거나 인터넷에서 찾은 이미지를 보내며 '입금했어요! 확인해 보세요.'라고 말합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The atmosphere is filled with suspense as the protagonist prepares to deliver the final blow.",
+      "actions": [
+        "Protagonist sends the manipulated image with a confident grin."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 7.333333333333334
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "사기꾼의 멘붕",
+      "composition": "Close-up of the scammer's reaction on the phone screen, showing confusion and panic.",
+      "dialogues": [
+        {
+          "speaker": "빌런",
+          "text": "어? 입금이 안 잡히는데요? 다시 해보셔야 할 것 같아요.",
+          "emotion": "confused"
+        },
+        {
+          "speaker": "나",
+          "text": "어라? 제 화면엔 입금 완료라고 뜨는데요? 아, 혹시 제가 보낸 주소 확인하셨어요? 거기 지금 제가 도착해 있는 곳이거든요.",
+          "emotion": "smug"
+        }
+      ],
+      "background": "Tension peaks as the scammer realizes something is wrong.",
+      "actions": [
+        "Protagonist leans back, enjoying the scammer's confusion."
+      ],
+      "characters": [
+        "주인공",
+        "빌런"
+      ],
+      "duration": 8.555555555555557
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "사이다 엔딩",
+      "composition": "Wide shot of the protagonist celebrating their victory, with a phone in hand.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "사기꾼은 '읽씹' 후 광속으로 잠수를 타거나 계정을 탈퇴합니다. 하지만 이미 신고는 완료된 상태! 경찰에서 연락이 오고, 결정적인 증거를 확보했다는 소식을 듣습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The room is filled with a sense of victory and relief, with uplifting music playing.",
+      "actions": [
+        "Protagonist raises their arms in triumph, smiling widely."
+      ],
+      "characters": [
+        "주인공"
+      ],
+      "duration": 8.555555555555557
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "완벽한 미끼 발견, Close-up of the phone screen showing the listing of the IT device, with the protagonist's hand hovering over it.. characters: 주인공. background: A cozy room with soft lighting, a hint of excitement in the air as the protagonist contemplates the deal.. dialogues: 나레이션: 평소 갖고 싶던 고가의 IT 기기가 중고 장터에 올라왔습니다. 가격은 시세보다 20만 원이나 저렴합니다. 이건 너무 완벽해서 수상한 느낌이 드네요.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499d/W5N3QLP4UgKP2jpREZ90I.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "의심의 시작, Medium shot of the protagonist, looking skeptical while reading the chat messages.. characters: 주인공. background: The room's atmosphere shifts to a more tense vibe, with a clock ticking in the background.. dialogues: 나레이션: 사기꾼은 전화 통화를 피하고 채팅으로만 대화하자고 합니다. '아기가 자고 있어서 전화는 힘들어요.' 이건 분명히 이상한 점이죠.. duration: 4.888888888888889 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499d/cGkSUpMt0rnmpTd-dA-_T.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "안전결제의 덫, Close-up of the phone screen showing the suspicious payment link sent by the scammer.. characters: 주인공. background: The tension rises as ominous music plays softly in the background.. dialogues: 나레이션: 직거래를 제안하자 사기꾼은 '지금 출장 중이라...'며 안전결제로 하자고 합니다. 링크를 확인해보니, naver-safe-pay.payment.com 같은 괴상한 주소입니다.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499d/OzLcg_KGSrohfDZ3ZxsHQ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "역공의 시작, Wide shot of the protagonist sitting at a desk, confidently typing on the laptop.. characters: 주인공. background: The atmosphere is now filled with determination, with upbeat music playing.. dialogues: 나레이션: 여기서 그냥 차단하면 재미없죠. 개발자 지망생인 저는 가짜 정보를 입력하기로 결심합니다. 아이디는 'scammer_die', 비밀번호는 'police_is_coming'으로 설정합니다.. duration: 7.333333333333334 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499e/oIx4GKh88_Tx7CWP01ynQ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "주소지 입력의 묘미, Close-up of the laptop screen as the protagonist fills out the shipping address.. characters: 주인공. background: The room is filled with a sense of triumph as the protagonist executes their plan.. dialogues: 나레이션: 배송지 입력란에 사기꾼이 좋아할 법한 가짜 이름과 'OO경찰서 사이버수사팀' 주소를 입력합니다. 이건 정말 기분이 좋네요.. duration: 6.111111111111112 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499e/xhV_i1lXflv1gg3nJyUkD.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "결제 완료 조작, Medium shot of the protagonist manipulating an image on the screen, pretending to show a payment confirmation.. characters: 주인공. background: The atmosphere is filled with suspense as the protagonist prepares to deliver the final blow.. dialogues: 나레이션: 결제 완료 스크린샷을 조작하거나 인터넷에서 찾은 이미지를 보내며 '입금했어요! 확인해 보세요.'라고 말합니다.. duration: 7.333333333333334 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499e/LMxTUuO_TETO9KXlnbX3r.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "사기꾼의 멘붕, Close-up of the scammer's reaction on the phone screen, showing confusion and panic.. characters: 주인공, 빌런. background: Tension peaks as the scammer realizes something is wrong.. dialogues: 빌런: 어? 입금이 안 잡히는데요? 다시 해보셔야 할 것 같아요.; 나: 어라? 제 화면엔 입금 완료라고 뜨는데요? 아, 혹시 제가 보낸 주소 확인하셨어요? 거기 지금 제가 도착해 있는 곳이거든요.. duration: 8.555555555555557 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499e/HpWkuueYGFpc87yrGg-TG.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "사이다 엔딩, Wide shot of the protagonist celebrating their victory, with a phone in hand.. characters: 주인공. background: The room is filled with a sense of victory and relief, with uplifting music playing.. dialogues: 나레이션: 사기꾼은 '읽씹' 후 광속으로 잠수를 타거나 계정을 탈퇴합니다. 하지만 이미 신고는 완료된 상태! 경찰에서 연락이 오고, 결정적인 증거를 확보했다는 소식을 듣습니다.. duration: 8.555555555555557 seconds. Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
+      "url": "https://v3b.fal.media/files/b/0a89499f/hJDPmDhq966KZzqnYKhIj.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\images\\image_08.png",
+      "message": ""
+    }
+  ],
   "image_job_id": "",
   "image_progress": {
-    "status": "",
-    "progress": 0,
-    "message": ""
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
   },
-  "style_key": "surreal"
+  "style_key": "ghibli",
+  "video_path": "/media/projects/새-프로젝트-20251226-165428/videos/final.mp4",
+  "video_clips": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_000.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_001.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_002.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_003.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_004.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_005.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_006.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\videos\\clips\\clip_007.mp4"
+  ],
+  "audio_paths": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_000.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_001.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_002.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_003.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_004.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_005.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_006.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-165428\\audio\\audio_007.mp3"
+  ],
+  "video_duration": 87.77
 }

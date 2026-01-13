@@ -49,6 +49,15 @@ export default function Project(){
   const [videoPath, setVideoPath] = useState('')
   const selectedStyle = useMemo(() => stylePresets.find(s => s.key === selectedStyleKey) || stylePresets[0], [stylePresets, selectedStyleKey])
 
+  // 백엔드에서 온 상대 경로(/media/...)를 절대 URL로 변환
+  const resolveMediaUrl = useCallback((value) => {
+    if(!value) return ''
+    if(typeof value !== 'string') return ''
+    if(value.startsWith('http://') || value.startsWith('https://')) return value
+    if(value.startsWith('/')) return `${API_BASE}${value}`
+    return value
+  }, [])
+
   const disabledGen = useMemo(() => loading || !story.trim(), [loading, story])
   const disabledImg = useMemo(() => loading || prompts.length === 0, [loading, prompts])
 
@@ -428,7 +437,11 @@ export default function Project(){
                       <div className="image-card" key={i}>
                         <div className="image-preview">
                           {(s.url || s.path) ? (
-                            <img src={s.url || s.path} alt={`컷 ${i+1}`} style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:12}} />
+                            <img 
+                              src={resolveMediaUrl(s.url || s.path)} 
+                              alt={`컷 ${i+1}`} 
+                              style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:12}} 
+                            />
                           ) : (
                             <div className="help" style={{textAlign:'center'}}>이미지가 없습니다</div>
                           )}
@@ -437,7 +450,17 @@ export default function Project(){
                         <textarea className="input" style={{minHeight:90}} value={s.prompt || prompts[i] || ''} onChange={e=>handleSavedPromptChange(i, e.target.value)} />
                         <div className="image-actions">
                           <button className="btn primary" onClick={()=>regenerateImage(i)} disabled={regenIndex===i || loading}>{regenIndex===i ? '재생성 중…' : '이 프롬프트로 다시 생성'}</button>
-                          {(s.url || s.path) && <a className="btn ghost" href={s.url || s.path} target="_blank" rel="noreferrer" style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}>원본 열기</a>}
+                          {(s.url || s.path) && (
+                            <a 
+                              className="btn ghost" 
+                              href={resolveMediaUrl(s.url || s.path)} 
+                              target="_blank" 
+                              rel="noreferrer" 
+                              style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}
+                            >
+                              원본 열기
+                            </a>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -455,24 +478,20 @@ export default function Project(){
                     >
                       {videoGenerating ? '영상 생성 중…' : '영상 생성 (자막 + TTS)'}
                     </button>
-                    {videoPath && (
-                      <>
-                        <a 
-                          className="btn ghost" 
-                          href={videoPath} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          style={{textAlign:'center',display:'inline-block',padding:'10px 14px'}}
-                        >
-                          영상 보기
-                        </a>
-                        <div className="help" style={{margin:0}}>✅ 영상 생성 완료</div>
-                      </>
-                    )}
                   </div>
                   {videoGenerating && (
                     <div className="help" style={{marginTop:8,color:'#2563eb'}}>
                       영상을 생성하는 중입니다. TTS 생성과 영상 합성에 시간이 걸릴 수 있습니다...
+                    </div>
+                  )}
+                  {videoPath && (
+                    <div style={{marginTop:12}}>
+                      <div className="help" style={{marginBottom:4}}>✅ 영상 생성 완료 · 아래 플레이 버튼을 눌러 바로 재생할 수 있습니다.</div>
+                      <video 
+                        src={resolveMediaUrl(videoPath)} 
+                        controls 
+                        style={{width:'100%',maxHeight:480,borderRadius:12,background:'black'}}
+                      />
                     </div>
                   )}
                 </div>
@@ -490,23 +509,71 @@ export default function Project(){
 
       <div className="sidebar">
         <div className="sidebar-inner">
-          <h3>{projectMode === 'fusion' ? '퓨전 모드' : '스토리 모드'} 단계</h3>
-          <div className="list">
-            {projectMode === 'fusion' ? (
-              <>
-                <div className="item">1) 비디오 파일 업로드</div>
-                <div className="item">2) 합성/블렌딩 설정</div>
-                <div className="item">3) 결과 영상 생성(추후)</div>
-              </>
-            ) : (
-              <>
-                <div className="item">1) 각본 → 콘티 프롬프트</div>
-                <div className="item">2) 이미지 생성</div>
-                <div className="item">3) 대사/오디오 추가(추후)</div>
-                <div className="item">4) 영상 합성(추후)</div>
-              </>
-            )}
-          </div>
+          {/* 영상이 생성되었을 때 쇼츠 스타일 플레이어 표시 */}
+          {videoPath ? (
+            <div className="shorts-player">
+              <h3 style={{marginBottom:12}}>🎬 생성된 영상</h3>
+              <div className="shorts-container">
+                <video 
+                  src={resolveMediaUrl(videoPath)} 
+                  controls 
+                  autoPlay
+                  loop
+                  playsInline
+                  className="shorts-video"
+                />
+                <div className="shorts-overlay">
+                  <div className="shorts-title">{title || '무제'}</div>
+                  <div className="shorts-info">
+                    총 {cuts.length}개 컷 · {saved.length}개 이미지
+                  </div>
+                </div>
+              </div>
+              <div style={{marginTop:12,display:'flex',gap:8,flexDirection:'column'}}>
+                <a 
+                  className="btn primary" 
+                  href={resolveMediaUrl(videoPath)} 
+                  download 
+                  style={{textAlign:'center',textDecoration:'none',width:'100%'}}
+                >
+                  ⬇ 다운로드
+                </a>
+                <button 
+                  className="btn ghost" 
+                  onClick={() => {
+                    const videoEl = document.querySelector('.shorts-video')
+                    if (videoEl) {
+                      if (videoEl.paused) videoEl.play()
+                      else videoEl.pause()
+                    }
+                  }}
+                  style={{width:'100%'}}
+                >
+                  ⏯ 재생/일시정지
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <h3>{projectMode === 'fusion' ? '퓨전 모드' : '스토리 모드'} 단계</h3>
+              <div className="list">
+                {projectMode === 'fusion' ? (
+                  <>
+                    <div className="item">1) 비디오 파일 업로드</div>
+                    <div className="item">2) 합성/블렌딩 설정</div>
+                    <div className="item">3) 결과 영상 생성(추후)</div>
+                  </>
+                ) : (
+                  <>
+                    <div className="item">1) 각본 → 콘티 프롬프트</div>
+                    <div className="item">2) 이미지 생성</div>
+                    <div className="item">3) 대사/오디오 추가</div>
+                    <div className="item">4) 영상 합성</div>
+                  </>
+                )}
+              </div>
+            </>
+          )}
           
           {imageProgress.status && (
             <div style={{marginTop:16,padding:12,background:'rgba(255,255,255,.1)',borderRadius:8}}>

@@ -1,0 +1,500 @@
+{
+  "title": "호주 워홀 집 구하기",
+  "story": "호주 워홀을 간지 2개월차쯤 친구와 집을 구하려고 했다. 어렵게 집을 구한 집은 47층에 고층 아파트였다. 뷰도 좋았고 방도 2개, 화장실이 방과 방 사이에 있는 꽤 괜찮은 집이였다. 그렇게 이사를 앞두고 집 청소를 하고 있던 중이였다. 우리는 노래를 들으면서 화장실 청소를 하고 있었는데 갑자기 방에 있던 장롱이 쾅하고 닫혔다. 우리는 놀라 방으로 뛰어 가 확인을 해보았는데 장롱은 닫혀있고 아무도 없었다. 우리는 옆집이나 윗집에서 소리가 난 줄 알고 다시 청소를 시작했다. 한 1시간 쯤 흘렀을까? 다시 방에서 쾅! 하고 소리가 났다. 이번에는 확실했다. 옆 방에서 소리가 났다는 것을. 그렇게 친구와 눈을 마주치고 다시 옆방으로 가 확인을 해보니 장롱이 열려 있었다. 우리는 놀랐고 서로를 쳐다보고 있었는데 화장실 건너편 방에서 검은 물체가 휙하고 지나가는 것을 동시에 느꼈다. 우리는 이 집에 이상한 기운을 느끼고 집을 싸 다시 돌아가자고 얘기 했다. 그렇게 서로 분주히 집을 싸고 있었는데 친구 집 싸는 소리가 안들리는 것이였다. 나는 왜 서두리지 않는 것인지 궁굼했고 확인을 하러 나가보니 친구가 멍하니 장롱 안을 쳐다 보고 있었다. 처음에는 장난치는 줄 알고 장난치지 말라고 2~3번 소리를 질렀는데 친구가 반응이 없자 나는 장난이 아닌 것을 깨닫고 친구의 뒤통수를 떄렸다. 그제서야 친구는 정신을 차리고 우리는 집을 나올 수가 있었다. 아직도 우리가 겪은 것이 무엇인지 그 집에서 무슨 일이 일어났던 것인지 우리는 알 수 없다..   ",
+  "min_shots_per_scene": 55,
+  "prompts": [
+    "이사 준비, Wide shot of the apartment with the two friends packing boxes.. characters: 나, 친구. background: Cheerful music playing in the background, sounds of packing.. dialogues: 나레이션: 호주 워홀을 간지 2개월차, 친구와 함께 집을 구하기로 결심했다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "고층 아파트, Close-up of the apartment view from the 47th floor.. characters: characters. background: Wind blowing sound, city noise.. dialogues: 나레이션: 드디어 구한 집은 47층에 위치한 고층 아파트였다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "방 청소 시작, Medium shot of the friends cleaning the bathroom.. characters: 나, 친구. background: Upbeat music continues, sounds of cleaning.. dialogues: 나레이션: 우리는 방 청소를 시작하며 노래를 듣고 있었다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "장롱 소리, Close-up of the wardrobe suddenly slamming shut.. characters: characters. background: Sudden loud sound of the wardrobe slamming.. dialogues: 나레이션: 그때, 방에서 장롱이 쾅하고 닫히는 소리가 들렸다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "놀란 친구들, Medium shot of the friends looking at each other in shock.. characters: 나, 친구. background: Tension building music.. dialogues: 나: 뭐야? 방에 아무도 없는데!. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "다시 청소 시작, Wide shot of the friends returning to cleaning.. characters: 나, 친구. background: Music resumes, sounds of cleaning continue.. dialogues: 나레이션: 우리는 옆집이나 윗집에서 소리가 난 줄 알고 다시 청소를 시작했다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "다시 쾅!, Close-up of the wardrobe again slamming shut after some time.. characters: characters. background: Loud sound of the wardrobe slamming again.. dialogues: 나레이션: 한 시간쯤 지나고, 다시 방에서 쾅! 하는 소리가 들렸다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "눈빛 교환, Medium shot of the friends exchanging worried glances.. characters: 나, 친구. background: Tension music builds up.. dialogues: 친구: 이번엔 확실히 방에서 난 것 같아.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "장롱 확인, Wide shot of the friends entering the room to check the wardrobe.. characters: 나, 친구. background: Sound of footsteps, tense music.. dialogues: 나레이션: 우리는 다시 옆방으로 가서 확인해보았다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "장롱 열림, Close-up of the wardrobe now open.. characters: characters. background: Tension music with a sudden stop.. dialogues: 나: 장롱이 열려 있어!. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "검은 물체, Medium shot of the friends noticing a shadow moving.. characters: 나, 친구. background: Suspenseful music, heartbeat sound.. dialogues: 나레이션: 그때, 화장실 건너편 방에서 검은 물체가 휙하고 지나가는 것을 느꼈다.. duration: 4.508196721311475 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "이상한 기운, Wide shot of the friends looking anxious and scared.. characters: 나, 친구. background: Ominous music playing softly.. dialogues: 나: 이 집에 뭔가 이상한 기운이 느껴져.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "집 싸기, Medium shot of the friends hurriedly packing their things.. characters: 나, 친구. background: Fast-paced music, sounds of packing.. dialogues: 나레이션: 우리는 집을 싸서 다시 돌아가자고 이야기했다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "친구의 이상한 행동, Close-up of the friend staring blankly into the wardrobe.. characters: 나, 친구. background: Quiet, eerie music.. dialogues: 나: 왜 이렇게 서두르지 않는 거야?. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "정신 차리기, Medium shot of the narrator hitting the friend's back.. characters: 나, 친구. background: Tension music resumes.. dialogues: 나: 장난치지 말라고 몇 번이나 소리쳤잖아!. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+    "탈출, Wide shot of the friends rushing out of the apartment.. characters: 나, 친구. background: Fast-paced music, sounds of footsteps.. dialogues: 나레이션: 우리는 겨우 정신을 차리고 집을 나올 수 있었다.. duration: 4.508196721311475 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "이사 준비",
+      "composition": "Wide shot of the apartment with the two friends packing boxes.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "호주 워홀을 간지 2개월차, 친구와 함께 집을 구하기로 결심했다.",
+          "emotion": null
+        }
+      ],
+      "background": "Cheerful music playing in the background, sounds of packing.",
+      "actions": [
+        "친구와 함께 상자를 포장하고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "고층 아파트",
+      "composition": "Close-up of the apartment view from the 47th floor.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "드디어 구한 집은 47층에 위치한 고층 아파트였다.",
+          "emotion": null
+        }
+      ],
+      "background": "Wind blowing sound, city noise.",
+      "actions": [],
+      "characters": [],
+      "duration": 2.7049180327868854
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "방 청소 시작",
+      "composition": "Medium shot of the friends cleaning the bathroom.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 방 청소를 시작하며 노래를 듣고 있었다.",
+          "emotion": null
+        }
+      ],
+      "background": "Upbeat music continues, sounds of cleaning.",
+      "actions": [
+        "청소 도구로 화장실을 청소하고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "장롱 소리",
+      "composition": "Close-up of the wardrobe suddenly slamming shut.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "그때, 방에서 장롱이 쾅하고 닫히는 소리가 들렸다.",
+          "emotion": null
+        }
+      ],
+      "background": "Sudden loud sound of the wardrobe slamming.",
+      "actions": [],
+      "characters": [],
+      "duration": 2.7049180327868854
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "놀란 친구들",
+      "composition": "Medium shot of the friends looking at each other in shock.",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "뭐야? 방에 아무도 없는데!",
+          "emotion": null
+        }
+      ],
+      "background": "Tension building music.",
+      "actions": [
+        "서로를 바라보며 놀란 표정을 짓고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "다시 청소 시작",
+      "composition": "Wide shot of the friends returning to cleaning.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 옆집이나 윗집에서 소리가 난 줄 알고 다시 청소를 시작했다.",
+          "emotion": null
+        }
+      ],
+      "background": "Music resumes, sounds of cleaning continue.",
+      "actions": [
+        "청소를 계속하고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 2.7049180327868854
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "다시 쾅!",
+      "composition": "Close-up of the wardrobe again slamming shut after some time.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "한 시간쯤 지나고, 다시 방에서 쾅! 하는 소리가 들렸다.",
+          "emotion": null
+        }
+      ],
+      "background": "Loud sound of the wardrobe slamming again.",
+      "actions": [],
+      "characters": [],
+      "duration": 2.7049180327868854
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "눈빛 교환",
+      "composition": "Medium shot of the friends exchanging worried glances.",
+      "dialogues": [
+        {
+          "speaker": "친구",
+          "text": "이번엔 확실히 방에서 난 것 같아.",
+          "emotion": null
+        }
+      ],
+      "background": "Tension music builds up.",
+      "actions": [
+        "서로의 눈을 바라보며 긴장한 표정을 짓고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 9,
+      "cut_name": "장롱 확인",
+      "composition": "Wide shot of the friends entering the room to check the wardrobe.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 다시 옆방으로 가서 확인해보았다.",
+          "emotion": null
+        }
+      ],
+      "background": "Sound of footsteps, tense music.",
+      "actions": [
+        "방으로 들어가 장롱을 확인하고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 10,
+      "cut_name": "장롱 열림",
+      "composition": "Close-up of the wardrobe now open.",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "장롱이 열려 있어!",
+          "emotion": null
+        }
+      ],
+      "background": "Tension music with a sudden stop.",
+      "actions": [],
+      "characters": [],
+      "duration": 2.7049180327868854
+    },
+    {
+      "cut_id": 11,
+      "cut_name": "검은 물체",
+      "composition": "Medium shot of the friends noticing a shadow moving.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "그때, 화장실 건너편 방에서 검은 물체가 휙하고 지나가는 것을 느꼈다.",
+          "emotion": null
+        }
+      ],
+      "background": "Suspenseful music, heartbeat sound.",
+      "actions": [
+        "두려운 표정으로 방을 바라보고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 4.508196721311475
+    },
+    {
+      "cut_id": 12,
+      "cut_name": "이상한 기운",
+      "composition": "Wide shot of the friends looking anxious and scared.",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "이 집에 뭔가 이상한 기운이 느껴져.",
+          "emotion": null
+        }
+      ],
+      "background": "Ominous music playing softly.",
+      "actions": [
+        "서로를 바라보며 불안해하고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 13,
+      "cut_name": "집 싸기",
+      "composition": "Medium shot of the friends hurriedly packing their things.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 집을 싸서 다시 돌아가자고 이야기했다.",
+          "emotion": null
+        }
+      ],
+      "background": "Fast-paced music, sounds of packing.",
+      "actions": [
+        "서둘러 짐을 싸고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 14,
+      "cut_name": "친구의 이상한 행동",
+      "composition": "Close-up of the friend staring blankly into the wardrobe.",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "왜 이렇게 서두르지 않는 거야?",
+          "emotion": null
+        }
+      ],
+      "background": "Quiet, eerie music.",
+      "actions": [
+        "친구가 장롱 안을 멍하니 쳐다보고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 15,
+      "cut_name": "정신 차리기",
+      "composition": "Medium shot of the narrator hitting the friend's back.",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "장난치지 말라고 몇 번이나 소리쳤잖아!",
+          "emotion": null
+        }
+      ],
+      "background": "Tension music resumes.",
+      "actions": [
+        "친구의 뒤통수를 친다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 3.6065573770491803
+    },
+    {
+      "cut_id": 16,
+      "cut_name": "탈출",
+      "composition": "Wide shot of the friends rushing out of the apartment.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 겨우 정신을 차리고 집을 나올 수 있었다.",
+          "emotion": null
+        }
+      ],
+      "background": "Fast-paced music, sounds of footsteps.",
+      "actions": [
+        "서둘러 아파트를 빠져나가고 있다."
+      ],
+      "characters": [
+        "나",
+        "친구"
+      ],
+      "duration": 4.508196721311475
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "이사 준비, Wide shot of the apartment with the two friends packing boxes.. characters: 나, 친구. background: Cheerful music playing in the background, sounds of packing.. dialogues: 나레이션: 호주 워홀을 간지 2개월차, 친구와 함께 집을 구하기로 결심했다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e77/Xs834TJaxjZtIkA-eFbyJ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "고층 아파트, Close-up of the apartment view from the 47th floor.. characters: characters. background: Wind blowing sound, city noise.. dialogues: 나레이션: 드디어 구한 집은 47층에 위치한 고층 아파트였다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e78/PWaY8gQHXbjtgIC9wKtgd.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "방 청소 시작, Medium shot of the friends cleaning the bathroom.. characters: 나, 친구. background: Upbeat music continues, sounds of cleaning.. dialogues: 나레이션: 우리는 방 청소를 시작하며 노래를 듣고 있었다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e78/dovEf_EpAhb29-fk22Lht.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "장롱 소리, Close-up of the wardrobe suddenly slamming shut.. characters: characters. background: Sudden loud sound of the wardrobe slamming.. dialogues: 나레이션: 그때, 방에서 장롱이 쾅하고 닫히는 소리가 들렸다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e78/5qoXdnCOIYR2-LgaFi6nM.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "놀란 친구들, Medium shot of the friends looking at each other in shock.. characters: 나, 친구. background: Tension building music.. dialogues: 나: 뭐야? 방에 아무도 없는데!. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e79/k_lp9UAf-x89x8W8LpmOe.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "다시 청소 시작, Wide shot of the friends returning to cleaning.. characters: 나, 친구. background: Music resumes, sounds of cleaning continue.. dialogues: 나레이션: 우리는 옆집이나 윗집에서 소리가 난 줄 알고 다시 청소를 시작했다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e79/rfm8TCM9FR9Iwa2bCubWK.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "다시 쾅!, Close-up of the wardrobe again slamming shut after some time.. characters: characters. background: Loud sound of the wardrobe slamming again.. dialogues: 나레이션: 한 시간쯤 지나고, 다시 방에서 쾅! 하는 소리가 들렸다.. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e79/PMdIT97dShXAmCz6r3BBt.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "눈빛 교환, Medium shot of the friends exchanging worried glances.. characters: 나, 친구. background: Tension music builds up.. dialogues: 친구: 이번엔 확실히 방에서 난 것 같아.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7a/_45yJWscMeZ_ctvQQ7xA3.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_08.png",
+      "message": ""
+    },
+    {
+      "index": 8,
+      "prompt": "장롱 확인, Wide shot of the friends entering the room to check the wardrobe.. characters: 나, 친구. background: Sound of footsteps, tense music.. dialogues: 나레이션: 우리는 다시 옆방으로 가서 확인해보았다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7a/jLAAXMx545mykf1vZcILS.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_09.png",
+      "message": ""
+    },
+    {
+      "index": 9,
+      "prompt": "장롱 열림, Close-up of the wardrobe now open.. characters: characters. background: Tension music with a sudden stop.. dialogues: 나: 장롱이 열려 있어!. duration: 2.7049180327868854 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7a/F228MJkEN_36VGu-lEOkg.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_10.png",
+      "message": ""
+    },
+    {
+      "index": 10,
+      "prompt": "검은 물체, Medium shot of the friends noticing a shadow moving.. characters: 나, 친구. background: Suspenseful music, heartbeat sound.. dialogues: 나레이션: 그때, 화장실 건너편 방에서 검은 물체가 휙하고 지나가는 것을 느꼈다.. duration: 4.508196721311475 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7b/cPednhIphMxCvWM6fvaoa.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_11.png",
+      "message": ""
+    },
+    {
+      "index": 11,
+      "prompt": "이상한 기운, Wide shot of the friends looking anxious and scared.. characters: 나, 친구. background: Ominous music playing softly.. dialogues: 나: 이 집에 뭔가 이상한 기운이 느껴져.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7b/dYC7qOjQ8YoO-e7eg4EMm.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_12.png",
+      "message": ""
+    },
+    {
+      "index": 12,
+      "prompt": "집 싸기, Medium shot of the friends hurriedly packing their things.. characters: 나, 친구. background: Fast-paced music, sounds of packing.. dialogues: 나레이션: 우리는 집을 싸서 다시 돌아가자고 이야기했다.. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7b/7awip0fZBckRhSSRAleTo.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_13.png",
+      "message": ""
+    },
+    {
+      "index": 13,
+      "prompt": "친구의 이상한 행동, Close-up of the friend staring blankly into the wardrobe.. characters: 나, 친구. background: Quiet, eerie music.. dialogues: 나: 왜 이렇게 서두르지 않는 거야?. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7c/d39rQHAmNQH7kyDJ9c81V.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_14.png",
+      "message": ""
+    },
+    {
+      "index": 14,
+      "prompt": "정신 차리기, Medium shot of the narrator hitting the friend's back.. characters: 나, 친구. background: Tension music resumes.. dialogues: 나: 장난치지 말라고 몇 번이나 소리쳤잖아!. duration: 3.6065573770491803 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7c/EuynqtTKVLh64LtGGp1Xq.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_15.png",
+      "message": ""
+    },
+    {
+      "index": 15,
+      "prompt": "탈출, Wide shot of the friends rushing out of the apartment.. characters: 나, 친구. background: Fast-paced music, sounds of footsteps.. dialogues: 나레이션: 우리는 겨우 정신을 차리고 집을 나올 수 있었다.. duration: 4.508196721311475 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
+      "url": "https://v3b.fal.media/files/b/0a8a2e7c/479m1NbWRDxf_qXMhNUfw.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\images\\image_16.png",
+      "message": ""
+    }
+  ],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
+  },
+  "style_key": "real",
+  "video_path": "/media/projects/새-프로젝트-20260113-134510/videos/final.mp4",
+  "video_clips": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_000.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_001.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_002.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_003.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_004.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_005.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_006.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_007.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_008.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_009.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_010.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_011.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_012.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_013.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_014.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\videos\\clips\\clip_015.mp4"
+  ],
+  "audio_paths": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_000.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_001.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_002.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_003.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_004.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_005.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_006.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_007.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_008.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_009.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_010.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_011.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_012.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_013.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_014.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-134510\\audio\\audio_015.mp3"
+  ],
+  "video_duration": 64.54000000000002
+}

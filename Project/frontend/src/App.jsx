@@ -74,10 +74,32 @@ export default function App() {
           <div className="grid">
             <button className="new-tile" onClick={startProject}>+ 새 프로젝트</button>
             {home.lists.projects?.length ? home.lists.projects.map(p => (
-              <div className="card project-card" key={p.id} onClick={()=>nav(`/project/${p.id}`)} style={{cursor:'pointer'}}>
-                <div className="project-title">{p.title}</div>
-                <div className="project-meta">모드: {p.mode === 'fusion' ? '퓨전' : '스토리'}</div>
-                <div className="project-meta">생성일: {p.createdAt || '-'}</div>
+              <div className="card project-card" key={p.id} onClick={()=>nav(`/project/${p.id}`)} style={{cursor:'pointer',overflow:'hidden',padding:0}}>
+                {p.videoPath ? (
+                  <div style={{width:'100%',height:140,background:'#000',position:'relative',overflow:'hidden'}}>
+                    <video 
+                      src={`${API_BASE}${p.videoPath}`}
+                      style={{width:'100%',height:'100%',objectFit:'cover'}}
+                      muted
+                      playsInline
+                      onMouseEnter={(e) => e.target.play()}
+                      onMouseLeave={(e) => {e.target.pause(); e.target.currentTime = 0}}
+                    />
+                    <div style={{position:'absolute',top:8,right:8,background:'rgba(0,0,0,.7)',color:'#fff',padding:'4px 8px',borderRadius:6,fontSize:11,fontWeight:600}}>
+                      🎬 영상
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{width:'100%',height:140,background:'linear-gradient(135deg,#667eea 0%,#764ba2 100%)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontSize:32,fontWeight:700}}>
+                    {p.title?.[0] || '📁'}
+                  </div>
+                )}
+                <div style={{padding:14}}>
+                  <div className="project-title">{p.title}</div>
+                  <div className="project-meta">모드: {p.mode === 'fusion' ? '퓨전' : '스토리'}</div>
+                  {p.imageCount > 0 && <div className="project-meta">이미지: {p.imageCount}개</div>}
+                  <div className="project-meta">생성일: {p.createdAt || '-'}</div>
+                </div>
               </div>
             )) : null}
           </div>
@@ -93,11 +115,46 @@ export default function App() {
               <div className="badge">images {home.counts.images}</div>
               <div className="badge">prompts {home.counts.prompts}</div>
             </div>
-            <div className="list">
-              {home.lists.videos?.length ? home.lists.videos.map((v,i)=> (
-                <div className="item" key={i}><a href={v} target="_blank" rel="noreferrer" style={{color:'#e2e8f0'}}>{v}</a></div>
-              )) : <div className="item" style={{opacity:.7}}>아직 영상이 없습니다.</div>}
-            </div>
+            
+            {/* 최신 영상을 쇼츠 스타일로 표시 */}
+            {home.lists.videos?.length > 0 ? (
+              <>
+                <div className="shorts-player" style={{marginTop:16}}>
+                  <div className="shorts-container">
+                    <video 
+                      src={home.lists.videos[home.lists.videos.length - 1]} 
+                      controls 
+                      loop
+                      playsInline
+                      className="shorts-video"
+                    />
+                    <div className="shorts-overlay">
+                      <div className="shorts-title">최신 영상</div>
+                      <div className="shorts-info">
+                        {new Date().toLocaleDateString('ko-KR')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {home.lists.videos.length > 1 && (
+                  <div className="list" style={{marginTop:16}}>
+                    <div style={{fontSize:12,color:'#94a3b8',marginBottom:8}}>이전 영상 목록</div>
+                    {home.lists.videos.slice(0, -1).reverse().map((v,i)=> (
+                      <div className="item" key={i}>
+                        <a href={v} target="_blank" rel="noreferrer" style={{color:'#e2e8f0',fontSize:12}}>
+                          영상 #{home.lists.videos.length - i - 1}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="list" style={{marginTop:16}}>
+                <div className="item" style={{opacity:.7}}>아직 영상이 없습니다.</div>
+              </div>
+            )}
           </div>
         </div>
       </div>

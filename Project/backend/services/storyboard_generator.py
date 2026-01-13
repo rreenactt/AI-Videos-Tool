@@ -32,7 +32,8 @@ def generate_storyboard_from_story(
 	story_text: str,
 	title: Optional[str] = None,
 	model: str = "gpt-5o-mini",
-	target_duration: float = 30.0
+	target_duration: float = 30.0,
+	min_cuts: int = 16
 ) -> Storyboard:
 	"""스토리 텍스트를 GPT에 보내서 컷별 요소를 추출한 스토리보드 JSON을 생성
 	
@@ -42,37 +43,53 @@ def generate_storyboard_from_story(
 		title: 제목 (선택사항)
 		model: 사용할 GPT 모델
 		target_duration: 목표 영상 시간(초). 모든 컷의 duration 합이 이 값에 가깝게 생성됩니다.
+		min_cuts: 최소 컷 개수 (기본값 16)
 	"""
 	
 	schema = Storyboard.model_json_schema()
+	avg_duration_per_cut = target_duration / min_cuts if min_cuts > 0 else 3.0
+	
 	system_prompt = (
-		"당신은 영상 콘티 기획 어시스턴트입니다. "
-		"사용자가 제공한 스토리를 분석하여 장면을 컷 단위로 나누고, "
-		"각 컷마다 구도, 대사, 배경, 액션, 등장 인물을 추출하여 구조화된 JSON으로 출력하세요. "
-		"반드시 JSON만 출력하고, 코드 펜스는 사용하지 마세요."
+		"You are a professional storyboard assistant for video production. "
+		"Analyze the provided story and break it down into detailed cuts/scenes. "
+		"For each cut, extract composition, dialogues (in Korean), background, actions, and characters in a structured JSON format. "
+		"Include rich narration so viewers can understand the situation well. "
+		"Output only JSON without code fences."
 	)
 	
 	user_prompt = (
-		f"스토리:\n{story_text}\n\n"
-		f"아래 JSON 스키마에 맞춰 스토리보드를 생성하세요:\n"
+		f"Story:\n{story_text}\n\n"
+		f"Generate a storyboard following this JSON schema:\n"
 		f"{json.dumps(schema, ensure_ascii=False, indent=2)}\n\n"
-		f"주의사항:\n"
-		f"- 스토리를 자연스럽게 여러 컷으로 나누세요.\n"
-		f"- **중요**: 모든 컷의 duration 합이 약 {target_duration}초가 되도록 컷을 생성하세요.\n"
-		f"- 각 컷은 고유한 cut_id를 가져야 합니다 (1부터 시작).\n"
-		f"- composition은 카메라 구도와 인물 배치를 설명하세요.\n"
-		f"- dialogues 배열에는 해당 컷의 모든 대사를 포함하세요.\n"
-		f"- background는 장면의 분위기, 사운드, 환경을 설명하세요.\n"
-		f"- actions는 인물의 행동/액션을 배열로 나열하세요.\n"
-		f"- characters는 해당 컷에 등장하는 인물 이름을 배열로 나열하세요.\n"
-		f"- duration은 각 컷의 재생 시간(초)입니다. 대사 길이, 액션 복잡도, 장면의 중요도에 따라 적절히 설정하세요:\n"
-		f"  * 짧은 대사나 단순한 액션: 2-3초\n"
-		f"  * 일반적인 대사나 액션: 3-5초\n"
-		f"  * 긴 대사나 복잡한 액션: 4-6초\n"
-		f"  * 중요한 장면이나 감정적 순간: 5-8초\n"
-		f"  * 각 컷의 duration을 합산했을 때 총 {target_duration}초에 가깝게 조정하세요.\n"
-		f"- dialogues은 한글로, 나머지 필드는 영어로 작성하세요.\n"
-		f"- 모든 컷에는 나레이션 대사 또는 인물의 대사가 포함되어야 합니다."
+		f"Important guidelines:\n"
+		f"- **CRITICAL**: Break the story into at least {min_cuts} detailed cuts.\n"
+		f"- Each scene transition, viewpoint change, or character expression change should be a separate cut.\n"
+		f"- Average duration per cut should be around {avg_duration_per_cut:.1f} seconds, but adjust based on content.\n"
+		f"- **IMPORTANT**: Total duration of all cuts should sum to approximately {target_duration} seconds.\n"
+		f"- Each cut must have a unique cut_id (starting from 1).\n"
+		f"- **composition**: Describe camera angle, shot type, and character placement in ENGLISH. Examples:\n"
+		f"  * 'close-up of protagonist's face, centered, neutral expression'\n"
+		f"  * 'wide shot, two characters facing each other in urban street'\n"
+		f"  * 'over-the-shoulder shot from behind character A looking at character B'\n"
+		f"- **dialogues**: Keep dialogue text in Korean. Include speaker name and emotion.\n"
+		f"- **background**: Describe scene atmosphere, lighting, and environment in ENGLISH. Examples:\n"
+		f"  * 'dark forest at night, moonlight filtering through trees, mysterious ambiance'\n"
+		f"  * 'modern office interior, bright fluorescent lighting, minimalist design'\n"
+		f"  * 'busy city street at sunset, warm orange glow, crowded with people'\n"
+		f"- **actions**: List character actions/movements in ENGLISH as array. Examples: ['walking forward', 'turning head', 'smiling']\n"
+		f"- **characters**: List character names appearing in the cut. For consistency, use same names throughout. Examples:\n"
+		f"  * Use descriptive names like 'young woman with long black hair', 'elderly man in suit', 'child with backpack'\n"
+		f"  * Keep character descriptions consistent across all cuts for the same character\n"
+		f"- **duration**: Set appropriate duration (seconds) based on dialogue length and action complexity:\n"
+		f"  * Short dialogue or simple action: 2-4 seconds\n"
+		f"  * Normal dialogue or action: 3-5 seconds\n"
+		f"  * Long dialogue or complex action: 4-6 seconds\n"
+		f"  * Important scene or emotional moment: 5-7 seconds\n"
+		f"  * Total duration should sum to approximately {target_duration} seconds.\n"
+		f"- **ALL fields except dialogues.text must be in ENGLISH**: cut_name, composition, background, actions, characters.\n"
+		f"- Every cut must include either narration or character dialogue.\n"
+		f"- Add sufficient narration (speaker: '나레이션') to help viewers understand the scene, emotions, and context.\n"
+		f"- Break scenes into at least {min_cuts} diverse cuts with detailed descriptions."
 	)
 	
 	try:

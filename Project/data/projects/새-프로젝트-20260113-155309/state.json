@@ -1,0 +1,492 @@
+{
+  "title": "제주에서의 꿈과 현실",
+  "story": "에메랄드빛 바다가 끝없이 펼쳐진 제주, 사랑하는 그녀의 웃음소리가 엔진 소리보다 감미롭게 들리던 그날은 정말이지 꿈만 같았습니다. 우리는 렌터카의 창문을 활짝 열고, 불어오는 바다 내음을 만끽하며 세상에서 가장 행복한 연인이었죠.\n\n하지만 그 행복이 독이었을까요? 따스한 햇살과 기분 좋은 피로감이 섞여 드는 찰나, 무거운 눈꺼풀이 중력을 이기지 못하고 내려앉았습니다. 짧은 정적, 그리고 귀를 찢는 듯한 굉음. 정신을 차렸을 때 눈앞에 남은 건 형체를 알아볼 수 없이 구겨진 고철 덩어리와, 싸늘하게 식어버린 우리의 여행이었습니다.\n\n다친 곳이 없어 다행이라는 안도감도 잠시, 눈앞에 들이닥친 건 감당하기 힘든 막대한 수리비와 빚의 무게였습니다. 23살 청춘이 감당하기엔 너무나 가혹한 현실이었죠. 결국 저는 그녀의 손을 잠시 놓아두고, 지도의 끝자락이라 불리는 이름 모를 오지로 떠나기로 결심했습니다.\n\n거친 바람과 고된 노동만이 기다리는 그곳에서, 저는 매일 밤 부서진 차 유리 조각처럼 흩어진 기억을 다시 맞춥니다. 다시 그녀의 곁으로 돌아가 당당하게 웃을 수 있는 그날을 위해, 저는 오늘 하루도 척박한 땅 위에서 땀을 흘리며 희망을 일굽니다.",
+  "min_shots_per_scene": 50,
+  "prompts": [
+    "제주 바다의 풍경, Wide shot of the emerald sea with a clear sky, showing the vastness of the ocean.. characters: characters. background: Soft sounds of waves crashing, seagulls calling, and a gentle breeze.. dialogues: 나레이션: 에메랄드빛 바다가 끝없이 펼쳐진 제주. 이곳은 우리의 사랑이 시작된 특별한 장소입니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "렌터카 안의 행복, Inside the car, close-up of the couple smiling at each other, with the window down.. characters: 남자, 여자. background: The sound of the car engine and the wind rushing through the open window.. dialogues: 나레이션: 사랑하는 그녀의 웃음소리가 엔진 소리보다 감미롭게 들리던 그날은 정말이지 꿈만 같았습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "바다 내음 만끽하기, Medium shot of the couple leaning out of the car window, inhaling the sea air.. characters: 남자, 여자. background: The sound of waves and the rustling of leaves.. dialogues: 나레이션: 우리는 렌터카의 창문을 활짝 열고, 불어오는 바다 내음을 만끽하며 세상에서 가장 행복한 연인이었죠.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "행복의 정점, Close-up of the couple's hands intertwined on the dashboard.. characters: 남자, 여자. background: Soft romantic music playing in the background.. dialogues: 나레이션: 그 순간, 우리는 세상의 모든 행복을 가진 듯했습니다.. duration: 2.142857142857143 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "행복의 그림자, Wide shot of the car driving down a scenic road, with the sun shining brightly.. characters: 남자, 여자. background: The sound of the car driving and birds chirping.. dialogues: 나레이션: 하지만 그 행복이 독이었을까요?. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "졸음의 순간, Close-up of the man's heavy eyelids as he struggles to stay awake.. characters: 남자. background: The sound of the car engine and soft music playing.. dialogues: 나레이션: 따스한 햇살과 기분 좋은 피로감이 섞여 드는 찰나, 무거운 눈꺼풀이 중력을 이기지 못하고 내려앉았습니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "충돌의 순간, Wide shot of the car suddenly veering off the road.. characters: characters. background: A sudden loud crash sound, followed by silence.. dialogues: 나레이션: 짧은 정적, 그리고 귀를 찢는 듯한 굉음.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "혼란의 순간, Close-up of the wrecked car, showing crumpled metal and shattered glass.. characters: characters. background: Eerie silence, broken only by distant sirens.. dialogues: 나레이션: 정신을 차렸을 때 눈앞에 남은 건 형체를 알아볼 수 없이 구겨진 고철 덩어리와, 싸늘하게 식어버린 우리의 여행이었습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "안도의 순간, Close-up of the man's face, showing relief as he checks for injuries.. characters: 남자. background: Quiet, tense atmosphere.. dialogues: 나레이션: 다친 곳이 없어 다행이라는 안도감도 잠시.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "현실의 무게, Medium shot of the man looking at the wreckage with despair.. characters: 남자. background: Somber music playing, creating a heavy atmosphere.. dialogues: 나레이션: 눈앞에 들이닥친 건 감당하기 힘든 막대한 수리비와 빚의 무게였습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "결심의 순간, Close-up of the man's determined face as he makes a decision.. characters: 남자. background: Dramatic music builds up, indicating a turning point.. dialogues: 나레이션: 결국 저는 그녀의 손을 잠시 놓아두고, 지도의 끝자락이라 불리는 이름 모를 오지로 떠나기로 결심했습니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "고된 노동의 시작, Wide shot of the man working hard in a rugged landscape.. characters: 남자. background: Sounds of wind howling and tools clanking.. dialogues: 나레이션: 거친 바람과 고된 노동만이 기다리는 그곳에서.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "부서진 기억, Close-up of the man's tired eyes, reflecting memories of the past.. characters: 남자. background: Soft, melancholic music playing.. dialogues: 나레이션: 저는 매일 밤 부서진 차 유리 조각처럼 흩어진 기억을 다시 맞춥니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "희망을 일구다, Medium shot of the man working hard, sweat dripping down his face.. characters: 남자. background: Sounds of nature, with a hopeful undertone in the music.. dialogues: 나레이션: 다시 그녀의 곁으로 돌아가 당당하게 웃을 수 있는 그날을 위해.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "희망의 빛, Wide shot of the sunset over the ocean, symbolizing hope.. characters: characters. background: The sound of waves gently crashing, with uplifting music.. dialogues: 나레이션: 저는 오늘 하루도 척박한 땅 위에서 땀을 흘리며 희망을 일굽니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+    "미래를 향한 다짐, Close-up of the man's face, filled with determination and hope.. characters: 남자. background: Inspirational music builds up, creating a sense of hope.. dialogues: 나레이션: 그날이 오기를 간절히 바라며, 저는 다시 일어섭니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+  ],
+  "cuts": [
+    {
+      "cut_id": 1,
+      "cut_name": "제주 바다의 풍경",
+      "composition": "Wide shot of the emerald sea with a clear sky, showing the vastness of the ocean.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "에메랄드빛 바다가 끝없이 펼쳐진 제주. 이곳은 우리의 사랑이 시작된 특별한 장소입니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Soft sounds of waves crashing, seagulls calling, and a gentle breeze.",
+      "actions": [],
+      "characters": [],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 2,
+      "cut_name": "렌터카 안의 행복",
+      "composition": "Inside the car, close-up of the couple smiling at each other, with the window down.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "사랑하는 그녀의 웃음소리가 엔진 소리보다 감미롭게 들리던 그날은 정말이지 꿈만 같았습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The sound of the car engine and the wind rushing through the open window.",
+      "actions": [
+        "Couple laughing and enjoying each other's company."
+      ],
+      "characters": [
+        "남자",
+        "여자"
+      ],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 3,
+      "cut_name": "바다 내음 만끽하기",
+      "composition": "Medium shot of the couple leaning out of the car window, inhaling the sea air.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "우리는 렌터카의 창문을 활짝 열고, 불어오는 바다 내음을 만끽하며 세상에서 가장 행복한 연인이었죠.",
+          "emotion": null
+        }
+      ],
+      "background": "The sound of waves and the rustling of leaves.",
+      "actions": [
+        "Couple takes deep breaths, smiling widely."
+      ],
+      "characters": [
+        "남자",
+        "여자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 4,
+      "cut_name": "행복의 정점",
+      "composition": "Close-up of the couple's hands intertwined on the dashboard.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "그 순간, 우리는 세상의 모든 행복을 가진 듯했습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Soft romantic music playing in the background.",
+      "actions": [],
+      "characters": [
+        "남자",
+        "여자"
+      ],
+      "duration": 2.142857142857143
+    },
+    {
+      "cut_id": 5,
+      "cut_name": "행복의 그림자",
+      "composition": "Wide shot of the car driving down a scenic road, with the sun shining brightly.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "하지만 그 행복이 독이었을까요?",
+          "emotion": null
+        }
+      ],
+      "background": "The sound of the car driving and birds chirping.",
+      "actions": [
+        "Car drives along the road, scenery passing by."
+      ],
+      "characters": [
+        "남자",
+        "여자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 6,
+      "cut_name": "졸음의 순간",
+      "composition": "Close-up of the man's heavy eyelids as he struggles to stay awake.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "따스한 햇살과 기분 좋은 피로감이 섞여 드는 찰나, 무거운 눈꺼풀이 중력을 이기지 못하고 내려앉았습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The sound of the car engine and soft music playing.",
+      "actions": [
+        "Man yawns and struggles to keep his eyes open."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "충돌의 순간",
+      "composition": "Wide shot of the car suddenly veering off the road.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "짧은 정적, 그리고 귀를 찢는 듯한 굉음.",
+          "emotion": null
+        }
+      ],
+      "background": "A sudden loud crash sound, followed by silence.",
+      "actions": [
+        "Car crashes, debris flying."
+      ],
+      "characters": [],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 8,
+      "cut_name": "혼란의 순간",
+      "composition": "Close-up of the wrecked car, showing crumpled metal and shattered glass.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "정신을 차렸을 때 눈앞에 남은 건 형체를 알아볼 수 없이 구겨진 고철 덩어리와, 싸늘하게 식어버린 우리의 여행이었습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Eerie silence, broken only by distant sirens.",
+      "actions": [],
+      "characters": [],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 9,
+      "cut_name": "안도의 순간",
+      "composition": "Close-up of the man's face, showing relief as he checks for injuries.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "다친 곳이 없어 다행이라는 안도감도 잠시.",
+          "emotion": null
+        }
+      ],
+      "background": "Quiet, tense atmosphere.",
+      "actions": [
+        "Man checks his body for injuries."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 10,
+      "cut_name": "현실의 무게",
+      "composition": "Medium shot of the man looking at the wreckage with despair.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "눈앞에 들이닥친 건 감당하기 힘든 막대한 수리비와 빚의 무게였습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Somber music playing, creating a heavy atmosphere.",
+      "actions": [
+        "Man looks down, feeling overwhelmed."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 11,
+      "cut_name": "결심의 순간",
+      "composition": "Close-up of the man's determined face as he makes a decision.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "결국 저는 그녀의 손을 잠시 놓아두고, 지도의 끝자락이라 불리는 이름 모를 오지로 떠나기로 결심했습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Dramatic music builds up, indicating a turning point.",
+      "actions": [
+        "Man clenches his fist, showing determination."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 12,
+      "cut_name": "고된 노동의 시작",
+      "composition": "Wide shot of the man working hard in a rugged landscape.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "거친 바람과 고된 노동만이 기다리는 그곳에서.",
+          "emotion": null
+        }
+      ],
+      "background": "Sounds of wind howling and tools clanking.",
+      "actions": [
+        "Man digs and works hard under the sun."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 13,
+      "cut_name": "부서진 기억",
+      "composition": "Close-up of the man's tired eyes, reflecting memories of the past.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "저는 매일 밤 부서진 차 유리 조각처럼 흩어진 기억을 다시 맞춥니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Soft, melancholic music playing.",
+      "actions": [
+        "Man stares into the distance, lost in thought."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 2.857142857142857
+    },
+    {
+      "cut_id": 14,
+      "cut_name": "희망을 일구다",
+      "composition": "Medium shot of the man working hard, sweat dripping down his face.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "다시 그녀의 곁으로 돌아가 당당하게 웃을 수 있는 그날을 위해.",
+          "emotion": null
+        }
+      ],
+      "background": "Sounds of nature, with a hopeful undertone in the music.",
+      "actions": [
+        "Man wipes sweat and continues to work."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 15,
+      "cut_name": "희망의 빛",
+      "composition": "Wide shot of the sunset over the ocean, symbolizing hope.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "저는 오늘 하루도 척박한 땅 위에서 땀을 흘리며 희망을 일굽니다.",
+          "emotion": null
+        }
+      ],
+      "background": "The sound of waves gently crashing, with uplifting music.",
+      "actions": [],
+      "characters": [],
+      "duration": 3.5714285714285716
+    },
+    {
+      "cut_id": 16,
+      "cut_name": "미래를 향한 다짐",
+      "composition": "Close-up of the man's face, filled with determination and hope.",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "그날이 오기를 간절히 바라며, 저는 다시 일어섭니다.",
+          "emotion": null
+        }
+      ],
+      "background": "Inspirational music builds up, creating a sense of hope.",
+      "actions": [
+        "Man stands tall, looking towards the horizon."
+      ],
+      "characters": [
+        "남자"
+      ],
+      "duration": 2.857142857142857
+    }
+  ],
+  "saved_results": [
+    {
+      "index": 0,
+      "prompt": "제주 바다의 풍경, Wide shot of the emerald sea with a clear sky, showing the vastness of the ocean.. characters: characters. background: Soft sounds of waves crashing, seagulls calling, and a gentle breeze.. dialogues: 나레이션: 에메랄드빛 바다가 끝없이 펼쳐진 제주. 이곳은 우리의 사랑이 시작된 특별한 장소입니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3138/ALkdJx-u4tpTgfvr9Myph.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_01.png",
+      "message": ""
+    },
+    {
+      "index": 1,
+      "prompt": "렌터카 안의 행복, Inside the car, close-up of the couple smiling at each other, with the window down.. characters: 남자, 여자. background: The sound of the car engine and the wind rushing through the open window.. dialogues: 나레이션: 사랑하는 그녀의 웃음소리가 엔진 소리보다 감미롭게 들리던 그날은 정말이지 꿈만 같았습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3138/Wn1jW_SeVQgx5WztJiYrW.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_02.png",
+      "message": ""
+    },
+    {
+      "index": 2,
+      "prompt": "바다 내음 만끽하기, Medium shot of the couple leaning out of the car window, inhaling the sea air.. characters: 남자, 여자. background: The sound of waves and the rustling of leaves.. dialogues: 나레이션: 우리는 렌터카의 창문을 활짝 열고, 불어오는 바다 내음을 만끽하며 세상에서 가장 행복한 연인이었죠.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3138/6JH0uX_3Eth9mDmzZiB2H.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_03.png",
+      "message": ""
+    },
+    {
+      "index": 3,
+      "prompt": "행복의 정점, Close-up of the couple's hands intertwined on the dashboard.. characters: 남자, 여자. background: Soft romantic music playing in the background.. dialogues: 나레이션: 그 순간, 우리는 세상의 모든 행복을 가진 듯했습니다.. duration: 2.142857142857143 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3139/RAyXncVELbES1bp1terBB.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_04.png",
+      "message": ""
+    },
+    {
+      "index": 4,
+      "prompt": "행복의 그림자, Wide shot of the car driving down a scenic road, with the sun shining brightly.. characters: 남자, 여자. background: The sound of the car driving and birds chirping.. dialogues: 나레이션: 하지만 그 행복이 독이었을까요?. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3139/1qad_ZE5xOAmZECyrGATz.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_05.png",
+      "message": ""
+    },
+    {
+      "index": 5,
+      "prompt": "졸음의 순간, Close-up of the man's heavy eyelids as he struggles to stay awake.. characters: 남자. background: The sound of the car engine and soft music playing.. dialogues: 나레이션: 따스한 햇살과 기분 좋은 피로감이 섞여 드는 찰나, 무거운 눈꺼풀이 중력을 이기지 못하고 내려앉았습니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a3139/aeOlg6VOSyncAIp18SmQ-.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_06.png",
+      "message": ""
+    },
+    {
+      "index": 6,
+      "prompt": "충돌의 순간, Wide shot of the car suddenly veering off the road.. characters: characters. background: A sudden loud crash sound, followed by silence.. dialogues: 나레이션: 짧은 정적, 그리고 귀를 찢는 듯한 굉음.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313a/7eZEp6fQuuIkY1F_ntkdC.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_07.png",
+      "message": ""
+    },
+    {
+      "index": 7,
+      "prompt": "혼란의 순간, Close-up of the wrecked car, showing crumpled metal and shattered glass.. characters: characters. background: Eerie silence, broken only by distant sirens.. dialogues: 나레이션: 정신을 차렸을 때 눈앞에 남은 건 형체를 알아볼 수 없이 구겨진 고철 덩어리와, 싸늘하게 식어버린 우리의 여행이었습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313a/tjCJUHJMevrYgY6cXuWv2.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_08.png",
+      "message": ""
+    },
+    {
+      "index": 8,
+      "prompt": "안도의 순간, Close-up of the man's face, showing relief as he checks for injuries.. characters: 남자. background: Quiet, tense atmosphere.. dialogues: 나레이션: 다친 곳이 없어 다행이라는 안도감도 잠시.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313b/m7YPkcUsipP_JCys9RZBF.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_09.png",
+      "message": ""
+    },
+    {
+      "index": 9,
+      "prompt": "현실의 무게, Medium shot of the man looking at the wreckage with despair.. characters: 남자. background: Somber music playing, creating a heavy atmosphere.. dialogues: 나레이션: 눈앞에 들이닥친 건 감당하기 힘든 막대한 수리비와 빚의 무게였습니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313b/1hwbDkLWSsL5uyiV69JFh.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_10.png",
+      "message": ""
+    },
+    {
+      "index": 10,
+      "prompt": "결심의 순간, Close-up of the man's determined face as he makes a decision.. characters: 남자. background: Dramatic music builds up, indicating a turning point.. dialogues: 나레이션: 결국 저는 그녀의 손을 잠시 놓아두고, 지도의 끝자락이라 불리는 이름 모를 오지로 떠나기로 결심했습니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313b/XzTvfDFKrW7yObihanab3.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_11.png",
+      "message": ""
+    },
+    {
+      "index": 11,
+      "prompt": "고된 노동의 시작, Wide shot of the man working hard in a rugged landscape.. characters: 남자. background: Sounds of wind howling and tools clanking.. dialogues: 나레이션: 거친 바람과 고된 노동만이 기다리는 그곳에서.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313c/T1OU0Kvaj3Lggx1D6CvBg.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_12.png",
+      "message": ""
+    },
+    {
+      "index": 12,
+      "prompt": "부서진 기억, Close-up of the man's tired eyes, reflecting memories of the past.. characters: 남자. background: Soft, melancholic music playing.. dialogues: 나레이션: 저는 매일 밤 부서진 차 유리 조각처럼 흩어진 기억을 다시 맞춥니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313c/R35TS57Smt7FCMhKxzwzK.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_13.png",
+      "message": ""
+    },
+    {
+      "index": 13,
+      "prompt": "희망을 일구다, Medium shot of the man working hard, sweat dripping down his face.. characters: 남자. background: Sounds of nature, with a hopeful undertone in the music.. dialogues: 나레이션: 다시 그녀의 곁으로 돌아가 당당하게 웃을 수 있는 그날을 위해.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313c/vOdwAPC_pfy6llck4I6hz.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_14.png",
+      "message": ""
+    },
+    {
+      "index": 14,
+      "prompt": "희망의 빛, Wide shot of the sunset over the ocean, symbolizing hope.. characters: characters. background: The sound of waves gently crashing, with uplifting music.. dialogues: 나레이션: 저는 오늘 하루도 척박한 땅 위에서 땀을 흘리며 희망을 일굽니다.. duration: 3.5714285714285716 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313d/pptwS76il7CaeHh4GBceI.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_15.png",
+      "message": ""
+    },
+    {
+      "index": 15,
+      "prompt": "미래를 향한 다짐, Close-up of the man's face, filled with determination and hope.. characters: 남자. background: Inspirational music builds up, creating a sense of hope.. dialogues: 나레이션: 그날이 오기를 간절히 바라며, 저는 다시 일어섭니다.. duration: 2.857142857142857 seconds. surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
+      "url": "https://v3b.fal.media/files/b/0a8a313d/xBCxyPoLKO6u4NI6B38mo.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\images\\image_16.png",
+      "message": ""
+    }
+  ],
+  "image_job_id": "",
+  "image_progress": {
+    "status": "completed",
+    "progress": 100.0,
+    "message": "모든 이미지 생성 완료"
+  },
+  "style_key": "surreal",
+  "video_path": "/media/projects/새-프로젝트-20260113-155309/videos/final.mp4",
+  "video_clips": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_000.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_001.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_002.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_003.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_004.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_005.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_006.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_007.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_008.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_009.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_010.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_011.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_012.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_013.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_014.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\videos\\clips\\clip_015.mp4"
+  ],
+  "audio_paths": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_000.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_001.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_002.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_003.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_004.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_005.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_006.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_007.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_008.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_009.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_010.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_011.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_012.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_013.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_014.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20260113-155309\\audio\\audio_015.mp3"
+  ],
+  "video_duration": 89.83
+}

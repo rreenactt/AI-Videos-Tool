@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import os
@@ -87,6 +88,15 @@ DATA_DIR = os.path.normpath(os.path.join(BASE_DIR, "../data"))
 OUTPUTS_DIR = os.path.join(DATA_DIR, "outputs")
 TEMP_DIR = os.path.join(DATA_DIR, "temp")
 PROJECTS_DIR = os.path.join(DATA_DIR, "projects")
+
+# 정적 파일 서빙 (이미지/영상 접근용)
+if os.path.isdir(DATA_DIR):
+	app.mount(
+		"/media",
+		StaticFiles(directory=DATA_DIR),
+		name="media",
+	)
+
 DEFAULT_STATE = {
 	"title": "",
 	"story": "",
@@ -100,15 +110,64 @@ DEFAULT_STATE = {
 }
 
 
+def _to_web_url(path: str) -> str:
+	"""DATA_DIR 기준 파일 시스템 경로를 브라우저에서 접근 가능한 /media URL로 변환"""
+	if not path:
+		return ""
+	# 절대 경로가 아니면 BASE_DIR 기준으로 정규화
+	abs_path = path
+	if not os.path.isabs(abs_path):
+		abs_path = os.path.normpath(os.path.join(BASE_DIR, abs_path))
+	try:
+		rel = os.path.relpath(abs_path, DATA_DIR)
+	except ValueError:
+		# DATA_DIR 밖의 경로이면 원본을 그대로 반환
+		return path
+	rel = rel.replace(os.sep, "/")
+	return f"/media/{rel}"
+
+
 def get_style_prompt_text(style_key: str) -> str:
-	"""스타일 키에 해당하는 프롬프트 스타일 텍스트 반환"""
+	"""스타일 키에 해당하는 프롬프트 스타일 텍스트 반환 (영어로, 상세하게)"""
 	style_map = {
-		"surreal": "surreal, dreamlike, fantastical, ethereal, otherworldly, cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-		"real": "photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-		"future": "futuristic, sci-fi, cyberpunk, neon lights, advanced technology, cinematic, detailed, dramatic lighting",
-		"simple3d": "3D render, simple 3D style, clean geometry, soft colors, minimalist, modern, smooth surfaces",
-		"ghibli": "Studio Ghibli style, anime, soft colors, whimsical, magical atmosphere, detailed illustration, warm lighting",
-		"dark": "dark fantasy, gothic, moody atmosphere, dramatic shadows, mysterious, cinematic, detailed illustration, high contrast",
+		"surreal": (
+			"Style: surreal dreamlike atmosphere, fantastical ethereal composition, "
+			"cinematic anime illustration with detailed lineart, soft cel shading, "
+			"dramatic volumetric lighting, vibrant color palette, otherworldly elements, "
+			"high quality digital art, professional illustration, 4K resolution"
+		),
+		"real": (
+			"Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, "
+			"detailed skin textures and fabric, depth of field bokeh effect, "
+			"professional photography quality, Canon EOS R5 style, "
+			"cinematic color grading, 8K high resolution, sharp focus"
+		),
+		"future": (
+			"Style: futuristic sci-fi aesthetic, cyberpunk atmosphere with neon lights, "
+			"advanced technology elements, holographic displays, metallic surfaces, "
+			"dramatic blue and purple color scheme, cinematic lighting with lens flares, "
+			"detailed mechanical parts, high-tech environment, 4K digital art"
+		),
+		"simple3d": (
+			"Style: 3D rendered illustration, simple clean geometry, smooth surfaces, "
+			"minimalist modern design, soft pastel colors, subtle gradients, "
+			"isometric or low-poly aesthetic, professional 3D modeling, "
+			"ambient occlusion lighting, Blender or C4D style render"
+		),
+		"ghibli": (
+			"Style: Studio Ghibli anime aesthetic, hand-drawn illustration quality, "
+			"soft watercolor-like colors, whimsical magical atmosphere, "
+			"detailed background art with depth, warm natural lighting, "
+			"character-focused composition, nostalgic peaceful mood, "
+			"Hayao Miyazaki inspired, high quality animation frame"
+		),
+		"dark": (
+			"Style: dark fantasy aesthetic, gothic atmosphere, moody dramatic shadows, "
+			"mysterious cinematic lighting, high contrast chiaroscuro, "
+			"detailed intricate illustration, muted desaturated colors with accent highlights, "
+			"ominous foreboding mood, Bloodborne or Dark Souls inspired, "
+			"professional concept art quality"
+		),
 	}
 	return style_map.get(style_key, style_map["surreal"])
 
@@ -120,14 +179,22 @@ def _normalize_saved_results(saved_results: Any, prompts: List[str]) -> list[dic
 		return normalized
 	for i, item in enumerate(saved_results):
 		if isinstance(item, str):
-			normalized.append({"index": i, "prompt": prompts[i] if i < len(prompts) else "", "url": item, "path": item})
+			# 문자열만 있는 경우: 파일 시스템 경로로 간주하고 URL 생성
+			url = _to_web_url(item)
+			normalized.append({
+				"index": i,
+				"prompt": prompts[i] if i < len(prompts) else "",
+				"url": url,
+				"path": item,
+			})
 		elif isinstance(item, dict):
-			url = item.get("url") or item.get("path") or ""
+			raw_path = item.get("path") or item.get("url") or ""
+			url = item.get("url") or _to_web_url(raw_path)
 			normalized.append({
 				"index": item.get("index", i),
 				"prompt": item.get("prompt") or (prompts[i] if i < len(prompts) else ""),
 				"url": url,
-				"path": item.get("path", url),
+				"path": item.get("path", raw_path),
 				"message": item.get("message", "")
 			})
 	return normalized
@@ -219,26 +286,43 @@ async def api_home():
 	os.makedirs(TEMP_DIR, exist_ok=True)
 	os.makedirs(PROJECTS_DIR, exist_ok=True)
 	prompts = sorted(glob(os.path.join(OUTPUTS_DIR, "prompt_*.txt")))
-	images = sorted([p for p in glob(os.path.join(OUTPUTS_DIR, "*.*")) if os.path.splitext(p)[1].lower() in {".png", ".jpg", ".jpeg", ".webp"}])
-	videos = sorted([p for p in glob(os.path.join(OUTPUTS_DIR, "*.*")) if os.path.splitext(p)[1].lower() in {".mp4", ".mov", ".webm"}])
+	images_fs = sorted([p for p in glob(os.path.join(OUTPUTS_DIR, "*.*")) if os.path.splitext(p)[1].lower() in {".png", ".jpg", ".jpeg", ".webp"}])
+	videos_fs = sorted([p for p in glob(os.path.join(OUTPUTS_DIR, "*.*")) if os.path.splitext(p)[1].lower() in {".mp4", ".mov", ".webm"}])
 	# projects: 디렉터리의 metadata.json 읽기
 	projects: List[dict] = []
 	for d in sorted(glob(os.path.join(PROJECTS_DIR, "*"))):
 		if not os.path.isdir(d):
 			continue
 		meta_path = os.path.join(d, "metadata.json")
-		meta = {"id": os.path.basename(d), "title": os.path.basename(d), "createdAt": None}
+		state_path = os.path.join(d, "state.json")
+		meta = {"id": os.path.basename(d), "title": os.path.basename(d), "createdAt": None, "videoPath": None, "imageCount": 0}
 		if os.path.isfile(meta_path):
 			try:
 				with open(meta_path, "r", encoding="utf-8") as f:
 					meta.update(json.load(f))
 			except Exception:
 				pass
+		# state.json에서 비디오 경로와 이미지 개수 가져오기
+		if os.path.isfile(state_path):
+			try:
+				with open(state_path, "r", encoding="utf-8") as f:
+					state_data = json.load(f)
+					if state_data.get("video_path"):
+						meta["videoPath"] = state_data.get("video_path")
+					if state_data.get("saved_results"):
+						meta["imageCount"] = len(state_data.get("saved_results"))
+			except Exception:
+				pass
 		projects.append(meta)
 	return {
 		"dirs": {"outputs": OUTPUTS_DIR, "temp": TEMP_DIR, "projects": PROJECTS_DIR},
-		"counts": {"prompts": len(prompts), "images": len(images), "videos": len(videos), "projects": len(projects)},
-		"lists": {"prompts": prompts, "images": images, "videos": videos, "projects": projects},
+		"counts": {"prompts": len(prompts), "images": len(images_fs), "videos": len(videos_fs), "projects": len(projects)},
+		"lists": {
+			"prompts": prompts,
+			"images": [ _to_web_url(p) for p in images_fs ],
+			"videos": [ _to_web_url(v) for v in videos_fs ],
+			"projects": projects,
+		},
 	}
 
 
@@ -328,26 +412,87 @@ async def api_storyboard(payload: StoryRequest):
 			story_text=adjusted,
 			title=payload.title,
 			model="gpt-4o-mini",
-			target_duration=target_duration
+			target_duration=target_duration,
+			min_cuts=16  # 최소 16개 컷 생성
 		)
 		
-		# 각 컷에서 프롬프트 생성 (이미지 생성용)
+		# 각 컷에서 프롬프트 생성 (이미지 생성용 - 영어로만, 고품질)
 		style_key = payload.style_key or "surreal"
 		style_text = get_style_prompt_text(style_key)
-		prompts = []
+		
+		# 캐릭터 일관성을 위한 character description 추출 및 강화
+		character_descriptions = {}
+		character_appearance_count = {}
+		
+		# 모든 캐릭터 수집 및 등장 횟수 계산
 		for cut in storyboard.cuts:
-			characters_str = ", ".join(cut.characters) if cut.characters else "characters"
-			dialogues_str = "; ".join([f"{d.speaker}: {d.text}" for d in cut.dialogues[:3]])
-			duration = getattr(cut, 'duration', 3.0)  # 기본값 3초
-			prompt = (
-				f"{cut.cut_name}, {cut.composition}. "
-				f"characters: {characters_str}. "
-				f"background: {cut.background}. "
-				f"dialogues: {dialogues_str}. "
-				f"duration: {duration} seconds. "
-				f"{style_text}"
-			)
+			for char in cut.characters:
+				if char and char.strip():
+					char_key = char.strip()
+					if char_key not in character_descriptions:
+						# 캐릭터 설명 저장 (일관성 유지를 위해 원본 그대로)
+						character_descriptions[char_key] = char_key
+						character_appearance_count[char_key] = 0
+					character_appearance_count[char_key] += 1
+		
+		# 주요 캐릭터 식별 (3회 이상 등장)
+		main_characters = [char for char, count in character_appearance_count.items() if count >= 3]
+		
+		prompts = []
+		for cut_idx, cut in enumerate(storyboard.cuts):
+			# 캐릭터 설명 (일관성 유지)
+			characters_in_scene = []
+			if cut.characters:
+				for char in cut.characters:
+					char_key = char.strip()
+					if char_key in character_descriptions:
+						char_desc = character_descriptions[char_key]
+						# 주요 캐릭터인 경우 "CONSISTENT:" 태그 추가로 일관성 강조
+						if char_key in main_characters:
+							characters_in_scene.append(f"CONSISTENT: {char_desc}")
+						else:
+							characters_in_scene.append(char_desc)
+			
+			characters_str = ", ".join(characters_in_scene) if characters_in_scene else ""
+			
+			# 액션 정보 (있을 경우, 최대 2개로 제한)
+			actions_str = ", ".join(cut.actions[:2]) if cut.actions else ""
+			
+			# 프롬프트 구성: 핵심 정보만 명확하게
+			# 대사(dialogues), duration, 불필요한 메타데이터 제외
+			prompt_parts = []
+			
+			# 1. Composition (카메라 앵글 + 구도) - 가장 중요
+			prompt_parts.append(cut.composition)
+			
+			# 2. Characters (일관성 있게, 있을 경우만)
+			if characters_str:
+				prompt_parts.append(characters_str)
+			
+			# 3. Actions (간결하게, 있을 경우만)
+			if actions_str:
+				prompt_parts.append(actions_str)
+			
+			# 4. Background (환경 + 분위기)
+			prompt_parts.append(cut.background)
+			
+			# 5. Style (스타일 + 품질 지시어)
+			prompt_parts.append(style_text)
+			
+			# 6. 포맷 최적화 (세로형 비율)
+			prompt_parts.append("vertical composition, portrait orientation optimized, centered framing")
+			
+			# 7. 품질 향상 지시어
+			prompt_parts.append("masterpiece, best quality, highly detailed, sharp focus, professional artwork")
+			
+			# 최종 프롬프트 (영어로만, 쉼표로 구분하여 깔끔하게)
+			prompt = ", ".join(prompt_parts)
+			
+			# Negative 요소 방지를 위한 추가 (프롬프트 끝에)
+			prompt += ". Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces"
+			
 			prompts.append(prompt)
+			print(f"[프롬프트 {cut_idx+1}] {prompt[:100]}...")
 		
 		if payload.project_id:
 			state = _load_project_state(payload.project_id)
@@ -362,6 +507,9 @@ async def api_storyboard(payload: StoryRequest):
 			state["saved_results"] = []
 			state["image_job_id"] = ""
 			state["image_progress"] = {"status": "", "progress": 0, "message": ""}
+			# 캐릭터 정보 저장 (일관성 유지를 위해)
+			state["character_descriptions"] = character_descriptions
+			state["main_characters"] = main_characters
 			_save_project_state(payload.project_id, state)
 			meta = _load_project_meta(payload.project_id)
 			if storyboard.title:
@@ -620,16 +768,20 @@ async def api_video(payload: VideoJobRequest):
 			tts_voice="alloy"
 		)
 		
+		# 웹에서 접근 가능한 URL 생성
+		web_output = _to_web_url(result["output_path"])
+		
 		# 프로젝트 상태에 영상 정보 저장
 		if payload.project_id:
 			state = _load_project_state(payload.project_id, require=False)
-			state["video_path"] = result["output_path"]
+			state["video_path"] = web_output
 			state["video_clips"] = result.get("clip_paths", [])
 			state["audio_paths"] = result.get("audio_paths", [])
 			state["video_duration"] = result.get("total_duration", 0)
 			_save_project_state(payload.project_id, state, require=False)
 		
-		return {"output": result["output_path"], "metadata": result}
+		# 프론트엔드에는 웹 URL을 우선 제공
+		return {"output": web_output, "metadata": {**result, "web_output": web_output}}
 	except Exception as e:
 		raise HTTPException(500, detail=str(e))
 
