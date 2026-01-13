@@ -64,17 +64,16 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 	# 자막 너비 설정 (화면의 80%)
 	subtitle_width = int(width * 0.8)
 	
+	# 자막 생성 시도 (ImageMagick 필요, 없으면 스킵)
 	# 폰트 크기를 화면 크기에 맞게 조정
 	fontsize = min(45, int(height * 0.04))  # 화면 높이의 4%, 최대 45
 	
-	# 폰트 경로
-	font_path = _get_font_path()
-	
 	subtitle_clip = None
 	
-	# 폰트 경로가 있으면 사용
-	if font_path:
-		try:
+	# 간단한 방법으로 시도 (실패 시 바로 None 반환)
+	try:
+		font_path = _get_font_path()
+		if font_path:
 			subtitle_clip = TextClip(
 				formatted_subtitle,
 				fontsize=fontsize,
@@ -82,29 +81,21 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 				font=font_path,
 				method='caption',
 				size=(subtitle_width, None),
-				align='center',
-				stroke_color='black',
-				stroke_width=2
+				align='center'
 			).set_duration(duration).set_start(start_time)
-		except Exception as e:
-			print(f"폰트 경로 사용 실패: {e}")
-	
-	# 폰트 경로 실패 시 기본 폰트
-	if not subtitle_clip:
-		try:
+		else:
 			subtitle_clip = TextClip(
 				formatted_subtitle,
 				fontsize=fontsize,
 				color='white',
 				method='caption',
 				size=(subtitle_width, None),
-				align='center',
-				stroke_color='black',
-				stroke_width=2
+				align='center'
 			).set_duration(duration).set_start(start_time)
-		except Exception as e:
-			print(f"자막 생성 실패: {e}")
-			return None
+	except Exception:
+		# ImageMagick 없거나 폰트 문제 - 조용히 스킵
+		# print(f"  ℹ️  자막 생성 스킵 (ImageMagick 미설치)")
+		return None
 	
 	if not subtitle_clip:
 		return None
@@ -175,66 +166,328 @@ def _create_single_video_clip(
 	subtitle_clips = []
 	current_time = 0
 	
+	subtitle_skipped = False
 	for subtitle_text, segment_duration in subtitle_segments:
 		if subtitle_text and segment_duration > 0:
-			subtitle_clip = _create_subtitle_clip(
-				subtitle_text=subtitle_text,
-				duration=segment_duration,
-				video_size=video_size,
-				start_time=current_time
-			)
-			if subtitle_clip:
-				subtitle_clips.append(subtitle_clip)
-				print(f"  자막 추가: '{subtitle_text[:20]}...' ({current_time:.1f}초 ~ {current_time + segment_duration:.1f}초)")
+			try:
+				subtitle_clip = _create_subtitle_clip(
+					subtitle_text=subtitle_text,
+					duration=segment_duration,
+					video_size=video_size,
+					start_time=current_time
+				)
+				if subtitle_clip:
+					subtitle_clips.append(subtitle_clip)
+					print(f"  ✅ 자막: '{subtitle_text[:25]}...' ({current_time:.1f}~{current_time + segment_duration:.1f}초)")
+				else:
+					subtitle_skipped = True
+			except Exception as e:
+				subtitle_skipped = True
 		current_time += segment_duration
+	
+	if subtitle_skipped and len(subtitle_clips) == 0:
+		print(f"  ℹ️  자막 생성 실패 (ImageMagick 미설치 - 오디오만 사용)")
 	
 	# 이미지와 자막들을 합성
 	if subtitle_clips:
-		# 모든 자막 클립을 하나의 CompositeVideoClip으로 합성
-		all_clips = [img_clip] + subtitle_clips
-		clip = CompositeVideoClip(all_clips, size=video_size).set_duration(duration)
-		print(f"✓ {len(subtitle_clips)}개 자막 세그먼트 추가 완료 (클립 {clip_index})")
+		try:
+			# 모든 자막 클립을 하나의 CompositeVideoClip으로 합성
+			all_clips = [img_clip] + subtitle_clips
+			clip = CompositeVideoClip(all_clips, size=video_size).set_duration(duration)
+			print(f"  ✅ 자막 합성 완료: {len(subtitle_clips)}개 세그먼트")
+		except Exception as e:
+			print(f"  ⚠ 자막 합성 실패, 자막 없이 진행: {str(e)[:50]}")
+			clip = img_clip
+			# 자막 클립 정리
+			for sc in subtitle_clips:
+				try:
+					sc.close()
+				except:
+					pass
 	else:
 		clip = img_clip
-		print(f"ℹ 자막 없음 (클립 {clip_index})")
 	
-	# 오디오 합치기
+	# 오디오 합치기 - 파일 경로로부터 새로 로드
 	if audio_segments:
 		audio_clips = []
+		print(f"  🎵 오디오 로드 중: {len(audio_segments)}개 파일")
+		
 		for audio_path in audio_segments:
-			if os.path.exists(audio_path):
-				audio_clips.append(AudioFileClip(audio_path))
+			if not os.path.exists(audio_path):
+				print(f"  ⚠ 파일 없음: {os.path.basename(audio_path)}")
+				continue
+			
+			try:
+				# 파일 크기 먼저 확인
+				file_size = os.path.getsize(audio_path)
+				if file_size < 100:
+					print(f"  ⚠ 파일 너무 작음 ({file_size} bytes): {os.path.basename(audio_path)}")
+					continue
+				
+				# 새로 로드 (이전에 close된 클립 재사용 안함)
+				audio_clip = AudioFileClip(audio_path)
+				
+				# 기본 검증
+				if not hasattr(audio_clip, 'reader') or audio_clip.reader is None:
+					print(f"  ⚠ 리더 None: {os.path.basename(audio_path)}")
+					try:
+						audio_clip.close()
+					except:
+						pass
+					continue
+				
+				if audio_clip.duration <= 0:
+					print(f"  ⚠ duration 0: {os.path.basename(audio_path)}")
+					try:
+						audio_clip.close()
+					except:
+						pass
+					continue
+				
+				# 프레임 읽기 테스트
+				try:
+					test_frame = audio_clip.get_frame(0)
+					if test_frame is None:
+						raise Exception("프레임 None")
+				except Exception as frame_e:
+					print(f"  ⚠ 프레임 테스트 실패: {os.path.basename(audio_path)}")
+					try:
+						audio_clip.close()
+					except:
+						pass
+					continue
+				
+				# 모든 검증 통과
+				audio_clips.append(audio_clip)
+				print(f"  ✓ 로드 완료: {os.path.basename(audio_path)} ({audio_clip.duration:.1f}초)")
+				
+			except Exception as e:
+				print(f"  ⚠ 로드 실패: {os.path.basename(audio_path)} - {str(e)[:40]}")
+				continue
 		
 		if audio_clips:
-			combined_audio = concatenate_audioclips(audio_clips)
-			# 오디오 길이에 맞춰 영상 조정
-			if combined_audio.duration > duration:
-				clip = clip.set_duration(combined_audio.duration)
-			clip = clip.set_audio(combined_audio)
-			
-			# 오디오 클립 정리
-			for ac in audio_clips:
-				ac.close()
+			try:
+				# 모든 클립이 유효한지 최종 확인
+				valid_clips = []
+				for idx, ac in enumerate(audio_clips):
+					try:
+						# reader 체크
+						if not hasattr(ac, 'reader') or ac.reader is None:
+							print(f"  ⚠ 클립 {idx+1} 리더 None, 제거")
+							ac.close()
+							continue
+						
+						# get_frame 테스트
+						test_frame = ac.get_frame(0)
+						if test_frame is None:
+							print(f"  ⚠ 클립 {idx+1} 프레임 None, 제거")
+							ac.close()
+							continue
+						
+						valid_clips.append(ac)
+					except Exception as e:
+						print(f"  ⚠ 클립 {idx+1} 검증 실패, 제거: {str(e)[:30]}")
+						try:
+							ac.close()
+						except:
+							pass
+				
+				if not valid_clips:
+					print(f"  ⚠ 유효한 오디오 클립이 없음, 무음으로 진행")
+				elif len(valid_clips) == 1:
+					# 클립이 1개만 있으면 합성 없이 바로 사용
+					single_audio = valid_clips[0]
+					try:
+						# duration 조정
+						if single_audio.duration > duration:
+							duration = single_audio.duration
+							clip = clip.set_duration(duration)
+						
+						# 오디오 설정
+						clip = clip.set_audio(single_audio)
+						print(f"  ✅ 오디오 적용: {single_audio.duration:.1f}초")
+					except Exception as e:
+						print(f"  ⚠ 오디오 적용 실패: {str(e)[:50]}, 무음으로 진행")
+						try:
+							single_audio.close()
+						except:
+							pass
+				else:
+					# 여러 클립 합성
+					print(f"  🔗 {len(valid_clips)}개 오디오 합성 중...")
+					combined_success = False
+					
+					try:
+						# concatenate 시도
+						combined_audio = concatenate_audioclips(valid_clips)
+						
+						# 합성 결과 검증 (CompositeAudioClip은 reader가 없을 수 있음)
+						# 프레임 읽기 테스트로 대체
+						try:
+							test_combined = combined_audio.get_frame(0)
+							if test_combined is None:
+								raise Exception("합성 오디오 프레임 None")
+							
+							# 성공 - 오디오 적용
+							if combined_audio.duration > duration:
+								duration = combined_audio.duration
+								clip = clip.set_duration(duration)
+							
+							clip = clip.set_audio(combined_audio)
+							print(f"  ✅ 오디오 합성 완료: {combined_audio.duration:.1f}초")
+							combined_success = True
+							
+						except Exception as verify_error:
+							print(f"  ⚠ 합성 오디오 검증 실패: {str(verify_error)[:50]}")
+							try:
+								combined_audio.close()
+							except:
+								pass
+					
+					except Exception as concat_error:
+						print(f"  ⚠ concatenate 실패: {str(concat_error)[:50]}")
+					
+					# 합성 실패 시 가장 긴 클립만 사용
+					if not combined_success and valid_clips:
+						try:
+							longest = max(valid_clips, key=lambda x: x.duration)
+							if longest.duration > duration:
+								duration = longest.duration
+								clip = clip.set_duration(duration)
+							clip = clip.set_audio(longest)
+							print(f"  ⚠ 대신 가장 긴 오디오 사용: {longest.duration:.1f}초")
+						except Exception as fallback_e:
+							print(f"  ✗ 모든 방법 실패: {str(fallback_e)[:40]}, 무음")
+						
+			except Exception as e:
+				print(f"  ⚠ 오디오 처리 실패: {str(e)[:70]}, 무음으로 진행")
+			# finally:
+			# 	# 오디오 클립은 close하지 않음 (clip.set_audio로 연결되어 있음)
+			# 	# clip이 close될 때 자동으로 정리됨
+			# 	pass
+		else:
+			print(f"  ℹ️  오디오 없음 (무음 영상)")
 	
 	# 개별 클립 저장
 	clip_output_path = os.path.join(output_dir, f"clip_{clip_index:03d}.mp4")
 	os.makedirs(output_dir, exist_ok=True)
 	
-	clip.write_videofile(
-		clip_output_path,
-		fps=24,
-		codec='libx264',
-		audio_codec='aac' if audio_segments else None,
-		preset='medium',
-		threads=4,
-		verbose=False,
-		logger=None
-	)
-	
-	# 리소스 정리
-	clip.close()
-	if 'img_clip' in locals():
-		img_clip.close()
+	try:
+		# 오디오가 있는지 확인
+		has_audio = hasattr(clip, 'audio') and clip.audio is not None
+		
+		if has_audio:
+			# 오디오 유효성 철저하게 검증
+			audio_valid = False
+			
+			try:
+				# 1. reader 확인 (있는 경우에만)
+				if hasattr(clip.audio, 'reader'):
+					if clip.audio.reader is None:
+						print(f"  ⚠ 오디오 리더 None → 제거")
+					else:
+						audio_valid = True
+				else:
+					# CompositeAudioClip 등은 reader가 없을 수 있음
+					audio_valid = True
+				
+				# 2. 프레임 읽기 테스트 (최종 검증)
+				if audio_valid:
+					try:
+						test_frame = clip.audio.get_frame(0)
+						if test_frame is None:
+							audio_valid = False
+							print(f"  ⚠ 오디오 프레임 None → 제거")
+						else:
+							# duration도 확인
+							if clip.audio.duration <= 0:
+								audio_valid = False
+								print(f"  ⚠ 오디오 duration 0 → 제거")
+					except Exception as frame_e:
+						audio_valid = False
+						print(f"  ⚠ 프레임 테스트 실패 → 제거: {str(frame_e)[:30]}")
+				
+			except Exception as check_error:
+				audio_valid = False
+				print(f"  ⚠ 오디오 검증 실패 → 제거: {str(check_error)[:30]}")
+			
+			if not audio_valid:
+				# 유효하지 않으면 오디오 제거
+				try:
+					clip = clip.without_audio()
+					has_audio = False
+				except Exception as remove_e:
+					print(f"  ⚠ 오디오 제거 실패: {str(remove_e)[:30]}")
+					has_audio = False
+		
+		if has_audio:
+			# 유효한 오디오가 있으면 오디오 포함 저장
+			try:
+				clip.write_videofile(
+					clip_output_path,
+					fps=24,
+					codec='libx264',
+					audio_codec='aac',
+					preset='medium',
+					threads=4,
+					verbose=False,
+					logger=None
+				)
+			except Exception as audio_error:
+				# 오디오 포함 저장 실패 시, 오디오 제거하고 재시도
+				print(f"  ⚠ 오디오 포함 저장 실패, 오디오 제거 후 재시도: {str(audio_error)[:70]}")
+				try:
+					clip = clip.without_audio()
+					clip.write_videofile(
+						clip_output_path,
+						fps=24,
+						codec='libx264',
+						audio_codec=None,
+						preset='medium',
+						threads=4,
+						verbose=False,
+						logger=None
+					)
+					has_audio = False
+				except Exception as retry_error:
+					raise Exception(f"오디오 제거 후에도 저장 실패: {str(retry_error)[:50]}")
+		else:
+			# 오디오가 없으면 비디오만 저장
+			clip.write_videofile(
+				clip_output_path,
+				fps=24,
+				codec='libx264',
+				audio_codec=None,
+				preset='medium',
+				threads=4,
+				verbose=False,
+				logger=None
+			)
+		
+		# 파일이 제대로 생성되었는지 확인
+		if not os.path.exists(clip_output_path):
+			raise Exception("클립 파일이 생성되지 않았습니다")
+		
+		file_size = os.path.getsize(clip_output_path)
+		if file_size < 1000:
+			raise Exception(f"클립 파일이 너무 작습니다 ({file_size} bytes)")
+		
+		audio_status = "오디오 포함" if has_audio else "무음"
+		print(f"  ✓ 클립 저장 완료: {os.path.basename(clip_output_path)} ({file_size / 1024:.1f} KB, {audio_status})")
+		
+	except Exception as e:
+		raise Exception(f"클립 저장 실패: {str(e)}")
+	finally:
+		# 리소스 정리
+		try:
+			clip.close()
+		except:
+			pass
+		if 'img_clip' in locals():
+			try:
+				img_clip.close()
+			except:
+				pass
 	
 	return clip_output_path
 
@@ -336,20 +589,78 @@ def compose_video(
 								voice=voice
 							)
 							
-							if os.path.exists(seg_output_path):
-								# 오디오 길이 측정
-								audio_clip = AudioFileClip(seg_output_path)
-								segment_duration = audio_clip.duration
-								audio_clip.close()
+							if not os.path.exists(seg_output_path):
+								print(f"  ⚠ TTS 파일 생성 안됨 (대사 {seg_idx+1})")
+								continue
+							
+							# 파일 크기 확인
+							file_size = os.path.getsize(seg_output_path)
+							if file_size < 100:
+								print(f"  ⚠ TTS 파일 너무 작음 ({file_size} bytes, 대사 {seg_idx+1})")
+								os.remove(seg_output_path)
+								continue
+							
+							# 오디오 길이 측정 (간단하게)
+							try:
+								# ffprobe로 duration 확인 (더 안정적)
+								from moviepy.video.io.ffmpeg_reader import ffmpeg_parse_infos
+								try:
+									infos = ffmpeg_parse_infos(seg_output_path)
+									segment_duration = infos.get('duration', 0)
+									
+									if segment_duration <= 0:
+										print(f"  ⚠ 오디오 duration 0 (대사 {seg_idx+1}), 파일 삭제")
+										os.remove(seg_output_path)
+										continue
+									
+									# 자막 세그먼트 추가 (파일 경로만 저장, 나중에 로드)
+									subtitle_segments.append((subtitle_text, segment_duration))
+									audio_segment_paths.append(seg_output_path)
+									generated_audio_paths.append(seg_output_path)
+									
+									print(f"  ✓ 대사 {seg_idx+1}: '{text[:30]}...' ({segment_duration:.1f}초, {file_size/1024:.1f}KB)")
+									
+								except Exception as ffprobe_error:
+									# ffprobe 실패 시 AudioFileClip으로 폴백
+									test_clip = AudioFileClip(seg_output_path)
+									
+									# reader 확인
+									if test_clip.reader is None:
+										print(f"  ⚠ 오디오 리더 None (대사 {seg_idx+1}), 파일 삭제")
+										test_clip.close()
+										os.remove(seg_output_path)
+										continue
+									
+									# duration 확인
+									if test_clip.duration <= 0:
+										print(f"  ⚠ 오디오 duration 0 (대사 {seg_idx+1}), 파일 삭제")
+										test_clip.close()
+										os.remove(seg_output_path)
+										continue
+									
+									segment_duration = test_clip.duration
+									test_clip.close()
+									
+									# 자막 세그먼트 추가
+									subtitle_segments.append((subtitle_text, segment_duration))
+									audio_segment_paths.append(seg_output_path)
+									generated_audio_paths.append(seg_output_path)
+									
+									print(f"  ✓ 대사 {seg_idx+1}: '{text[:30]}...' ({segment_duration:.1f}초, {file_size/1024:.1f}KB)")
 								
-								# 자막 세그먼트 추가
-								subtitle_segments.append((subtitle_text, segment_duration))
-								audio_segment_paths.append(seg_output_path)
-								generated_audio_paths.append(seg_output_path)
+							except Exception as e:
+								print(f"  ⚠ 오디오 검증 실패 (대사 {seg_idx+1}): {str(e)[:50]}")
+								if os.path.exists(seg_output_path):
+									os.remove(seg_output_path)
+								continue
 								
-								print(f"  대사 {seg_idx+1}: '{text[:30]}...' ({segment_duration:.1f}초)")
 						except Exception as e:
-							print(f"  TTS 생성 실패 (대사 {seg_idx+1}): {e}")
+							print(f"  ✗ TTS 생성 실패 (대사 {seg_idx+1}): {str(e)[:50]}")
+							if os.path.exists(seg_output_path):
+								try:
+									os.remove(seg_output_path)
+								except:
+									pass
 							continue
 			
 			# 전체 duration을 오디오 길이 합으로 조정
@@ -363,11 +674,10 @@ def compose_video(
 		
 		# 개별 영상 클립 생성
 		try:
-			print(f"\n=== 클립 {i+1}/{len(image_paths)} 생성 시작 ===")
-			print(f"이미지: {os.path.basename(image_path)}")
-			print(f"자막 세그먼트: {len(subtitle_segments)}개")
-			print(f"오디오 세그먼트: {len(audio_segment_paths)}개")
-			print(f"전체 길이: {duration:.1f}초")
+			print(f"\n{'='*60}")
+			print(f"🎬 클립 {i+1}/{len(image_paths)}: {os.path.basename(image_path)}")
+			print(f"{'='*60}")
+			print(f"   💬 자막: {len(subtitle_segments)}개 | 🎵 오디오: {len(audio_segment_paths)}개 | ⏱️  {duration:.1f}초")
 			
 			clip_path = _create_single_video_clip(
 				image_path=image_path,
@@ -378,44 +688,103 @@ def compose_video(
 				clip_index=i
 			)
 			clip_paths.append(clip_path)
-			print(f"✓ 클립 생성 완료: {os.path.basename(clip_path)}")
+			print(f"\n✅ 클립 {i+1} 완료\n")
 		except Exception as e:
-			print(f"✗ 클립 생성 실패 (이미지 {i+1}): {e}")
-			import traceback
-			traceback.print_exc()
+			print(f"\n❌ 클립 {i+1} 실패: {str(e)[:80]}")
+			print(f"⏩ 다음 클립으로 계속...\n")
 			continue
 	
 	if not clip_paths:
-		raise ValueError("생성할 영상 클립이 없습니다.")
+		raise ValueError("생성할 영상 클립이 없습니다. 모든 클립 생성에 실패했습니다.")
+	
+	print(f"\n{'='*60}")
+	print(f"🎞️  최종 영상 합성")
+	print(f"{'='*60}")
+	print(f"✅ 생성 성공: {len(clip_paths)}개 클립")
+	print(f"❌ 생성 실패: {len(image_paths) - len(clip_paths)}개 클립")
+	print(f"{'='*60}\n")
 	
 	# 모든 클립 로드 및 합치기
 	from moviepy.editor import VideoFileClip
-	video_clips = [VideoFileClip(path) for path in clip_paths if os.path.exists(path)]
+	video_clips = []
+	
+	for idx, path in enumerate(clip_paths):
+		if os.path.exists(path):
+			try:
+				clip = VideoFileClip(path)
+				if clip.duration > 0:
+					video_clips.append(clip)
+					print(f"  ✓ 클립 {idx+1} 로드: {clip.duration:.1f}초")
+				else:
+					print(f"  ⚠ 클립 {idx+1} 스킵: duration이 0")
+					clip.close()
+			except Exception as e:
+				print(f"  ✗ 클립 {idx+1} 로드 실패: {str(e)[:100]}")
+				continue
+		else:
+			print(f"  ✗ 클립 {idx+1} 파일 없음: {path}")
 	
 	if not video_clips:
-		raise ValueError("로드할 영상 클립이 없습니다.")
+		raise ValueError("로드할 영상 클립이 없습니다. 모든 클립이 손상되었거나 누락되었습니다.")
+	
+	print(f"\n총 {len(video_clips)}개 클립을 합칩니다...")
 	
 	# 모든 클립 합치기
-	final_clip = concatenate_videoclips(video_clips, method="compose")
+	try:
+		final_clip = concatenate_videoclips(video_clips, method="compose")
+		total_duration = final_clip.duration
+		print(f"✓ 클립 합성 완료: {total_duration:.1f}초")
+	except Exception as e:
+		# 리소스 정리
+		for clip in video_clips:
+			try:
+				clip.close()
+			except:
+				pass
+		raise Exception(f"클립 합성 실패: {str(e)}")
 	
 	# 최종 영상 저장
-	final_clip.write_videofile(
-		output_path,
-		fps=fps,
-		codec='libx264',
-		audio_codec='aac',
-		preset='medium',
-		threads=4
-	)
-	
-	# 리소스 정리
-	final_clip.close()
-	for clip in video_clips:
-		clip.close()
+	print(f"\n💾 최종 영상 저장 중...")
+	print(f"   경로: {output_path}")
+	print(f"   길이: {total_duration:.1f}초")
+	print(f"   FPS: {fps}")
+	try:
+		final_clip.write_videofile(
+			output_path,
+			fps=fps,
+			codec='libx264',
+			audio_codec='aac',
+			preset='medium',
+			threads=4,
+			verbose=False,
+			logger=None
+		)
+		file_size = os.path.getsize(output_path) / (1024 * 1024)  # MB
+		print(f"\n{'='*60}")
+		print(f"🎉 영상 생성 완료!")
+		print(f"{'='*60}")
+		print(f"📁 파일: {os.path.basename(output_path)}")
+		print(f"📏 크기: {file_size:.1f} MB")
+		print(f"⏱️  길이: {total_duration:.1f}초")
+		print(f"🎬 클립: {len(video_clips)}개")
+		print(f"{'='*60}\n")
+	except Exception as e:
+		raise Exception(f"영상 저장 실패: {str(e)}")
+	finally:
+		# 리소스 정리
+		try:
+			final_clip.close()
+		except:
+			pass
+		for clip in video_clips:
+			try:
+				clip.close()
+			except:
+				pass
 	
 	return {
 		"output_path": output_path,
 		"clip_paths": clip_paths,
 		"audio_paths": generated_audio_paths,
-		"total_duration": sum(clip.duration for clip in video_clips)
+		"total_duration": total_duration
 	}

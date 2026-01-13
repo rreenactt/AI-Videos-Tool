@@ -390,25 +390,48 @@ export default function Project(){
 
             {cuts.length>0 && (
               <div className="card project-card" style={{marginTop:12}}>
-                <div className="section-title">컷별 요소 ({cuts.length}개)</div>
+                <div className="section-title">
+                  컷별 요소 ({cuts.length}개)
+                  <span style={{marginLeft:8,fontSize:12,fontWeight:400,color:'#22c55e'}}>
+                    ✓ 나레이션: {cuts.filter(c => c.dialogues?.some(d => d.speaker?.includes('나레이션'))).length}/{cuts.length}
+                  </span>
+                </div>
                 <div className="list">
-                  {cuts.map((cut,i)=> (
-                    <div className="item" key={i} style={{marginBottom:12}}>
-                      <div style={{fontWeight:600,marginBottom:4}}>컷 {cut.cut_id}: {cut.cut_name}</div>
-                      <div className="help" style={{marginBottom:4}}>구도: {cut.composition}</div>
-                      <div className="help" style={{marginBottom:4}}>배경: {cut.background}</div>
-                      {cut.characters.length>0 && <div className="help" style={{marginBottom:4}}>인물: {cut.characters.join(', ')}</div>}
-                      {cut.dialogues.length>0 && (
-                        <div style={{marginTop:6}}>
-                          <div className="help">대사:</div>
-                          {cut.dialogues.map((d,j)=> (
-                            <div key={j} style={{marginLeft:8,fontSize:12}}>• {d.speaker}: "{d.text}"</div>
-                          ))}
+                  {cuts.map((cut,i)=> {
+                    const hasNarration = cut.dialogues?.some(d => d.speaker?.includes('나레이션'))
+                    return (
+                      <div className="item" key={i} style={{marginBottom:12,borderLeft:hasNarration?'3px solid #22c55e':'3px solid #ef4444',paddingLeft:12}}>
+                        <div style={{fontWeight:600,marginBottom:4}}>
+                          컷 {cut.cut_id}: {cut.cut_name}
+                          {!hasNarration && <span style={{marginLeft:8,fontSize:11,color:'#ef4444'}}>⚠ 나레이션 없음</span>}
                         </div>
-                      )}
-                      {cut.actions.length>0 && <div className="help" style={{marginTop:4}}>액션: {cut.actions.join(', ')}</div>}
-                    </div>
-                  ))}
+                        <div className="help" style={{marginBottom:4}}>구도: {cut.composition}</div>
+                        <div className="help" style={{marginBottom:4}}>배경: {cut.background}</div>
+                        {cut.characters.length>0 && <div className="help" style={{marginBottom:4}}>인물: {cut.characters.join(', ')}</div>}
+                        {cut.dialogues.length>0 && (
+                          <div style={{marginTop:6}}>
+                            <div className="help">대사/나레이션:</div>
+                            {cut.dialogues.map((d,j)=> {
+                              const isNarration = d.speaker?.includes('나레이션')
+                              return (
+                                <div key={j} style={{
+                                  marginLeft:8,
+                                  fontSize:12,
+                                  background: isNarration ? '#f0fdf4' : 'transparent',
+                                  padding: isNarration ? '4px 8px' : '0',
+                                  borderRadius: isNarration ? '4px' : '0',
+                                  marginBottom:4
+                                }}>
+                                  • <strong style={{color: isNarration ? '#22c55e' : '#2563eb'}}>{d.speaker}</strong>: "{d.text}"
+                                </div>
+                              )
+                            })}
+                          </div>
+                        )}
+                        {cut.actions.length>0 && <div className="help" style={{marginTop:4}}>액션: {cut.actions.join(', ')}</div>}
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             )}

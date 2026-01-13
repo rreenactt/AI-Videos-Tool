@@ -3,290 +3,310 @@
   "story": "천재적인 재능과 치명적인 실수\n리 신은 어릴 적부터 아이오니아의 쇼진 사원에서 촉망받는 제자였습니다. 그는 남들보다 훨씬 빠르게 마법 실력을 키웠고, 자신의 재능에 자만하게 됩니다.\n\n결국 그는 금기시되던 '소환 마법'에 손을 댔고, 역병 정글의 괴수를 소환하려다 실수로 한 어린아이를 소환하게 됩니다. 하지만 소환된 아이는 형체를 유지하지 못하고 고통 속에 죽어갔고, 이 사건으로 마을 전체가 파괴되는 비극이 발생합니다.\n\n2. 방랑과 속죄의 길\n자신의 오만이 불러온 비극에 절망한 리 신은 사원을 떠나 평생을 속죄하며 살기로 결심합니다. 그는 수년 동안 전 세계를 방랑하며 자신의 실수를 되새겼고, 무력이 아닌 정신 수양에 매진했습니다.\n\n3. 아이오니아 침공과 위대한 희생\n그러던 중, 녹서스 군대가 아이오니아를 침공했습니다. 리 신은 고통받는 동포들을 외면할 수 없었습니다. 그는 녹서스의 점령에 항의하기 위해 **자신의 몸에 불을 붙여 공양(Self-immolation)**하는 극단적인 결단을 내립니다.\n\n\"내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.\"\n\n그는 불길 속에서도 비명 하나 지르지 않고 버텼습니다. 이 사건으로 그는 시력을 영원히 잃게 되었지만, 동시에 내면의 **'용의 정신'**을 깨우게 됩니다. 그의 희생은 아이오니아인들에게 큰 용기를 주었고, 결국 녹서스군을 몰아내는 기폭제가 되었습니다.\n\n4. 용의 눈을 뜬 수도승\n현재 리 신은 시각 대신 모든 감각이 초월적으로 발달한 상태입니다. 그는 단순히 눈이 먼 것이 아니라, 세상의 흐름과 기운을 읽는 능력을 갖게 되었습니다. 이제 그는 쇼진 사원의 마스터로서, 자신의 힘을 과시하는 대신 아이오니아의 균형을 지키는 진정한 수호자로 살아가고 있습니다.",
   "min_shots_per_scene": 55,
   "prompts": [
-    "리 신의 어린 시절, 리 신이 사원에서 마법을 배우고 있는 모습, 카메라는 그를 정면에서 비추며 집중.. characters: 리 신. background: 사원 내부, 마법의 빛이 반짝이는 분위기, 조용한 사원에서 마법의 소리가 들린다.. dialogues: 나레이션: 리 신은 아이오니아의 쇼진 사원에서 어린 시절부터 뛰어난 재능을 보였습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "자만에 빠진 리 신, 리 신이 다른 제자들 앞에서 자신감 넘치는 표정으로 마법을 시연하는 모습.. characters: 리 신, 다른 제자들. background: 사원 안, 다른 제자들이 놀라워하는 표정, 긴장감이 감도는 분위기.. dialogues: 나레이션: 그의 재능은 남다른 것이었고, 그는 그로 인해 자만하게 되었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "금기시된 마법, 리 신이 혼자서 금기된 소환 마법을 연구하는 모습, 카메라는 그의 손과 마법서에 초점을 맞춤.. characters: 리 신. background: 어두운 방, 마법서의 빛이 리 신의 얼굴을 비추며 긴장감을 더한다.. dialogues: 나레이션: 그는 금기시된 소환 마법에 손을 대기로 결심합니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "소환의 순간, 리 신이 마법을 시전하는 장면, 마법의 에너지가 주변을 감싸는 모습.. characters: 리 신. background: 마법의 빛이 번쩍이며 긴장감이 감도는 순간.. dialogues: 나레이션: 하지만 그의 실수로 소환된 것은 어린아이였습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "비극의 시작, 소환된 아이가 형체를 유지하지 못하고 고통스러워하는 모습, 리 신의 표정이 충격으로 변함.. characters: 리 신, 소환된 아이. background: 어두운 정글, 비극적인 분위기, 아이의 비명 소리가 들린다.. dialogues: 나레이션: 소환된 아이는 고통 속에 사라져갔고, 이로 인해 마을은 파괴되었습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "리 신의 절망, 리 신이 무너진 마을을 바라보며 절망하는 모습, 카메라는 그의 뒷모습을 비춘다.. characters: 리 신. background: 파괴된 마을, 슬픔이 가득한 분위기.. dialogues: 나레이션: 자신의 오만이 불러온 비극에 리 신은 절망했습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "방랑의 시작, 리 신이 사원을 떠나는 모습, 카메라는 그의 뒷모습을 따라간다.. characters: 리 신. background: 사원의 출구, 고요한 분위기, 바람 소리가 들린다.. dialogues: 나레이션: 그는 평생을 속죄하며 살기로 결심하고 사원을 떠났습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "정신 수양, 리 신이 자연 속에서 명상하는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 자연 속, 새소리와 바람 소리가 들리는 평화로운 분위기.. dialogues: 나레이션: 수년 동안 그는 자신의 실수를 되새기며 정신 수양에 매진했습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "아이오니아 침공, 녹서스 군대가 아이오니아를 침공하는 장면, 카메라는 전투의 혼란을 비춘다.. characters: 녹서스 군대. background: 전투의 소음, 불과 연기가 가득한 혼란스러운 분위기.. dialogues: 나레이션: 그러던 중, 녹서스 군대가 아이오니아를 침공했습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "리 신의 결단, 리 신이 결연한 표정으로 불길을 바라보는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 전투의 혼란 속, 긴장감이 감도는 분위기.. dialogues: 나레이션: 리 신은 고통받는 동포들을 외면할 수 없었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "자신의 몸에 불을 붙이다, 리 신이 자신의 몸에 불을 붙이는 장면, 카메라는 그의 결연한 표정을 비춘다.. characters: 리 신. background: 불길이 타오르는 장면, 강렬한 분위기.. dialogues: 리 신: 내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "희생의 순간, 리 신이 불길 속에서도 고통을 참으며 버티는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 불길이 타오르는 장면, 극적인 분위기.. dialogues: 나레이션: 그는 비명 하나 지르지 않고 버텼습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "시력을 잃은 리 신, 리 신이 불길 속에서 시력을 잃는 장면, 카메라는 그의 눈을 비춘다.. characters: 리 신. background: 불길이 사라지는 장면, 조용한 분위기.. dialogues: 나레이션: 이 사건으로 그는 시력을 영원히 잃게 되었지만, 동시에 내면의 '용의 정신'을 깨우게 됩니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "용기의 상징, 리 신의 희생을 지켜본 아이오니아인들의 모습, 카메라는 그들의 표정을 비춘다.. characters: 리 신, 아이오니아인들. background: 아이오니아인들이 감동받은 모습, 희망의 분위기.. dialogues: 나레이션: 그의 희생은 아이오니아인들에게 큰 용기를 주었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "리 신의 새로운 시작, 리 신이 새로운 힘을 얻은 모습, 카메라는 그의 얼굴을 비춘다.. characters: 리 신. background: 빛나는 자연, 평화로운 분위기.. dialogues: 나레이션: 이제 그는 시각 대신 모든 감각이 초월적으로 발달한 상태입니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-    "진정한 수호자로서의 삶, 리 신이 쇼진 사원의 마스터로서 아이오니아를 지키는 모습, 카메라는 그의 뒷모습을 비춘다.. characters: 리 신. background: 사원의 평화로운 풍경, 조용한 분위기.. dialogues: 나레이션: 이제 그는 자신의 힘을 과시하는 대신 아이오니아의 균형을 지키는 진정한 수호자로 살아가고 있습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography"
+    "wide shot of the shrine, young Lee Sin practicing magic in the center, surrounded by other students, CONSISTENT: young Lee Sin, other students, casting spells, concentrating, bright and serene shrine, sunlight streaming through trees, peaceful atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of Lee Sin's face, confident expression, eyes shining with ambition, CONSISTENT: young Lee Sin, smirking, looking around with pride, soft focus on the shrine, warm lighting, sense of ambition in the air, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "over-the-shoulder shot of Lee Sin looking at an ancient book, pages glowing ominously, CONSISTENT: young Lee Sin, flipping through the book, frowning in concentration, dimly lit library, shadows dancing on the walls, an air of mystery, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of a dark forest clearing, Lee Sin standing in the center with a summoning circle, tension in the air, CONSISTENT: young Lee Sin, chanting incantations, gesturing dramatically, dark forest, eerie mist swirling around, sense of foreboding, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of the summoned child, face contorted in pain, fading away, summoned child, screaming, fading away, dark and chaotic atmosphere, shadows closing in, haunting silence, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of the village in chaos, buildings burning, villagers fleeing, CONSISTENT: villagers, CONSISTENT: young Lee Sin, running, screaming, smoke and fire engulfing the village, panic and despair in the air, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of Lee Sin's face, filled with horror and regret, tears in his eyes, CONSISTENT: young Lee Sin, clenching fists, looking down, darkened forest, shadows creeping in, heavy atmosphere of guilt, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of Lee Sin walking through various landscapes, from mountains to deserts, CONSISTENT: young Lee Sin, walking, reflecting, varied landscapes, changing seasons, sense of solitude, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of Lee Sin meditating in a serene environment, eyes closed, CONSISTENT: young Lee Sin, meditating, breathing deeply, peaceful mountain top, gentle breeze, calming atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of Noxian army marching towards Ionia, dark clouds overhead, Noxian soldiers, marching, shouting orders, ominous sky, tension in the air, sense of impending doom, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of Lee Sin's determined face, fire reflecting in his eyes, CONSISTENT: young Lee Sin, clenching fists, looking resolute, darkened battlefield, tension rising, sense of sacrifice, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of Lee Sin engulfed in flames, standing tall amidst the fire, CONSISTENT: young Lee Sin, standing firm, embracing the flames, flames roaring, smoke rising, dramatic and intense atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of Lee Sin's face, eyes closed, a serene expression as he transcends pain, CONSISTENT: young Lee Sin, breathing deeply, relaxing, glowing light surrounding him, sense of peace amidst chaos, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of villagers watching Lee Sin's sacrifice, expressions of awe and determination, CONSISTENT: villagers, CONSISTENT: young Lee Sin, gathering, cheering, crowd gathered, flames in the background, atmosphere of hope, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of villagers rallying together, pushing back Noxian soldiers, CONSISTENT: villagers, Noxian soldiers, fighting, rallying, battlefield, sounds of clashing swords, atmosphere of triumph, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of Lee Sin, now a master, meditating in the shrine, aura of wisdom around him, Lee Sin, meditating, breathing calmly, bright shrine, peaceful ambiance, sense of tranquility, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces"
   ],
   "cuts": [
     {
       "cut_id": 1,
-      "cut_name": "리 신의 어린 시절",
-      "composition": "리 신이 사원에서 마법을 배우고 있는 모습, 카메라는 그를 정면에서 비추며 집중.",
+      "cut_name": "Young Lee Sin at the Shrine",
+      "composition": "wide shot of the shrine, young Lee Sin practicing magic in the center, surrounded by other students",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "리 신은 아이오니아의 쇼진 사원에서 어린 시절부터 뛰어난 재능을 보였습니다.",
+          "text": "어린 리 신은 아이오니아의 쇼진 사원에서 마법을 연습하고 있습니다. 그의 재능이 빛나는 순간입니다.",
           "emotion": null
         }
       ],
-      "background": "사원 내부, 마법의 빛이 반짝이는 분위기, 조용한 사원에서 마법의 소리가 들린다.",
+      "background": "bright and serene shrine, sunlight streaming through trees, peaceful atmosphere",
       "actions": [
-        "리 신이 마법을 시도하며 집중하는 모습."
+        "casting spells",
+        "concentrating",
+        "smiling with confidence"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin",
+        "other students"
       ],
       "duration": 3.142857142857143
     },
     {
       "cut_id": 2,
-      "cut_name": "자만에 빠진 리 신",
-      "composition": "리 신이 다른 제자들 앞에서 자신감 넘치는 표정으로 마법을 시연하는 모습.",
+      "cut_name": "Lee Sin's Pride",
+      "composition": "close-up of Lee Sin's face, confident expression, eyes shining with ambition",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "그의 재능은 남다른 것이었고, 그는 그로 인해 자만하게 되었습니다.",
+          "text": "리 신은 자신의 재능에 자만하게 됩니다. 그는 더 큰 힘을 원합니다.",
           "emotion": null
         }
       ],
-      "background": "사원 안, 다른 제자들이 놀라워하는 표정, 긴장감이 감도는 분위기.",
+      "background": "soft focus on the shrine, warm lighting, sense of ambition in the air",
       "actions": [
-        "리 신이 마법을 성공적으로 시전하며 웃는 모습."
+        "smirking",
+        "looking around with pride"
       ],
       "characters": [
-        "리 신",
-        "다른 제자들"
+        "young Lee Sin"
       ],
-      "duration": 3.142857142857143
+      "duration": 2.75
     },
     {
       "cut_id": 3,
-      "cut_name": "금기시된 마법",
-      "composition": "리 신이 혼자서 금기된 소환 마법을 연구하는 모습, 카메라는 그의 손과 마법서에 초점을 맞춤.",
+      "cut_name": "Forbidden Magic",
+      "composition": "over-the-shoulder shot of Lee Sin looking at an ancient book, pages glowing ominously",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "그는 금기시된 소환 마법에 손을 대기로 결심합니다.",
+          "text": "그는 금기시된 소환 마법을 발견합니다. 호기심이 그를 자극합니다.",
           "emotion": null
         }
       ],
-      "background": "어두운 방, 마법서의 빛이 리 신의 얼굴을 비추며 긴장감을 더한다.",
+      "background": "dimly lit library, shadows dancing on the walls, an air of mystery",
       "actions": [
-        "리 신이 마법서를 펼치며 집중하는 모습."
+        "flipping through the book",
+        "frowning in concentration"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
       "duration": 3.142857142857143
     },
     {
       "cut_id": 4,
-      "cut_name": "소환의 순간",
-      "composition": "리 신이 마법을 시전하는 장면, 마법의 에너지가 주변을 감싸는 모습.",
+      "cut_name": "The Summoning Mistake",
+      "composition": "wide shot of a dark forest clearing, Lee Sin standing in the center with a summoning circle, tension in the air",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "하지만 그의 실수로 소환된 것은 어린아이였습니다.",
+          "text": "리 신은 소환 마법을 시도합니다. 그러나 그의 실수로 어린아이가 소환됩니다.",
           "emotion": null
         }
       ],
-      "background": "마법의 빛이 번쩍이며 긴장감이 감도는 순간.",
+      "background": "dark forest, eerie mist swirling around, sense of foreboding",
       "actions": [
-        "리 신이 마법을 외치며 손을 흔드는 모습."
+        "chanting incantations",
+        "gesturing dramatically"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
       "duration": 3.9285714285714284
     },
     {
       "cut_id": 5,
-      "cut_name": "비극의 시작",
-      "composition": "소환된 아이가 형체를 유지하지 못하고 고통스러워하는 모습, 리 신의 표정이 충격으로 변함.",
+      "cut_name": "The Tragic Outcome",
+      "composition": "close-up of the summoned child, face contorted in pain, fading away",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "소환된 아이는 고통 속에 사라져갔고, 이로 인해 마을은 파괴되었습니다.",
+          "text": "소환된 아이는 형체를 유지하지 못하고 고통 속에 죽어갑니다. 비극이 시작됩니다.",
           "emotion": null
         }
       ],
-      "background": "어두운 정글, 비극적인 분위기, 아이의 비명 소리가 들린다.",
+      "background": "dark and chaotic atmosphere, shadows closing in, haunting silence",
       "actions": [
-        "리 신이 충격에 빠져 손을 뻗는 모습."
+        "screaming",
+        "fading away"
       ],
       "characters": [
-        "리 신",
-        "소환된 아이"
-      ],
-      "duration": 3.9285714285714284
-    },
-    {
-      "cut_id": 6,
-      "cut_name": "리 신의 절망",
-      "composition": "리 신이 무너진 마을을 바라보며 절망하는 모습, 카메라는 그의 뒷모습을 비춘다.",
-      "dialogues": [
-        {
-          "speaker": "나레이션",
-          "text": "자신의 오만이 불러온 비극에 리 신은 절망했습니다.",
-          "emotion": null
-        }
-      ],
-      "background": "파괴된 마을, 슬픔이 가득한 분위기.",
-      "actions": [
-        "리 신이 무릎을 꿇고 하늘을 바라보는 모습."
-      ],
-      "characters": [
-        "리 신"
+        "summoned child"
       ],
       "duration": 3.142857142857143
     },
     {
-      "cut_id": 7,
-      "cut_name": "방랑의 시작",
-      "composition": "리 신이 사원을 떠나는 모습, 카메라는 그의 뒷모습을 따라간다.",
+      "cut_id": 6,
+      "cut_name": "Destruction of the Village",
+      "composition": "wide shot of the village in chaos, buildings burning, villagers fleeing",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "그는 평생을 속죄하며 살기로 결심하고 사원을 떠났습니다.",
+          "text": "마을 전체가 파괴되는 비극이 발생합니다. 리 신의 오만이 가져온 결과입니다.",
           "emotion": null
         }
       ],
-      "background": "사원의 출구, 고요한 분위기, 바람 소리가 들린다.",
+      "background": "smoke and fire engulfing the village, panic and despair in the air",
       "actions": [
-        "리 신이 사원을 떠나는 모습."
+        "running",
+        "screaming",
+        "crying"
       ],
       "characters": [
-        "리 신"
+        "villagers",
+        "young Lee Sin"
+      ],
+      "duration": 3.9285714285714284
+    },
+    {
+      "cut_id": 7,
+      "cut_name": "Lee Sin's Despair",
+      "composition": "close-up of Lee Sin's face, filled with horror and regret, tears in his eyes",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "리 신은 자신의 오만이 불러온 비극에 절망합니다. 그는 사원을 떠나기로 결심합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "darkened forest, shadows creeping in, heavy atmosphere of guilt",
+      "actions": [
+        "clenching fists",
+        "looking down"
+      ],
+      "characters": [
+        "young Lee Sin"
       ],
       "duration": 3.142857142857143
     },
     {
       "cut_id": 8,
-      "cut_name": "정신 수양",
-      "composition": "리 신이 자연 속에서 명상하는 모습, 카메라는 그의 얼굴을 클로즈업.",
+      "cut_name": "Wandering the World",
+      "composition": "wide shot of Lee Sin walking through various landscapes, from mountains to deserts",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "수년 동안 그는 자신의 실수를 되새기며 정신 수양에 매진했습니다.",
+          "text": "그는 수년 동안 전 세계를 방랑하며 자신의 실수를 되새깁니다.",
           "emotion": null
         }
       ],
-      "background": "자연 속, 새소리와 바람 소리가 들리는 평화로운 분위기.",
+      "background": "varied landscapes, changing seasons, sense of solitude",
       "actions": [
-        "리 신이 눈을 감고 명상하는 모습."
+        "walking",
+        "reflecting"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
-      "duration": 3.142857142857143
+      "duration": 3.9285714285714284
     },
     {
       "cut_id": 9,
-      "cut_name": "아이오니아 침공",
-      "composition": "녹서스 군대가 아이오니아를 침공하는 장면, 카메라는 전투의 혼란을 비춘다.",
+      "cut_name": "Mental Training",
+      "composition": "medium shot of Lee Sin meditating in a serene environment, eyes closed",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "그러던 중, 녹서스 군대가 아이오니아를 침공했습니다.",
+          "text": "리 신은 무력이 아닌 정신 수양에 매진합니다. 내면의 힘을 키우고 있습니다.",
           "emotion": null
         }
       ],
-      "background": "전투의 소음, 불과 연기가 가득한 혼란스러운 분위기.",
+      "background": "peaceful mountain top, gentle breeze, calming atmosphere",
       "actions": [
-        "군인들이 전투를 벌이는 모습."
+        "meditating",
+        "breathing deeply"
       ],
       "characters": [
-        "녹서스 군대"
-      ],
-      "duration": 3.9285714285714284
-    },
-    {
-      "cut_id": 10,
-      "cut_name": "리 신의 결단",
-      "composition": "리 신이 결연한 표정으로 불길을 바라보는 모습, 카메라는 그의 얼굴을 클로즈업.",
-      "dialogues": [
-        {
-          "speaker": "나레이션",
-          "text": "리 신은 고통받는 동포들을 외면할 수 없었습니다.",
-          "emotion": null
-        }
-      ],
-      "background": "전투의 혼란 속, 긴장감이 감도는 분위기.",
-      "actions": [
-        "리 신이 결단을 내리는 모습."
-      ],
-      "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
       "duration": 3.142857142857143
     },
     {
-      "cut_id": 11,
-      "cut_name": "자신의 몸에 불을 붙이다",
-      "composition": "리 신이 자신의 몸에 불을 붙이는 장면, 카메라는 그의 결연한 표정을 비춘다.",
+      "cut_id": 10,
+      "cut_name": "Noxian Invasion",
+      "composition": "wide shot of Noxian army marching towards Ionia, dark clouds overhead",
       "dialogues": [
         {
-          "speaker": "리 신",
-          "text": "내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.",
+          "speaker": "나레이션",
+          "text": "그때, 녹서스 군대가 아이오니아를 침공합니다. 리 신은 고통받는 동포들을 외면할 수 없습니다.",
           "emotion": null
         }
       ],
-      "background": "불길이 타오르는 장면, 강렬한 분위기.",
+      "background": "ominous sky, tension in the air, sense of impending doom",
       "actions": [
-        "리 신이 불길 속으로 뛰어드는 모습."
+        "marching",
+        "shouting orders"
       ],
       "characters": [
-        "리 신"
+        "Noxian soldiers"
       ],
       "duration": 3.9285714285714284
+    },
+    {
+      "cut_id": 11,
+      "cut_name": "Lee Sin's Decision",
+      "composition": "close-up of Lee Sin's determined face, fire reflecting in his eyes",
+      "dialogues": [
+        {
+          "speaker": "나레이션",
+          "text": "리 신은 극단적인 결단을 내립니다. 자신의 몸에 불을 붙여 공양하기로 합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "darkened battlefield, tension rising, sense of sacrifice",
+      "actions": [
+        "clenching fists",
+        "looking resolute"
+      ],
+      "characters": [
+        "young Lee Sin"
+      ],
+      "duration": 3.142857142857143
     },
     {
       "cut_id": 12,
-      "cut_name": "희생의 순간",
-      "composition": "리 신이 불길 속에서도 고통을 참으며 버티는 모습, 카메라는 그의 얼굴을 클로즈업.",
+      "cut_name": "Self-Immolation",
+      "composition": "wide shot of Lee Sin engulfed in flames, standing tall amidst the fire",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "그는 비명 하나 지르지 않고 버텼습니다.",
+          "text": "Self-Immolation young Lee Sin가 등장합니다 서 있습니다.",
           "emotion": null
+        },
+        {
+          "speaker": "리 신",
+          "text": "내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.",
+          "emotion": "determined"
         }
       ],
-      "background": "불길이 타오르는 장면, 극적인 분위기.",
+      "background": "flames roaring, smoke rising, dramatic and intense atmosphere",
       "actions": [
-        "리 신이 불길 속에서 고통을 참는 모습."
+        "standing firm",
+        "embracing the flames"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
-      "duration": 3.9285714285714284
+      "duration": 4.321428571428571
     },
     {
       "cut_id": 13,
-      "cut_name": "시력을 잃은 리 신",
-      "composition": "리 신이 불길 속에서 시력을 잃는 장면, 카메라는 그의 눈을 비춘다.",
+      "cut_name": "The Awakening",
+      "composition": "close-up of Lee Sin's face, eyes closed, a serene expression as he transcends pain",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "이 사건으로 그는 시력을 영원히 잃게 되었지만, 동시에 내면의 '용의 정신'을 깨우게 됩니다.",
+          "text": "그는 불길 속에서도 비명 하나 지르지 않고 버텼습니다. 내면의 '용의 정신'이 깨어납니다.",
           "emotion": null
         }
       ],
-      "background": "불길이 사라지는 장면, 조용한 분위기.",
+      "background": "glowing light surrounding him, sense of peace amidst chaos",
       "actions": [
-        "리 신이 눈을 감고 있는 모습."
+        "breathing deeply",
+        "relaxing"
       ],
       "characters": [
-        "리 신"
+        "young Lee Sin"
       ],
       "duration": 3.142857142857143
     },
     {
       "cut_id": 14,
-      "cut_name": "용기의 상징",
-      "composition": "리 신의 희생을 지켜본 아이오니아인들의 모습, 카메라는 그들의 표정을 비춘다.",
+      "cut_name": "Inspiration for the People",
+      "composition": "wide shot of villagers watching Lee Sin's sacrifice, expressions of awe and determination",
       "dialogues": [
         {
           "speaker": "나레이션",
@@ -294,167 +314,171 @@
           "emotion": null
         }
       ],
-      "background": "아이오니아인들이 감동받은 모습, 희망의 분위기.",
+      "background": "crowd gathered, flames in the background, atmosphere of hope",
       "actions": [
-        "아이오니아인들이 리 신을 바라보며 결의를 다지는 모습."
+        "gathering",
+        "cheering"
       ],
       "characters": [
-        "리 신",
-        "아이오니아인들"
+        "villagers",
+        "young Lee Sin"
       ],
       "duration": 3.142857142857143
     },
     {
       "cut_id": 15,
-      "cut_name": "리 신의 새로운 시작",
-      "composition": "리 신이 새로운 힘을 얻은 모습, 카메라는 그의 얼굴을 비춘다.",
+      "cut_name": "Victory Over Noxus",
+      "composition": "wide shot of villagers rallying together, pushing back Noxian soldiers",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "이제 그는 시각 대신 모든 감각이 초월적으로 발달한 상태입니다.",
+          "text": "결국, 리 신의 희생은 녹서스군을 몰아내는 기폭제가 되었습니다.",
           "emotion": null
         }
       ],
-      "background": "빛나는 자연, 평화로운 분위기.",
+      "background": "battlefield, sounds of clashing swords, atmosphere of triumph",
       "actions": [
-        "리 신이 주변을 바라보며 미소 짓는 모습."
+        "fighting",
+        "rallying"
       ],
       "characters": [
-        "리 신"
+        "villagers",
+        "Noxian soldiers"
       ],
-      "duration": 3.142857142857143
+      "duration": 3.9285714285714284
     },
     {
       "cut_id": 16,
-      "cut_name": "진정한 수호자로서의 삶",
-      "composition": "리 신이 쇼진 사원의 마스터로서 아이오니아를 지키는 모습, 카메라는 그의 뒷모습을 비춘다.",
+      "cut_name": "The Master of the Shrine",
+      "composition": "medium shot of Lee Sin, now a master, meditating in the shrine, aura of wisdom around him",
       "dialogues": [
         {
           "speaker": "나레이션",
-          "text": "이제 그는 자신의 힘을 과시하는 대신 아이오니아의 균형을 지키는 진정한 수호자로 살아가고 있습니다.",
+          "text": "현재 리 신은 아이오니아의 균형을 지키는 진정한 수호자로 살아갑니다.",
           "emotion": null
         }
       ],
-      "background": "사원의 평화로운 풍경, 조용한 분위기.",
+      "background": "bright shrine, peaceful ambiance, sense of tranquility",
       "actions": [
-        "리 신이 사원을 바라보며 결의에 찬 모습."
+        "meditating",
+        "breathing calmly"
       ],
       "characters": [
-        "리 신"
+        "Lee Sin"
       ],
-      "duration": 3.9285714285714284
+      "duration": 3.142857142857143
     }
   ],
   "saved_results": [
     {
       "index": 0,
-      "prompt": "리 신의 어린 시절, 리 신이 사원에서 마법을 배우고 있는 모습, 카메라는 그를 정면에서 비추며 집중.. characters: 리 신. background: 사원 내부, 마법의 빛이 반짝이는 분위기, 조용한 사원에서 마법의 소리가 들린다.. dialogues: 나레이션: 리 신은 아이오니아의 쇼진 사원에서 어린 시절부터 뛰어난 재능을 보였습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3230/pYVR9VWSXOGrL6wwcWPpN.jpg",
+      "prompt": "wide shot of the shrine, young Lee Sin practicing magic in the center, surrounded by other students, CONSISTENT: young Lee Sin, other students, casting spells, concentrating, bright and serene shrine, sunlight streaming through trees, peaceful atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e3/lgwf3knf-OyXWSKXXWKVu.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_01.png",
       "message": ""
     },
     {
       "index": 1,
-      "prompt": "자만에 빠진 리 신, 리 신이 다른 제자들 앞에서 자신감 넘치는 표정으로 마법을 시연하는 모습.. characters: 리 신, 다른 제자들. background: 사원 안, 다른 제자들이 놀라워하는 표정, 긴장감이 감도는 분위기.. dialogues: 나레이션: 그의 재능은 남다른 것이었고, 그는 그로 인해 자만하게 되었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3230/vx1cai8WkNei-Z12taYuu.jpg",
+      "prompt": "close-up of Lee Sin's face, confident expression, eyes shining with ambition, CONSISTENT: young Lee Sin, smirking, looking around with pride, soft focus on the shrine, warm lighting, sense of ambition in the air, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e4/cuNRz05JKi5vvOEXoNF7F.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_02.png",
       "message": ""
     },
     {
       "index": 2,
-      "prompt": "금기시된 마법, 리 신이 혼자서 금기된 소환 마법을 연구하는 모습, 카메라는 그의 손과 마법서에 초점을 맞춤.. characters: 리 신. background: 어두운 방, 마법서의 빛이 리 신의 얼굴을 비추며 긴장감을 더한다.. dialogues: 나레이션: 그는 금기시된 소환 마법에 손을 대기로 결심합니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3230/QgH-D7HqpazmLsqT3YkFL.jpg",
+      "prompt": "over-the-shoulder shot of Lee Sin looking at an ancient book, pages glowing ominously, CONSISTENT: young Lee Sin, flipping through the book, frowning in concentration, dimly lit library, shadows dancing on the walls, an air of mystery, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e4/QRTVD8VONIvcSE-jJ-ai5.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_03.png",
       "message": ""
     },
     {
       "index": 3,
-      "prompt": "소환의 순간, 리 신이 마법을 시전하는 장면, 마법의 에너지가 주변을 감싸는 모습.. characters: 리 신. background: 마법의 빛이 번쩍이며 긴장감이 감도는 순간.. dialogues: 나레이션: 하지만 그의 실수로 소환된 것은 어린아이였습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3231/WCpXm4AuU55vWt--EoJV7.jpg",
+      "prompt": "wide shot of a dark forest clearing, Lee Sin standing in the center with a summoning circle, tension in the air, CONSISTENT: young Lee Sin, chanting incantations, gesturing dramatically, dark forest, eerie mist swirling around, sense of foreboding, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e4/T2TkQgW17XjJs91xrXKkM.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_04.png",
       "message": ""
     },
     {
       "index": 4,
-      "prompt": "비극의 시작, 소환된 아이가 형체를 유지하지 못하고 고통스러워하는 모습, 리 신의 표정이 충격으로 변함.. characters: 리 신, 소환된 아이. background: 어두운 정글, 비극적인 분위기, 아이의 비명 소리가 들린다.. dialogues: 나레이션: 소환된 아이는 고통 속에 사라져갔고, 이로 인해 마을은 파괴되었습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3231/o6G9roJzhbM45esKNYVUn.jpg",
+      "prompt": "close-up of the summoned child, face contorted in pain, fading away, summoned child, screaming, fading away, dark and chaotic atmosphere, shadows closing in, haunting silence, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e5/QY40E4IRKxYrO3X5o9lQM.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_05.png",
       "message": ""
     },
     {
       "index": 5,
-      "prompt": "리 신의 절망, 리 신이 무너진 마을을 바라보며 절망하는 모습, 카메라는 그의 뒷모습을 비춘다.. characters: 리 신. background: 파괴된 마을, 슬픔이 가득한 분위기.. dialogues: 나레이션: 자신의 오만이 불러온 비극에 리 신은 절망했습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3231/ougpdZpJej1zWabUt4j4a.jpg",
+      "prompt": "wide shot of the village in chaos, buildings burning, villagers fleeing, CONSISTENT: villagers, CONSISTENT: young Lee Sin, running, screaming, smoke and fire engulfing the village, panic and despair in the air, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e5/rCZuqBMb6eDCrz0Ito9ua.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_06.png",
       "message": ""
     },
     {
       "index": 6,
-      "prompt": "방랑의 시작, 리 신이 사원을 떠나는 모습, 카메라는 그의 뒷모습을 따라간다.. characters: 리 신. background: 사원의 출구, 고요한 분위기, 바람 소리가 들린다.. dialogues: 나레이션: 그는 평생을 속죄하며 살기로 결심하고 사원을 떠났습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3232/WfK9obySqxFww1CIJEg-V.jpg",
+      "prompt": "close-up of Lee Sin's face, filled with horror and regret, tears in his eyes, CONSISTENT: young Lee Sin, clenching fists, looking down, darkened forest, shadows creeping in, heavy atmosphere of guilt, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e5/nNCJp1wRX9U8HiX6ne8lJ.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_07.png",
       "message": ""
     },
     {
       "index": 7,
-      "prompt": "정신 수양, 리 신이 자연 속에서 명상하는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 자연 속, 새소리와 바람 소리가 들리는 평화로운 분위기.. dialogues: 나레이션: 수년 동안 그는 자신의 실수를 되새기며 정신 수양에 매진했습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3232/1jMlbMiWQNfVeLvUJ8qJJ.jpg",
+      "prompt": "wide shot of Lee Sin walking through various landscapes, from mountains to deserts, CONSISTENT: young Lee Sin, walking, reflecting, varied landscapes, changing seasons, sense of solitude, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e6/NaxZCSE1jV9unmelIgNwJ.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_08.png",
       "message": ""
     },
     {
       "index": 8,
-      "prompt": "아이오니아 침공, 녹서스 군대가 아이오니아를 침공하는 장면, 카메라는 전투의 혼란을 비춘다.. characters: 녹서스 군대. background: 전투의 소음, 불과 연기가 가득한 혼란스러운 분위기.. dialogues: 나레이션: 그러던 중, 녹서스 군대가 아이오니아를 침공했습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3233/exj451trvZAJntDW3Ud1t.jpg",
+      "prompt": "medium shot of Lee Sin meditating in a serene environment, eyes closed, CONSISTENT: young Lee Sin, meditating, breathing deeply, peaceful mountain top, gentle breeze, calming atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e6/DZTGApUOfRxqW3p5cIR0K.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_09.png",
       "message": ""
     },
     {
       "index": 9,
-      "prompt": "리 신의 결단, 리 신이 결연한 표정으로 불길을 바라보는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 전투의 혼란 속, 긴장감이 감도는 분위기.. dialogues: 나레이션: 리 신은 고통받는 동포들을 외면할 수 없었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3233/F-Wtjyg3cv77zcQe0LQL7.jpg",
+      "prompt": "wide shot of Noxian army marching towards Ionia, dark clouds overhead, Noxian soldiers, marching, shouting orders, ominous sky, tension in the air, sense of impending doom, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e7/VyTgn_maxCRZ8VrtsbfiI.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_10.png",
       "message": ""
     },
     {
       "index": 10,
-      "prompt": "자신의 몸에 불을 붙이다, 리 신이 자신의 몸에 불을 붙이는 장면, 카메라는 그의 결연한 표정을 비춘다.. characters: 리 신. background: 불길이 타오르는 장면, 강렬한 분위기.. dialogues: 리 신: 내 육신은 불타 없어져도, 아이오니아의 정신은 영원할 것이다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3233/d2l8J-GeSaNAeygQQ2K1j.jpg",
+      "prompt": "close-up of Lee Sin's determined face, fire reflecting in his eyes, CONSISTENT: young Lee Sin, clenching fists, looking resolute, darkened battlefield, tension rising, sense of sacrifice, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e7/FnE999fZmeI7jiROVX_4B.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_11.png",
       "message": ""
     },
     {
       "index": 11,
-      "prompt": "희생의 순간, 리 신이 불길 속에서도 고통을 참으며 버티는 모습, 카메라는 그의 얼굴을 클로즈업.. characters: 리 신. background: 불길이 타오르는 장면, 극적인 분위기.. dialogues: 나레이션: 그는 비명 하나 지르지 않고 버텼습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3234/RoA6uCxqIEVIOFokW4mrU.jpg",
+      "prompt": "wide shot of Lee Sin engulfed in flames, standing tall amidst the fire, CONSISTENT: young Lee Sin, standing firm, embracing the flames, flames roaring, smoke rising, dramatic and intense atmosphere, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e7/prArUuhC4Jb5I09mzn6wq.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_12.png",
       "message": ""
     },
     {
       "index": 12,
-      "prompt": "시력을 잃은 리 신, 리 신이 불길 속에서 시력을 잃는 장면, 카메라는 그의 눈을 비춘다.. characters: 리 신. background: 불길이 사라지는 장면, 조용한 분위기.. dialogues: 나레이션: 이 사건으로 그는 시력을 영원히 잃게 되었지만, 동시에 내면의 '용의 정신'을 깨우게 됩니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3234/Yboe5T7QFCP391GB4Ixx3.jpg",
+      "prompt": "close-up of Lee Sin's face, eyes closed, a serene expression as he transcends pain, CONSISTENT: young Lee Sin, breathing deeply, relaxing, glowing light surrounding him, sense of peace amidst chaos, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e8/I-gZVIIoaoKE-7yXcC7fp.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_13.png",
       "message": ""
     },
     {
       "index": 13,
-      "prompt": "용기의 상징, 리 신의 희생을 지켜본 아이오니아인들의 모습, 카메라는 그들의 표정을 비춘다.. characters: 리 신, 아이오니아인들. background: 아이오니아인들이 감동받은 모습, 희망의 분위기.. dialogues: 나레이션: 그의 희생은 아이오니아인들에게 큰 용기를 주었습니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3234/KZymHFJpnSMT5xQwiOSj7.jpg",
+      "prompt": "wide shot of villagers watching Lee Sin's sacrifice, expressions of awe and determination, CONSISTENT: villagers, CONSISTENT: young Lee Sin, gathering, cheering, crowd gathered, flames in the background, atmosphere of hope, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e8/T36OlhpiWMKvBwhB9lbV7.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_14.png",
       "message": ""
     },
     {
       "index": 14,
-      "prompt": "리 신의 새로운 시작, 리 신이 새로운 힘을 얻은 모습, 카메라는 그의 얼굴을 비춘다.. characters: 리 신. background: 빛나는 자연, 평화로운 분위기.. dialogues: 나레이션: 이제 그는 시각 대신 모든 감각이 초월적으로 발달한 상태입니다.. duration: 3.142857142857143 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3235/pqqhWBQJqxTXKCkhrGemD.jpg",
+      "prompt": "wide shot of villagers rallying together, pushing back Noxian soldiers, CONSISTENT: villagers, Noxian soldiers, fighting, rallying, battlefield, sounds of clashing swords, atmosphere of triumph, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e9/4Xux8OBF8VHOQsedOVr1p.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_15.png",
       "message": ""
     },
     {
       "index": 15,
-      "prompt": "진정한 수호자로서의 삶, 리 신이 쇼진 사원의 마스터로서 아이오니아를 지키는 모습, 카메라는 그의 뒷모습을 비춘다.. characters: 리 신. background: 사원의 평화로운 풍경, 조용한 분위기.. dialogues: 나레이션: 이제 그는 자신의 힘을 과시하는 대신 아이오니아의 균형을 지키는 진정한 수호자로 살아가고 있습니다.. duration: 3.9285714285714284 seconds. photorealistic, realistic, natural lighting, detailed textures, high quality, professional photography",
-      "url": "https://v3b.fal.media/files/b/0a8a3235/KEfsa7f3BUH2D9V19Gte_.jpg",
+      "prompt": "medium shot of Lee Sin, now a master, meditating in the shrine, aura of wisdom around him, Lee Sin, meditating, breathing calmly, bright shrine, peaceful ambiance, sense of tranquility, Style: photorealistic, ultra-realistic rendering, natural lighting with soft shadows, detailed skin textures and fabric, depth of field bokeh effect, professional photography quality, Canon EOS R5 style, cinematic color grading, 8K high resolution, sharp focus, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a32e9/-3z43cGSWgCBhYrmr4BnK.jpg",
       "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\images\\image_16.png",
       "message": ""
     }
@@ -483,27 +507,38 @@
     "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_012.mp4",
     "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_013.mp4",
     "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_014.mp4",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_015.mp4",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_016.mp4"
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\videos\\clips\\clip_015.mp4"
   ],
   "audio_paths": [
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_000.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_001.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_002.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_003.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_004.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_005.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_006.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_007.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_008.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_009.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_010.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_011.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_012.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_013.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_014.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_015.mp3",
-    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_016.mp3"
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_000_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_001_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_002_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_003_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_004_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_005_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_006_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_007_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_008_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_009_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_010_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_011_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_011_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_012_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_013_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_014_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251226-154628\\audio\\audio_015_00.mp3"
   ],
-  "video_duration": 81.14000000000001
+  "video_duration": 96.6,
+  "character_descriptions": {
+    "young Lee Sin": "young Lee Sin",
+    "other students": "other students",
+    "summoned child": "summoned child",
+    "villagers": "villagers",
+    "Noxian soldiers": "Noxian soldiers",
+    "Lee Sin": "Lee Sin"
+  },
+  "main_characters": [
+    "young Lee Sin",
+    "villagers"
+  ]
 }

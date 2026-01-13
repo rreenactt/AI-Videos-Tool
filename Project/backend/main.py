@@ -515,6 +515,16 @@ async def api_storyboard(payload: StoryRequest):
 			if storyboard.title:
 				meta["title"] = storyboard.title
 				_save_project_meta(payload.project_id, meta)
+		# 나레이션 통계
+		cuts_with_narration = sum(
+			1 for cut in storyboard.cuts 
+			if any(d.speaker and "나레이션" in d.speaker for d in cut.dialogues)
+		)
+		print(f"\n📊 스토리보드 생성 결과:")
+		print(f"   - 총 컷: {len(storyboard.cuts)}개")
+		print(f"   - 나레이션 포함: {cuts_with_narration}/{len(storyboard.cuts)}개")
+		print(f"   - 프롬프트: {len(prompts)}개")
+		
 		return {
 			"title": storyboard.title,
 			"cuts": [cut.model_dump() for cut in storyboard.cuts],

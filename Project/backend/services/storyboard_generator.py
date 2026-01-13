@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from openai import OpenAI
 import json
 import os
+import re
 
 
 class DialogueLine(BaseModel):
@@ -25,6 +26,74 @@ class StoryCut(BaseModel):
 class Storyboard(BaseModel):
 	title: str
 	cuts: List[StoryCut] = Field(default_factory=list)
+
+
+def _generate_smart_narration(cut: StoryCut, cut_index: int, total_cuts: int) -> str:
+	"""컷의 정보를 바탕으로 지능적인 나레이션 생성"""
+	narration_parts = []
+	
+	# 장면 설명
+	if cut.cut_name and cut.cut_name.lower() != "scene":
+		narration_parts.append(cut.cut_name)
+	
+	# 인물 정보 (있을 경우)
+	if cut.characters:
+		if len(cut.characters) == 1:
+			narration_parts.append(f"{cut.characters[0]}가 등장합니다")
+		elif len(cut.characters) == 2:
+			narration_parts.append(f"{cut.characters[0]}와 {cut.characters[1]}가 함께 있습니다")
+		else:
+			narration_parts.append(f"{', '.join(cut.characters[:2])} 등 여러 인물이 등장합니다")
+	
+	# 액션 정보 (있을 경우)
+	if cut.actions:
+		action_ko = []
+		action_map = {
+			"walking": "걷고 있습니다",
+			"running": "달리고 있습니다",
+			"standing": "서 있습니다",
+			"sitting": "앉아 있습니다",
+			"looking": "바라보고 있습니다",
+			"talking": "이야기하고 있습니다",
+			"turning": "돌아보고 있습니다",
+			"smiling": "미소 짓고 있습니다",
+			"crying": "울고 있습니다",
+			"fighting": "싸우고 있습니다",
+		}
+		for action in cut.actions[:2]:
+			action_lower = action.lower()
+			for eng, ko in action_map.items():
+				if eng in action_lower:
+					action_ko.append(ko)
+					break
+		if action_ko:
+			narration_parts.append(", ".join(action_ko))
+	
+	# 배경 정보 (간단히)
+	if cut.background:
+		bg_lower = cut.background.lower()
+		if "night" in bg_lower or "dark" in bg_lower:
+			narration_parts.append("어두운 분위기 속에서")
+		elif "day" in bg_lower or "bright" in bg_lower or "sunlight" in bg_lower:
+			narration_parts.append("밝은 햇살 아래")
+		elif "sunset" in bg_lower or "dawn" in bg_lower:
+			narration_parts.append("노을이 지는 하늘 아래")
+		elif "indoor" in bg_lower or "room" in bg_lower or "office" in bg_lower:
+			narration_parts.append("실내에서")
+		elif "outdoor" in bg_lower or "street" in bg_lower or "city" in bg_lower:
+			narration_parts.append("야외에서")
+	
+	# 진행 상황 (첫/중간/마지막 컷 구분)
+	if cut_index == 0:
+		narration_parts.insert(0, "이야기가 시작됩니다.")
+	elif cut_index == total_cuts - 1:
+		narration_parts.append("이야기가 마무리됩니다.")
+	
+	# 최종 나레이션 조합
+	if narration_parts:
+		return " ".join(narration_parts) + "."
+	else:
+		return f"{cut.cut_name}. 장면이 전개됩니다."
 
 
 def generate_storyboard_from_story(
@@ -87,9 +156,18 @@ def generate_storyboard_from_story(
 		f"  * Important scene or emotional moment: 5-7 seconds\n"
 		f"  * Total duration should sum to approximately {target_duration} seconds.\n"
 		f"- **ALL fields except dialogues.text must be in ENGLISH**: cut_name, composition, background, actions, characters.\n"
-		f"- Every cut must include either narration or character dialogue.\n"
-		f"- Add sufficient narration (speaker: '나레이션') to help viewers understand the scene, emotions, and context.\n"
-		f"- Break scenes into at least {min_cuts} diverse cuts with detailed descriptions."
+		f"- **CRITICAL REQUIREMENT**: EVERY SINGLE CUT MUST HAVE AT LEAST ONE NARRATION (speaker: '나레이션').\n"
+		f"- **MANDATORY**: Even if a cut has character dialogue, it MUST also include narration for context.\n"
+		f"- Narration should describe:\n"
+		f"  * What is happening in the scene\n"
+		f"  * Character emotions and atmosphere\n"
+		f"  * Important visual details\n"
+		f"  * Transition context if scene changes\n"
+		f"- Each narration should be 1-3 sentences long and descriptive.\n"
+		f"- Example narration format:\n"
+		f"  {{'speaker': '나레이션', 'text': '어두운 숲 속, 주인공이 천천히 걸어갑니다. 달빛이 나뭇잎 사이로 스며들며 신비로운 분위기를 만듭니다.', 'emotion': null}}\n"
+		f"- Break scenes into at least {min_cuts} diverse cuts with detailed descriptions.\n"
+		f"- **VERIFY**: Before finalizing, check that EVERY cut has '나레이션' in dialogues array."
 	)
 	
 	try:
@@ -126,13 +204,45 @@ def generate_storyboard_from_story(
 				cut_id=1,
 				cut_name="Scene",
 				composition="medium shot",
-				dialogues=[],
+				dialogues=[DialogueLine(speaker="나레이션", text="장면이 시작됩니다.", emotion=None)],
 				background="neutral background",
 				actions=[],
 				characters=[],
 				duration=target_duration
 			))
 			return storyboard
+		
+		# 모든 컷에 나레이션이 있는지 확인하고 없으면 추가
+		total_cuts = len(storyboard.cuts)
+		for idx, cut in enumerate(storyboard.cuts):
+			if not cut.dialogues or len(cut.dialogues) == 0:
+				# 나레이션이 전혀 없는 경우: 스마트 나레이션 생성
+				narration_text = _generate_smart_narration(cut, idx, total_cuts)
+				default_narration = DialogueLine(
+					speaker="나레이션",
+					text=narration_text,
+					emotion=None
+				)
+				cut.dialogues = [default_narration]
+				print(f"⚠ 컷 {cut.cut_id}: 나레이션 자동 추가 - '{narration_text}'")
+			else:
+				# 나레이션이 있는지 확인
+				has_narration = any(
+					d.speaker and ("나레이션" in d.speaker or "narration" in d.speaker.lower())
+					for d in cut.dialogues
+				)
+				
+				if not has_narration:
+					# 다른 대사는 있지만 나레이션이 없는 경우: 스마트 나레이션 추가
+					narration_text = _generate_smart_narration(cut, idx, total_cuts)
+					narration = DialogueLine(
+						speaker="나레이션",
+						text=narration_text,
+						emotion=None
+					)
+					# 나레이션을 맨 앞에 추가
+					cut.dialogues.insert(0, narration)
+					print(f"⚠ 컷 {cut.cut_id}: 나레이션 자동 추가 (대사 앞) - '{narration_text}'")
 		
 		# 모든 컷의 duration 합 계산
 		total_duration = sum(cut.duration for cut in storyboard.cuts)
@@ -159,6 +269,25 @@ def generate_storyboard_from_story(
 			avg_duration = target_duration / len(storyboard.cuts) if storyboard.cuts else target_duration
 			for cut in storyboard.cuts:
 				cut.duration = max(0.5, min(30.0, avg_duration))
+		
+		# 최종 검증: 모든 컷에 나레이션이 있는지 확인
+		cuts_with_narration = 0
+		total_dialogues = 0
+		for cut in storyboard.cuts:
+			if cut.dialogues:
+				total_dialogues += len(cut.dialogues)
+				has_narration = any(
+					d.speaker and "나레이션" in d.speaker
+					for d in cut.dialogues
+				)
+				if has_narration:
+					cuts_with_narration += 1
+		
+		print(f"\n✅ 스토리보드 생성 완료:")
+		print(f"   - 총 {len(storyboard.cuts)}개 컷")
+		print(f"   - 나레이션이 있는 컷: {cuts_with_narration}개 ({cuts_with_narration/len(storyboard.cuts)*100:.0f}%)")
+		print(f"   - 총 대사/나레이션: {total_dialogues}개")
+		print(f"   - 총 재생 시간: {sum(cut.duration for cut in storyboard.cuts):.1f}초")
 		
 		return storyboard
 		

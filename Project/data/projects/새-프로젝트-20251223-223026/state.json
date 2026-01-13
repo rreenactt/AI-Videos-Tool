@@ -1,273 +1,579 @@
 {
-  "title": "Proof of Sphere",
+  "title": "구의 증명",
   "story": "『구의 증명』 스토리 요약 (스포일러 포함)\n\n소설은 ‘구’가 이미 죽은 상태에서 시작한다. 화자인 ‘나’는 구의 죽음 이후, 그 사실을 받아들이지 못한 채 구와 함께했던 시간을 계속해서 떠올린다. 현재의 시간은 거의 움직이지 않고, 이야기는 과거 회상과 현재의 애도 상태를 오가며 전개된다.\n\n1. ‘나’와 ‘구’의 만남과 관계\n\n‘나’와 ‘구’는 모두 삶에 균열이 있는 인물들이다. 둘은 사회적으로 안정된 인생을 살고 있지 않고, 각자 결핍과 불안을 안고 있다. 그럼에도 불구하고 서로에게 끌리고, 결국 함께 살게 된다.\n\n둘의 사랑은 밝고 경쾌하기보다는,\n\n서로의 고통을 조심스럽게 다루고\n\n상대의 불안정함을 “있는 그대로” 견디려는\n매우 조용하고 밀착된 관계로 그려진다.\n\n‘구’는 특히 삶에 대한 피로와 죽음 충동을 내면에 품고 있는 인물로 묘사되고, ‘나’는 그런 구를 붙잡고 지켜야 할 존재처럼 느낀다.\n\n2. 불안의 축적과 예고된 파국\n\n시간이 흐르면서 ‘구’의 상태는 점점 불안정해진다.\n\n삶에 대한 무기력,\n\n계속되는 자기 혐오,\n\n죽음에 대한 생각들이 반복적으로 드러난다.\n\n‘나’는 구를 사랑하기 때문에 곁에 머물고, 함께 버티려 하지만,\n\n구의 고통을 완전히 대신해줄 수는 없고\n\n결국 구의 내면 깊숙한 절망까지 막아내지는 못한다.\n\n소설은 이 시점에서 구의 죽음이 돌발적 사건이 아니라, 서서히 다가온 선택이었음을 암시한다.\n\n3. 구의 죽음\n\n결국 구는 스스로 생을 마감한다.\n\n구체적인 방법이나 장면은 자극적으로 묘사되지 않지만, 그 죽음은 분명한 자살로 제시된다. ‘나’는 이 죽음을 예견했음에도, 혹은 예견했다고 믿기 때문에, 더 큰 죄책감에 사로잡힌다.\n\n“내가 조금만 더 잘했다면”\n\n“그날 그 말을 하지 않았다면”\n\n“곁에 있었더라면”\n\n같은 가정들이 끊임없이 반복된다.\n\n4. 죽음 이후, 남겨진 ‘나’의 상태\n\n구의 죽음 이후 ‘나’는 정상적인 애도 과정을 밟지 못한다.\n\n구의 흔적을 치우지 못하고\n\n구의 물건, 냄새, 말투를 계속 붙잡고\n\n구가 아직 살아 있는 것처럼 느끼려 한다.\n\n특히 소설 후반부에서 드러나는 가장 충격적인 설정은,\n\n‘나’가 **구의 시신 일부(살)**를 먹는다는 사실이다.\n\n이 행위는 충격을 주기 위한 장치라기보다는,\n\n구를 완전히 잃지 않기 위한 극단적인 방식,\n\n구를 ‘내 안에 남기려는’ 집착적인 애도의 형태로 제시된다.\n\n5. ‘증명’의 의미와 현재 시점\n\n‘나’에게 이 모든 행동은 광기가 아니라 사랑의 연장이다.\n구가 이 세상에 분명히 존재했고,\n자신의 삶을 바꿨으며,\n지금도 여전히 자신의 일부라는 것을 증명하려는 시도다.\n\n소설의 끝에서 ‘나’는 완전히 회복되거나, 구를 떠나보내지 않는다.\n다만,\n\n구의 죽음 이후에도 삶이 계속되고 있다는 사실,\n\n그 삶이 결코 이전으로 돌아갈 수 없다는 점\n을 받아들이는 상태에 가까워진다.",
-  "min_shots_per_scene": 1,
+  "min_shots_per_scene": 55,
   "prompts": [
-    "Introduction to Death, Close-up on the narrator's face, reflecting sorrow and disbelief.. characters: Narrator. background: Somber atmosphere, soft piano music playing in the background.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "Memories of 'Gu', Flashback scenes with soft focus, showing moments of happiness and pain.. characters: Narrator, Gu. background: Warm, nostalgic music with a hint of melancholy.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Struggles, Wide shot of 'Gu' sitting alone, looking lost and troubled.. characters: Gu. background: Heavy silence, punctuated by distant sounds of the city.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Relationship, Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.. characters: Narrator, Gu. background: Intimate atmosphere, soft lighting.. dialogues: Narrator: 나는 너를 지켜야 해.; Gu: 내가 괜찮아질 수 있을까?. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Descent, Close-up on 'Gu's face, showing despair and hopelessness.. characters: Narrator, Gu. background: Dark, oppressive atmosphere with low, dissonant music.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Inevitable Choice, Wide shot of 'Gu' standing alone in a dark room.. characters: Gu. background: Heavy silence, the sound of a clock ticking.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Death, Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.. characters: Narrator, Gu. background: Eerie silence, a haunting melody plays softly.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Guilt, Close-up on the narrator's face, filled with regret and sorrow.. characters: Narrator. background: Somber atmosphere, echoing silence.. dialogues: Narrator: 내가 조금만 더 잘했더라면.... cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Obsession, Intense close-up of the narrator's hands as they hold 'Gu's belongings.. characters: Narrator. background: Tense atmosphere, heartbeat sound effect.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Extreme Act, Dark, surreal imagery as the narrator engages in the shocking act.. characters: Narrator. background: Disturbing, dissonant music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-    "The Acceptance, Wide shot of the narrator standing alone, looking out at the horizon.. characters: Narrator. background: Hopeful yet melancholic music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting"
+    "close-up of '나' with a sorrowful expression, tears in eyes, CONSISTENT: '나', sitting on the floor, wiping tears, dimly lit room, shadows cast by a single light source, somber atmosphere, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of '나' and '구' sitting together at a café, smiling at each other, CONSISTENT: '나', CONSISTENT: '구', laughing, holding hands, cozy café, warm lighting, soft chatter in the background, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "over-the-shoulder shot of '나' looking at '구', who is gazing out the window, CONSISTENT: '나', CONSISTENT: '구', gazing out, smiling softly, sunset view from the window, warm colors filling the room, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '구' with a troubled expression, hands clenched, CONSISTENT: '구', CONSISTENT: '나', clenching fists, looking down, dimly lit room, tension in the air, silence broken by soft breathing, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of '나' and '구' sitting on a bed, '구' looking away, CONSISTENT: '구', CONSISTENT: '나', sitting silently, turning away, dark bedroom, shadows loom, a sense of hopelessness, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '구' with tears streaming down, face contorted in pain, CONSISTENT: '구', CONSISTENT: '나', crying, reaching out, dark room, heavy atmosphere, silence broken by soft sobs, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of '구' standing alone in a dimly lit room, looking out the window, CONSISTENT: '구', staring out, taking a deep breath, darkened room, faint light from outside, a sense of finality, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '나' receiving a phone call, shock on their face, CONSISTENT: '나', holding the phone tightly, eyes wide open, dimly lit room, phone ringing loudly, tension in the air, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of '나' sitting on the floor, head in hands, CONSISTENT: '나', sobbing, rocking back and forth, dark room, shadows creeping in, a heavy silence, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '나' holding 구's belongings, looking nostalgic, CONSISTENT: '나', holding items, gazing at them, cluttered room, soft light illuminating the items, a sense of longing, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '나' with a conflicted expression, holding a piece of 구, CONSISTENT: '나', holding tightly, breathing heavily, dark room, eerie silence, tension in the air, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "medium shot of '나' sitting in a sunlit room, looking contemplative, CONSISTENT: '나', sitting quietly, taking deep breaths, bright room, sunlight streaming in, a sense of calm, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of '나' walking in a park, looking around, CONSISTENT: '나', walking slowly, looking around, sunny park, birds chirping, vibrant colors of nature, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '나' with a serene expression, looking up at the sky, CONSISTENT: '나', closing eyes, smiling softly, clear blue sky, gentle breeze, a sense of peace, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "wide shot of '나' walking away from the camera, towards the horizon, CONSISTENT: '나', walking confidently, looking ahead, sunset on the horizon, warm colors blending, a sense of closure, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+    "close-up of '나' with a thoughtful expression, fading to black, CONSISTENT: '나', pausing, reflecting, black screen, silence, a lingering sense of love, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces"
   ],
   "cuts": [
     {
       "cut_id": 1,
-      "cut_name": "Introduction to Death",
-      "composition": "Close-up on the narrator's face, reflecting sorrow and disbelief.",
-      "dialogues": [],
-      "background": "Somber atmosphere, soft piano music playing in the background.",
+      "cut_name": "Opening Scene - Death of 구",
+      "composition": "close-up of '나' with a sorrowful expression, tears in eyes",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "구가 죽었다는 사실을 받아들이지 못해.",
+          "emotion": "sad"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "주인공은 구의 죽음을 받아들이지 못하고, 그를 잃은 슬픔에 잠겨 있습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "dimly lit room, shadows cast by a single light source, somber atmosphere",
       "actions": [
-        "The narrator stares blankly at a photo of 'Gu'.",
-        "Tears well up in the narrator's eyes."
+        "sitting on the floor",
+        "wiping tears"
       ],
       "characters": [
-        "Narrator"
-      ]
+        "'나'"
+      ],
+      "duration": 3.819444444444444
     },
     {
       "cut_id": 2,
-      "cut_name": "Memories of 'Gu'",
-      "composition": "Flashback scenes with soft focus, showing moments of happiness and pain.",
-      "dialogues": [],
-      "background": "Warm, nostalgic music with a hint of melancholy.",
+      "cut_name": "Flashback - Meeting 구",
+      "composition": "medium shot of '나' and '구' sitting together at a café, smiling at each other",
+      "dialogues": [
+        {
+          "speaker": "구",
+          "text": "우리 이렇게 만날 줄 몰랐어.",
+          "emotion": "happy"
+        },
+        {
+          "speaker": "나",
+          "text": "나도, 하지만 좋았어.",
+          "emotion": "happy"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그들은 서로의 결핍을 이해하며, 처음 만났던 순간을 회상합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "cozy café, warm lighting, soft chatter in the background",
       "actions": [
-        "The narrator reminisces about their time together.",
-        "Images of laughter and quiet moments flash by."
+        "laughing",
+        "holding hands"
       ],
       "characters": [
-        "Narrator",
-        "Gu"
-      ]
+        "'나'",
+        "'구'"
+      ],
+      "duration": 3.0555555555555554
     },
     {
       "cut_id": 3,
-      "cut_name": "The Struggles",
-      "composition": "Wide shot of 'Gu' sitting alone, looking lost and troubled.",
-      "dialogues": [],
-      "background": "Heavy silence, punctuated by distant sounds of the city.",
+      "cut_name": "Building Relationship",
+      "composition": "over-the-shoulder shot of '나' looking at '구', who is gazing out the window",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "너와 함께하는 시간이 소중해.",
+          "emotion": "affectionate"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "그들은 서로의 고통을 조심스럽게 다루며, 깊은 유대감을 형성합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "sunset view from the window, warm colors filling the room",
       "actions": [
-        "'Gu' stares out the window, lost in thought.",
-        "'Gu' clutches their head in despair."
+        "gazing out",
+        "smiling softly"
       ],
       "characters": [
-        "Gu"
-      ]
+        "'나'",
+        "'구'"
+      ],
+      "duration": 3.0555555555555554
     },
     {
       "cut_id": 4,
-      "cut_name": "The Relationship",
-      "composition": "Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.",
+      "cut_name": "Growing Anxiety",
+      "composition": "close-up of '구' with a troubled expression, hands clenched",
       "dialogues": [
         {
-          "speaker": "Narrator",
-          "text": "나는 너를 지켜야 해.",
-          "emotion": "determined"
+          "speaker": "구",
+          "text": "내가 이렇게 힘들어도 괜찮을까?",
+          "emotion": "worried"
         },
         {
-          "speaker": "Gu",
-          "text": "내가 괜찮아질 수 있을까?",
-          "emotion": "anxious"
+          "speaker": "나",
+          "text": "나는 항상 네 곁에 있을게.",
+          "emotion": "reassuring"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 불안정함이 점점 커져가고, '나'는 그를 지키고 싶어합니다.",
+          "emotion": null
         }
       ],
-      "background": "Intimate atmosphere, soft lighting.",
+      "background": "dimly lit room, tension in the air, silence broken by soft breathing",
       "actions": [
-        "The narrator holds 'Gu's hand tightly.",
-        "'Gu' looks down, unsure."
+        "clenching fists",
+        "looking down"
       ],
       "characters": [
-        "Narrator",
-        "Gu"
-      ]
+        "'구'",
+        "'나'"
+      ],
+      "duration": 3.819444444444444
     },
     {
       "cut_id": 5,
-      "cut_name": "The Descent",
-      "composition": "Close-up on 'Gu's face, showing despair and hopelessness.",
-      "dialogues": [],
-      "background": "Dark, oppressive atmosphere with low, dissonant music.",
+      "cut_name": "Despair Accumulates",
+      "composition": "wide shot of '나' and '구' sitting on a bed, '구' looking away",
+      "dialogues": [
+        {
+          "speaker": "구",
+          "text": "나는 더 이상 버틸 수 없어.",
+          "emotion": "desperate"
+        },
+        {
+          "speaker": "나",
+          "text": "그럴 리 없어, 함께 이겨내자.",
+          "emotion": "determined"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 고통이 깊어지고, '나'는 그를 붙잡으려 애씁니다.",
+          "emotion": null
+        }
+      ],
+      "background": "dark bedroom, shadows loom, a sense of hopelessness",
       "actions": [
-        "'Gu' expresses self-hatred and hopelessness.",
-        "The narrator looks on, helpless."
+        "sitting silently",
+        "turning away"
       ],
       "characters": [
-        "Narrator",
-        "Gu"
-      ]
+        "'구'",
+        "'나'"
+      ],
+      "duration": 3.819444444444444
     },
     {
       "cut_id": 6,
-      "cut_name": "The Inevitable Choice",
-      "composition": "Wide shot of 'Gu' standing alone in a dark room.",
-      "dialogues": [],
-      "background": "Heavy silence, the sound of a clock ticking.",
+      "cut_name": "The Breaking Point",
+      "composition": "close-up of '구' with tears streaming down, face contorted in pain",
+      "dialogues": [
+        {
+          "speaker": "구",
+          "text": "나는 더 이상 이 삶을 살고 싶지 않아.",
+          "emotion": "sorrowful"
+        },
+        {
+          "speaker": "나",
+          "text": "제발, 나를 떠나지 마.",
+          "emotion": "pleading"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 절망이 극에 달하며, '나'는 그를 잃을까 두려워합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "dark room, heavy atmosphere, silence broken by soft sobs",
       "actions": [
-        "'Gu' contemplates their life choices.",
-        "'Gu' takes a deep breath."
+        "crying",
+        "reaching out"
       ],
       "characters": [
-        "Gu"
-      ]
+        "'구'",
+        "'나'"
+      ],
+      "duration": 3.819444444444444
     },
     {
       "cut_id": 7,
-      "cut_name": "The Death",
-      "composition": "Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.",
-      "dialogues": [],
-      "background": "Eerie silence, a haunting melody plays softly.",
+      "cut_name": "구's Decision",
+      "composition": "medium shot of '구' standing alone in a dimly lit room, looking out the window",
+      "dialogues": [
+        {
+          "speaker": "구",
+          "text": "이제 끝내야겠어.",
+          "emotion": "resolute"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구는 스스로의 결정을 내리며, 그 순간이 다가오고 있음을 느낍니다.",
+          "emotion": null
+        }
+      ],
+      "background": "darkened room, faint light from outside, a sense of finality",
       "actions": [
-        "The narrator gasps in shock.",
-        "The narrator collapses to the floor."
+        "staring out",
+        "taking a deep breath"
       ],
       "characters": [
-        "Narrator",
-        "Gu"
-      ]
+        "'구'"
+      ],
+      "duration": 3.0555555555555554
     },
     {
       "cut_id": 8,
-      "cut_name": "The Guilt",
-      "composition": "Close-up on the narrator's face, filled with regret and sorrow.",
+      "cut_name": "The Moment of Loss",
+      "composition": "close-up of '나' receiving a phone call, shock on their face",
       "dialogues": [
         {
-          "speaker": "Narrator",
-          "text": "내가 조금만 더 잘했더라면...",
-          "emotion": "guilty"
+          "speaker": "나",
+          "text": "무슨 일이야?!",
+          "emotion": "shocked"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 죽음 소식이 전해지고, '나'는 충격에 빠집니다.",
+          "emotion": null
         }
       ],
-      "background": "Somber atmosphere, echoing silence.",
+      "background": "dimly lit room, phone ringing loudly, tension in the air",
       "actions": [
-        "The narrator clutches their head in despair.",
-        "The narrator looks at 'Gu's belongings scattered around."
+        "holding the phone tightly",
+        "eyes wide open"
       ],
       "characters": [
-        "Narrator"
-      ]
+        "'나'"
+      ],
+      "duration": 3.0555555555555554
     },
     {
       "cut_id": 9,
-      "cut_name": "The Obsession",
-      "composition": "Intense close-up of the narrator's hands as they hold 'Gu's belongings.",
-      "dialogues": [],
-      "background": "Tense atmosphere, heartbeat sound effect.",
+      "cut_name": "Guilt and Regret",
+      "composition": "medium shot of '나' sitting on the floor, head in hands",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "내가 조금만 더 잘했더라면...",
+          "emotion": "guilty"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "자신의 무능함에 괴로워하며, '나'는 구를 잃은 슬픔을 되새깁니다.",
+          "emotion": null
+        }
+      ],
+      "background": "dark room, shadows creeping in, a heavy silence",
       "actions": [
-        "The narrator clings to 'Gu's items.",
-        "The narrator's hands tremble."
+        "sobbing",
+        "rocking back and forth"
       ],
       "characters": [
-        "Narrator"
-      ]
+        "'나'"
+      ],
+      "duration": 3.819444444444444
     },
     {
       "cut_id": 10,
-      "cut_name": "The Extreme Act",
-      "composition": "Dark, surreal imagery as the narrator engages in the shocking act.",
-      "dialogues": [],
-      "background": "Disturbing, dissonant music plays.",
+      "cut_name": "Clinging to Memories",
+      "composition": "close-up of '나' holding 구's belongings, looking nostalgic",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "이건 구의 것이야...",
+          "emotion": "nostalgic"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 흔적을 지우지 못하고, '나'는 그를 붙잡으려 애씁니다.",
+          "emotion": null
+        }
+      ],
+      "background": "cluttered room, soft light illuminating the items, a sense of longing",
       "actions": [
-        "The narrator consumes part of 'Gu's remains.",
-        "The narrator's expression is a mix of anguish and desperation."
+        "holding items",
+        "gazing at them"
       ],
       "characters": [
-        "Narrator"
-      ]
+        "'나'"
+      ],
+      "duration": 3.0555555555555554
     },
     {
       "cut_id": 11,
-      "cut_name": "The Acceptance",
-      "composition": "Wide shot of the narrator standing alone, looking out at the horizon.",
-      "dialogues": [],
-      "background": "Hopeful yet melancholic music plays.",
+      "cut_name": "Extreme Measure",
+      "composition": "close-up of '나' with a conflicted expression, holding a piece of 구",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "이렇게라도 너를 잊지 않을 거야.",
+          "emotion": "obsessive"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "극단적인 애도의 형태로, '나'는 구를 잃지 않으려는 집착을 드러냅니다.",
+          "emotion": null
+        }
+      ],
+      "background": "dark room, eerie silence, tension in the air",
       "actions": [
-        "The narrator takes a deep breath.",
-        "The narrator looks determined yet sad."
+        "holding tightly",
+        "breathing heavily"
       ],
       "characters": [
-        "Narrator"
-      ]
+        "'나'"
+      ],
+      "duration": 3.819444444444444
+    },
+    {
+      "cut_id": 12,
+      "cut_name": "Acceptance of Loss",
+      "composition": "medium shot of '나' sitting in a sunlit room, looking contemplative",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "이제는 받아들여야 해.",
+          "emotion": "resigned"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 죽음 이후, '나'는 삶을 계속해야 함을 깨닫습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "bright room, sunlight streaming in, a sense of calm",
+      "actions": [
+        "sitting quietly",
+        "taking deep breaths"
+      ],
+      "characters": [
+        "'나'"
+      ],
+      "duration": 3.0555555555555554
+    },
+    {
+      "cut_id": 13,
+      "cut_name": "Continuing Life",
+      "composition": "wide shot of '나' walking in a park, looking around",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "구가 있었던 모든 순간을 기억할 거야.",
+          "emotion": "hopeful"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 기억을 간직하며, '나'는 새로운 삶을 향해 나아갑니다.",
+          "emotion": null
+        }
+      ],
+      "background": "sunny park, birds chirping, vibrant colors of nature",
+      "actions": [
+        "walking slowly",
+        "looking around"
+      ],
+      "characters": [
+        "'나'"
+      ],
+      "duration": 3.819444444444444
+    },
+    {
+      "cut_id": 14,
+      "cut_name": "Final Reflection",
+      "composition": "close-up of '나' with a serene expression, looking up at the sky",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "구, 나는 너를 잊지 않을 거야.",
+          "emotion": "determined"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 존재를 증명하며, '나'는 앞으로 나아갈 준비를 합니다.",
+          "emotion": null
+        }
+      ],
+      "background": "clear blue sky, gentle breeze, a sense of peace",
+      "actions": [
+        "closing eyes",
+        "smiling softly"
+      ],
+      "characters": [
+        "'나'"
+      ],
+      "duration": 3.0555555555555554
+    },
+    {
+      "cut_id": 15,
+      "cut_name": "End Scene - Moving Forward",
+      "composition": "wide shot of '나' walking away from the camera, towards the horizon",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "이제는 나의 길을 가야 해.",
+          "emotion": "resolute"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구의 죽음 이후에도 삶은 계속되며, '나'는 새로운 시작을 향해 나아갑니다.",
+          "emotion": null
+        }
+      ],
+      "background": "sunset on the horizon, warm colors blending, a sense of closure",
+      "actions": [
+        "walking confidently",
+        "looking ahead"
+      ],
+      "characters": [
+        "'나'"
+      ],
+      "duration": 3.819444444444444
+    },
+    {
+      "cut_id": 16,
+      "cut_name": "Final Thoughts",
+      "composition": "close-up of '나' with a thoughtful expression, fading to black",
+      "dialogues": [
+        {
+          "speaker": "나",
+          "text": "사랑은 끝나지 않아.",
+          "emotion": "reflective"
+        },
+        {
+          "speaker": "나레이션",
+          "text": "구와의 사랑은 여전히 '나'의 일부로 남아 있습니다.",
+          "emotion": null
+        }
+      ],
+      "background": "black screen, silence, a lingering sense of love",
+      "actions": [
+        "pausing",
+        "reflecting"
+      ],
+      "characters": [
+        "'나'"
+      ],
+      "duration": 3.0555555555555554
     }
   ],
   "saved_results": [
     {
       "index": 0,
-      "prompt": "Introduction to Death, Close-up on the narrator's face, reflecting sorrow and disbelief.. characters: Narrator. background: Somber atmosphere, soft piano music playing in the background.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01b/VhYb3beXws1_b6KeyNfXB.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_01.png",
+      "prompt": "close-up of '나' with a sorrowful expression, tears in eyes, CONSISTENT: '나', sitting on the floor, wiping tears, dimly lit room, shadows cast by a single light source, somber atmosphere, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cc/8lnw-cKqoXCvQFHqhTagd.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_01.png",
       "message": ""
     },
     {
       "index": 1,
-      "prompt": "Memories of 'Gu', Flashback scenes with soft focus, showing moments of happiness and pain.. characters: Narrator, Gu. background: Warm, nostalgic music with a hint of melancholy.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01c/eiaHTdQ8XPcwehmqLAQR9.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_02.png",
+      "prompt": "medium shot of '나' and '구' sitting together at a café, smiling at each other, CONSISTENT: '나', CONSISTENT: '구', laughing, holding hands, cozy café, warm lighting, soft chatter in the background, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cc/IDvp4gOfoxxVfcBTGxbSi.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_02.png",
       "message": ""
     },
     {
       "index": 2,
-      "prompt": "The Struggles, Wide shot of 'Gu' sitting alone, looking lost and troubled.. characters: Gu. background: Heavy silence, punctuated by distant sounds of the city.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01c/BLCPukRSl3JOM5bieU4-g.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_03.png",
+      "prompt": "over-the-shoulder shot of '나' looking at '구', who is gazing out the window, CONSISTENT: '나', CONSISTENT: '구', gazing out, smiling softly, sunset view from the window, warm colors filling the room, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cd/eEwsvZCMTHM44HnVuTI2g.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_03.png",
       "message": ""
     },
     {
       "index": 3,
-      "prompt": "The Relationship, Medium shot of the narrator and 'Gu' sitting closely together, sharing a quiet moment.. characters: Narrator, Gu. background: Intimate atmosphere, soft lighting.. dialogues: Narrator: 나는 너를 지켜야 해.; Gu: 내가 괜찮아질 수 있을까?. cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01c/5-3crkSFM8buOvjTi7Tpa.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_04.png",
+      "prompt": "close-up of '구' with a troubled expression, hands clenched, CONSISTENT: '구', CONSISTENT: '나', clenching fists, looking down, dimly lit room, tension in the air, silence broken by soft breathing, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cd/TGhJ8He9ZyYPWcfMlM4he.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_04.png",
       "message": ""
     },
     {
       "index": 4,
-      "prompt": "The Descent, Close-up on 'Gu's face, showing despair and hopelessness.. characters: Narrator, Gu. background: Dark, oppressive atmosphere with low, dissonant music.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01d/RpiPDNEDgscD2Zg3Al_nj.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_05.png",
+      "prompt": "wide shot of '나' and '구' sitting on a bed, '구' looking away, CONSISTENT: '구', CONSISTENT: '나', sitting silently, turning away, dark bedroom, shadows loom, a sense of hopelessness, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33ce/D8GgbQ_i5HlggDsAmiw9n.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_05.png",
       "message": ""
     },
     {
       "index": 5,
-      "prompt": "The Inevitable Choice, Wide shot of 'Gu' standing alone in a dark room.. characters: Gu. background: Heavy silence, the sound of a clock ticking.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01d/iNqQfHg7LXhfD45TK5hwk.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_06.png",
+      "prompt": "close-up of '구' with tears streaming down, face contorted in pain, CONSISTENT: '구', CONSISTENT: '나', crying, reaching out, dark room, heavy atmosphere, silence broken by soft sobs, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33ce/UjJXi4_tSk6wLwMcHBejl.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_06.png",
       "message": ""
     },
     {
       "index": 6,
-      "prompt": "The Death, Over-the-shoulder shot of the narrator discovering 'Gu's lifeless body.. characters: Narrator, Gu. background: Eerie silence, a haunting melody plays softly.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01d/a6qfL8MJxWjMPZGm3qPbx.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_07.png",
+      "prompt": "medium shot of '구' standing alone in a dimly lit room, looking out the window, CONSISTENT: '구', staring out, taking a deep breath, darkened room, faint light from outside, a sense of finality, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33ce/WLlW-_BikWwIJyS89b3fZ.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_07.png",
       "message": ""
     },
     {
       "index": 7,
-      "prompt": "The Guilt, Close-up on the narrator's face, filled with regret and sorrow.. characters: Narrator. background: Somber atmosphere, echoing silence.. dialogues: Narrator: 내가 조금만 더 잘했더라면.... cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01e/cNZdYMky1_6-_ondAg5wH.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_08.png",
+      "prompt": "close-up of '나' receiving a phone call, shock on their face, CONSISTENT: '나', holding the phone tightly, eyes wide open, dimly lit room, phone ringing loudly, tension in the air, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cf/sXh2tV--VdtHhUSkA_XBK.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_08.png",
       "message": ""
     },
     {
       "index": 8,
-      "prompt": "The Obsession, Intense close-up of the narrator's hands as they hold 'Gu's belongings.. characters: Narrator. background: Tense atmosphere, heartbeat sound effect.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01e/-Are-NX3sDNfVw9oeI9-Z.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_09.png",
+      "prompt": "medium shot of '나' sitting on the floor, head in hands, CONSISTENT: '나', sobbing, rocking back and forth, dark room, shadows creeping in, a heavy silence, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cf/Tt3qpg5NGxmj1JBSvUrcj.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_09.png",
       "message": ""
     },
     {
       "index": 9,
-      "prompt": "The Extreme Act, Dark, surreal imagery as the narrator engages in the shocking act.. characters: Narrator. background: Disturbing, dissonant music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01e/SwSmb-QJ_CE0j_ME2ldd1.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_10.png",
+      "prompt": "close-up of '나' holding 구's belongings, looking nostalgic, CONSISTENT: '나', holding items, gazing at them, cluttered room, soft light illuminating the items, a sense of longing, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33cf/c2Byc9bghHPXjDNpove8e.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_10.png",
       "message": ""
     },
     {
       "index": 10,
-      "prompt": "The Acceptance, Wide shot of the narrator standing alone, looking out at the horizon.. characters: Narrator. background: Hopeful yet melancholic music plays.. dialogues: . cinematic anime illustration, detailed lineart, soft shading, dramatic lighting",
-      "url": "https://v3b.fal.media/files/b/0a87d01f/UxHCznQkgUm9t-cHSSMkh.jpg",
-      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\backend\\Project\\data\\outputs\\image_11.png",
+      "prompt": "close-up of '나' with a conflicted expression, holding a piece of 구, CONSISTENT: '나', holding tightly, breathing heavily, dark room, eerie silence, tension in the air, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d0/-oVb616WtoB_CSWH60rA7.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_11.png",
+      "message": ""
+    },
+    {
+      "index": 11,
+      "prompt": "medium shot of '나' sitting in a sunlit room, looking contemplative, CONSISTENT: '나', sitting quietly, taking deep breaths, bright room, sunlight streaming in, a sense of calm, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d0/9H_iFO9Q9J4_Kig4T7VH3.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_12.png",
+      "message": ""
+    },
+    {
+      "index": 12,
+      "prompt": "wide shot of '나' walking in a park, looking around, CONSISTENT: '나', walking slowly, looking around, sunny park, birds chirping, vibrant colors of nature, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d1/_e0mNv1XzlN8s-wMitWzx.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_13.png",
+      "message": ""
+    },
+    {
+      "index": 13,
+      "prompt": "close-up of '나' with a serene expression, looking up at the sky, CONSISTENT: '나', closing eyes, smiling softly, clear blue sky, gentle breeze, a sense of peace, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d1/NlYYYs5maGxdAufTbV5lw.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_14.png",
+      "message": ""
+    },
+    {
+      "index": 14,
+      "prompt": "wide shot of '나' walking away from the camera, towards the horizon, CONSISTENT: '나', walking confidently, looking ahead, sunset on the horizon, warm colors blending, a sense of closure, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d1/sNxPIsbElpH_6BZ9I5JQx.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_15.png",
+      "message": ""
+    },
+    {
+      "index": 15,
+      "prompt": "close-up of '나' with a thoughtful expression, fading to black, CONSISTENT: '나', pausing, reflecting, black screen, silence, a lingering sense of love, Style: surreal dreamlike atmosphere, fantastical ethereal composition, cinematic anime illustration with detailed lineart, soft cel shading, dramatic volumetric lighting, vibrant color palette, otherworldly elements, high quality digital art, professional illustration, 4K resolution, vertical composition, portrait orientation optimized, centered framing, masterpiece, best quality, highly detailed, sharp focus, professional artwork. Avoid: blurry, low quality, distorted, bad anatomy, extra limbs, duplicate characters, text, watermark, signature, deformed faces",
+      "url": "https://v3b.fal.media/files/b/0a8a33d2/iQR6f6FlSGkn66HBJQOCh.jpg",
+      "path": "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\images\\image_16.png",
       "message": ""
     }
   ],
@@ -277,5 +583,71 @@
     "progress": 100.0,
     "message": "모든 이미지 생성 완료"
   },
-  "style_key": "surreal"
+  "style_key": "real",
+  "character_descriptions": {
+    "'나'": "'나'",
+    "'구'": "'구'"
+  },
+  "main_characters": [
+    "'나'",
+    "'구'"
+  ],
+  "video_path": "/media/projects/새-프로젝트-20251223-223026/videos/final.mp4",
+  "video_clips": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_000.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_001.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_002.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_003.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_004.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_005.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_006.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_007.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_008.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_009.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_010.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_011.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_012.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_013.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_014.mp4",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\videos\\clips\\clip_015.mp4"
+  ],
+  "audio_paths": [
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_000_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_000_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_001_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_001_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_001_02.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_002_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_002_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_003_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_003_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_003_02.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_004_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_004_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_004_02.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_005_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_005_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_005_02.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_006_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_006_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_007_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_007_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_008_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_008_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_009_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_009_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_010_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_010_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_011_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_011_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_012_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_012_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_013_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_013_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_014_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_014_01.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_015_00.mp3",
+    "C:\\Users\\kimjh\\OneDrive\\바탕 화면\\AIVideosService\\Project\\data\\projects\\새-프로젝트-20251223-223026\\audio\\audio_015_01.mp3"
+  ],
+  "video_duration": 117.6
 }
