@@ -10,6 +10,30 @@ import numpy as np
 from .tts_generator import generate_tts
 from .subtitle_splitter import format_subtitle_lines
 
+# config에서 ImageMagick 경로 가져오기
+try:
+	import sys
+	backend_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	if backend_path not in sys.path:
+		sys.path.insert(0, backend_path)
+	from config import IMAGEMAGICK_BINARY
+	
+	# ImageMagick 경로 설정
+	if IMAGEMAGICK_BINARY and os.path.exists(IMAGEMAGICK_BINARY):
+		os.environ["IMAGEMAGICK_BINARY"] = IMAGEMAGICK_BINARY
+		# MoviePy config에도 설정
+		try:
+			from moviepy.config import change_settings
+			change_settings({"IMAGEMAGICK_BINARY": IMAGEMAGICK_BINARY})
+			print(f"✅ ImageMagick 설정: {IMAGEMAGICK_BINARY}")
+		except Exception as e:
+			print(f"⚠ MoviePy 설정 실패: {e}")
+	else:
+		print(f"ℹ️  ImageMagick 미설정 (자막 비활성화, 오디오는 정상)")
+except ImportError:
+	print(f"⚠ config.py를 찾을 수 없습니다. backend/config.py를 생성하세요.")
+	IMAGEMAGICK_BINARY = None
+
 
 _SPEAKER_VOICE_CACHE: Dict[str, str] = {}
 _AVAILABLE_VOICES = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
@@ -64,16 +88,16 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 	# 자막 너비 설정 (화면의 80%)
 	subtitle_width = int(width * 0.8)
 	
-	# 자막 생성 시도 (ImageMagick 필요, 없으면 스킵)
-	# 폰트 크기를 화면 크기에 맞게 조정
+	# 자막 생성 시도
 	fontsize = min(45, int(height * 0.04))  # 화면 높이의 4%, 최대 45
 	
 	subtitle_clip = None
 	
-	# 간단한 방법으로 시도 (실패 시 바로 None 반환)
 	try:
 		font_path = _get_font_path()
-		if font_path:
+		
+		# 폰트 경로가 있으면 사용
+		if font_path and os.path.exists(font_path):
 			subtitle_clip = TextClip(
 				formatted_subtitle,
 				fontsize=fontsize,
@@ -84,6 +108,7 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 				align='center'
 			).set_duration(duration).set_start(start_time)
 		else:
+			# 기본 폰트 사용
 			subtitle_clip = TextClip(
 				formatted_subtitle,
 				fontsize=fontsize,
@@ -92,9 +117,15 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 				size=(subtitle_width, None),
 				align='center'
 			).set_duration(duration).set_start(start_time)
-	except Exception:
-		# ImageMagick 없거나 폰트 문제 - 조용히 스킵
-		# print(f"  ℹ️  자막 생성 스킵 (ImageMagick 미설치)")
+	except Exception as e:
+		# 실패 원인 출력 (디버깅용)
+		error_msg = str(e)
+		if "ImageMagick" in error_msg or "magick" in error_msg.lower():
+			# ImageMagick 문제는 조용히
+			pass
+		else:
+			# 다른 에러는 출력
+			print(f"  ⚠ 자막 생성 실패: {error_msg[:60]}")
 		return None
 	
 	if not subtitle_clip:
@@ -166,7 +197,9 @@ def _create_single_video_clip(
 	subtitle_clips = []
 	current_time = 0
 	
-	subtitle_skipped = False
+	subtitle_success_count = 0
+	subtitle_fail_count = 0
+	
 	for subtitle_text, segment_duration in subtitle_segments:
 		if subtitle_text and segment_duration > 0:
 			try:
@@ -179,14 +212,16 @@ def _create_single_video_clip(
 				if subtitle_clip:
 					subtitle_clips.append(subtitle_clip)
 					print(f"  ✅ 자막: '{subtitle_text[:25]}...' ({current_time:.1f}~{current_time + segment_duration:.1f}초)")
+					subtitle_success_count += 1
 				else:
-					subtitle_skipped = True
+					subtitle_fail_count += 1
 			except Exception as e:
-				subtitle_skipped = True
+				subtitle_fail_count += 1
 		current_time += segment_duration
 	
-	if subtitle_skipped and len(subtitle_clips) == 0:
-		print(f"  ℹ️  자막 생성 실패 (ImageMagick 미설치 - 오디오만 사용)")
+	if subtitle_fail_count > 0 and subtitle_success_count == 0:
+		# 모든 자막이 실패한 경우에만 메시지 출력
+		print(f"  ℹ️  자막 생성 실패 (ImageMagick 설정 필요 - 오디오만 사용)")
 	
 	# 이미지와 자막들을 합성
 	if subtitle_clips:
@@ -194,9 +229,10 @@ def _create_single_video_clip(
 			# 모든 자막 클립을 하나의 CompositeVideoClip으로 합성
 			all_clips = [img_clip] + subtitle_clips
 			clip = CompositeVideoClip(all_clips, size=video_size).set_duration(duration)
-			print(f"  ✅ 자막 합성 완료: {len(subtitle_clips)}개 세그먼트")
+			if len(subtitle_clips) > 0:
+				print(f"  💬 자막 합성 완료: {len(subtitle_clips)}개")
 		except Exception as e:
-			print(f"  ⚠ 자막 합성 실패, 자막 없이 진행: {str(e)[:50]}")
+			print(f"  ⚠ 자막 합성 실패: {str(e)[:50]}, 자막 없이 진행")
 			clip = img_clip
 			# 자막 클립 정리
 			for sc in subtitle_clips:
