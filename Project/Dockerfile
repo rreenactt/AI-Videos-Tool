@@ -22,6 +22,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
     && pip install --no-cache-dir -r requirements.txt
 
+    
 # 4. 소스 코드 복사
 COPY . .
 
