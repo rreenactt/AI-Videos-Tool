@@ -5,8 +5,8 @@ RUN apt-get update && apt-get install -y \
     libgl1 libglib2.0-0 imagemagick && \
     rm -rf /var/lib/apt/lists/*
 
-# 2. ImageMagick 보안 정책 수정 (자막 생성을 위해 필수)
-RUN sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/g' /etc/ImageMagick-6/policy.xml
+# 2. ImageMagick 보안 정책 수정 (와일드카드(*)를 사용하여 경로 문제를 해결)
+RUN sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/g' /etc/*/policy.xml
 
 # 3. 작업 디렉토리 설정 및 라이브러리 설치
 WORKDIR /app
