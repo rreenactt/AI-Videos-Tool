@@ -20,8 +20,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: .  # 빌드 기준점을 최상위 폴더로 설정
-          file: Project/Dockerfile  # 실제 파일은 Project 폴더 안에 있음
+          context: ./Project 
+          file: ./Project/Dockerfile 
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
 
