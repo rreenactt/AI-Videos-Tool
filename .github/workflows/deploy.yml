@@ -1,0 +1,47 @@
+name: CI/CD Deploy
+
+on:
+  push:
+    branches: [ main ] # main 브랜치에 코드가 올라오면 실행됩니다.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 내 소스 코드 가져오기
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. 도커 허브 로그인
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. 도커 이미지 빌드 및 푸시
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./Project # Dockerfile이 있는 폴더 위치를 꼭 확인하세요!
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
+
+      # 4. EC2 서버 접속 및 배포
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            # 기존 앱 중지 및 삭제
+            docker stop ai-video-app || true
+            docker rm ai-video-app || true
+            # 최신 이미지 내려받기
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
+            # 새 컨테이너 실행
+            docker run -d --name ai-video-app \
+              -p 8000:8000 \
+              -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
+              ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
