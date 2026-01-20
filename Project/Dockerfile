@@ -1,11 +1,22 @@
+# 1단계: 프론트엔드 빌드
 FROM node:20 AS frontend-build
 
 WORKDIR /frontend
+
+# 1. 의존성 파일 먼저 복사 및 설치
 COPY frontend/package*.json ./
 RUN npm install
-COPY frontend/ ./
-RUN npx vite build
 
+# 2. 전체 소스 복사
+COPY frontend/ ./
+
+# 3. 중요: 실행 권한 강제 부여 (권한 문제 해결)
+RUN chmod -R +x node_modules/.bin
+
+# 4. npx 대신 npm run build 사용 (package.json의 스크립트 실행)
+RUN npm run build
+
+# --- 이후 파이썬 설정은 기존과 동일 ---
 FROM python:3.12-slim
 
 # 1. 시스템 라이브러리 및 빌드 도구 설치 (컴파일러 포함)
