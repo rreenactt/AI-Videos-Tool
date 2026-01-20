@@ -2,7 +2,8 @@ FROM node:20-slim AS frontend-build
 
 WORKDIR /frontend
 COPY frontend/package*.json ./
-RUN npm ci
+ENV NODE_ENV=development
+RUN npm ci --include=dev
 COPY frontend ./
 RUN npm run build
 
