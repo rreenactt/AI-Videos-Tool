@@ -1,10 +1,9 @@
-FROM node:20-slim AS frontend-build
+FROM node:20 AS frontend-build
 
 WORKDIR /frontend
 COPY frontend/package*.json ./
-ENV NODE_ENV=development
-RUN npm ci --include=dev
-COPY frontend ./
+RUN npm install
+COPY frontend/ ./
 RUN npm run build
 
 FROM python:3.12-slim
@@ -28,8 +27,8 @@ WORKDIR /app
 
 # 3. 의존성 설치
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
-    && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
 
     
 # 4. 소스 코드 복사
