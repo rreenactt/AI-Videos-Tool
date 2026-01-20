@@ -62,13 +62,17 @@ def _get_font_path() -> Optional[str]:
 			if os.path.exists(path):
 				return path
 	elif system == "Linux":
-		# Linux 한글 폰트 경로들 (나눔 폰트)
+		# Linux 한글 폰트 경로들 (Noto CJK, 나눔 폰트)
 		font_paths = [
+			# Noto CJK 폰트 (fonts-noto-cjk 패키지)
+			"/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+			"/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc",
+			"/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+			"/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+			# 나눔 폰트 (fonts-nanum 패키지)
 			"/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
 			"/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
-			"/usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf",
 			"/usr/share/fonts/opentype/nanum/NanumGothic.ttf",
-			"/usr/share/fonts/nanum/NanumGothic.ttf",
 		]
 		for path in font_paths:
 			if os.path.exists(path):

@@ -20,7 +20,7 @@ RUN npm run build
 FROM python:3.12-slim
 
 # 1. 시스템 라이브러리 및 빌드 도구 설치 (컴파일러 포함)
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-dev \
     libgl1 \
@@ -29,8 +29,7 @@ RUN apt-get update && apt-get install -y \
     libsndfile1-dev \
     ffmpeg \
     imagemagick \
-    fonts-nanum \
-    fonts-nanum-coding \
+    fonts-noto-cjk \
     fontconfig \
     && rm -rf /var/lib/apt/lists/* \
     && fc-cache -fv
