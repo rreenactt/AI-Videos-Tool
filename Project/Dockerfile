@@ -29,7 +29,11 @@ RUN apt-get update && apt-get install -y \
     libsndfile1-dev \
     ffmpeg \
     imagemagick \
-    && rm -rf /var/lib/apt/lists/*
+    fonts-nanum \
+    fonts-nanum-coding \
+    fontconfig \
+    && rm -rf /var/lib/apt/lists/* \
+    && fc-cache -fv
 
 # 2. ImageMagick 보안 정책 수정
 RUN sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/g' /etc/ImageMagick-*/policy.xml

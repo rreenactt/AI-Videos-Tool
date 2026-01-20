@@ -61,7 +61,19 @@ def _get_font_path() -> Optional[str]:
 		for path in font_paths:
 			if os.path.exists(path):
 				return path
-	# Linux나 기타 시스템은 기본값 사용
+	elif system == "Linux":
+		# Linux 한글 폰트 경로들 (나눔 폰트)
+		font_paths = [
+			"/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
+			"/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
+			"/usr/share/fonts/truetype/nanum/NanumMyeongjo.ttf",
+			"/usr/share/fonts/opentype/nanum/NanumGothic.ttf",
+			"/usr/share/fonts/nanum/NanumGothic.ttf",
+		]
+		for path in font_paths:
+			if os.path.exists(path):
+				return path
+	# 기본값
 	return None
 
 
