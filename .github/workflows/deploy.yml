@@ -25,7 +25,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
 
-
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
