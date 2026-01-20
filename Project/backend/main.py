@@ -815,6 +815,27 @@ async def api_video(payload: VideoJobRequest):
 		raise HTTPException(500, detail=str(e))
 
 
+# 프론트엔드 public 폴더 정적 파일 서빙 (로고 등)
+@app.get("/{filename:path}")
+async def serve_static_or_spa(filename: str):
+	"""SPA 라우팅 및 정적 파일 서빙"""
+	# 1. API 경로는 404 반환 (이미 위에서 처리됨)
+	if filename.startswith("api/"):
+		raise HTTPException(404, detail="API not found")
+	
+	# 2. 정적 파일 확인 (로고, 아이콘 등)
+	static_path = os.path.join(FRONTEND_DIST_DIR, filename)
+	if os.path.isfile(static_path):
+		return FileResponse(static_path)
+	
+	# 3. SPA 라우팅: index.html 반환 (React Router 지원)
+	index_path = os.path.join(FRONTEND_DIST_DIR, "index.html")
+	if os.path.isfile(index_path):
+		return FileResponse(index_path)
+	
+	raise HTTPException(404, detail="Not found")
+
+
 if __name__ == "__main__":
 	import uvicorn
 	import logging

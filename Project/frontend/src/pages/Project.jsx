@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://127.0.0.1:8001'
+const API_BASE = import.meta.env.VITE_API_BASE || ''
 const normalizeSavedResults = (savedList, promptList = []) => {
   if(!Array.isArray(savedList)) return []
   return savedList.map((item, idx) => {
