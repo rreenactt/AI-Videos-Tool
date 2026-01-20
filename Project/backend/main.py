@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import os
@@ -88,6 +89,8 @@ DATA_DIR = os.path.normpath(os.path.join(BASE_DIR, "../data"))
 OUTPUTS_DIR = os.path.join(DATA_DIR, "outputs")
 TEMP_DIR = os.path.join(DATA_DIR, "temp")
 PROJECTS_DIR = os.path.join(DATA_DIR, "projects")
+FRONTEND_DIST_DIR = os.path.normpath(os.path.join(BASE_DIR, "../frontend/dist"))
+FRONTEND_ASSETS_DIR = os.path.join(FRONTEND_DIST_DIR, "assets")
 
 # 정적 파일 서빙 (이미지/영상 접근용)
 if os.path.isdir(DATA_DIR):
@@ -95,6 +98,14 @@ if os.path.isdir(DATA_DIR):
 		"/media",
 		StaticFiles(directory=DATA_DIR),
 		name="media",
+	)
+
+# 프론트엔드 정적 파일 서빙 (Vite build 결과)
+if os.path.isdir(FRONTEND_ASSETS_DIR):
+	app.mount(
+		"/assets",
+		StaticFiles(directory=FRONTEND_ASSETS_DIR),
+		name="assets",
 	)
 
 DEFAULT_STATE = {
@@ -278,6 +289,14 @@ progress_store: dict[str, dict] = {}
 @app.get("/health")
 async def health():
 	return {"status": "ok"}
+
+
+@app.get("/")
+async def root():
+	index_path = os.path.join(FRONTEND_DIST_DIR, "index.html")
+	if os.path.isfile(index_path):
+		return FileResponse(index_path)
+	raise HTTPException(404, detail="프론트엔드 빌드 파일을 찾을 수 없습니다")
 
 
 @app.get("/api/home")

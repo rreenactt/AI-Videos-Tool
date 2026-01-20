@@ -1,3 +1,11 @@
+FROM node:20-slim AS frontend-build
+
+WORKDIR /frontend
+COPY frontend/package*.json ./
+RUN npm ci
+COPY frontend ./
+RUN npm run build
+
 FROM python:3.12-slim
 
 # 1. 시스템 라이브러리 및 빌드 도구 설치 (컴파일러 포함)
@@ -25,6 +33,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
     
 # 4. 소스 코드 복사
 COPY . .
+COPY --from=frontend-build /frontend/dist ./frontend/dist
 
 # 5. 실행 설정
 EXPOSE 8000
