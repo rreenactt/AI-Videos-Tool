@@ -100,6 +100,14 @@ if os.path.isdir(DATA_DIR):
 		name="media",
 	)
 
+# outputs 폴더 직접 서빙 (영상 파일 접근용)
+os.makedirs(OUTPUTS_DIR, exist_ok=True)
+app.mount(
+	"/outputs",
+	StaticFiles(directory=OUTPUTS_DIR),
+	name="outputs",
+)
+
 # 프론트엔드 정적 파일 서빙 (Vite build 결과)
 if os.path.isdir(FRONTEND_ASSETS_DIR):
 	app.mount(

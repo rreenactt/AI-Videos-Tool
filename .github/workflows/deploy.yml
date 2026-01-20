@@ -35,9 +35,16 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
             docker stop ai-video-app || true
             docker rm ai-video-app || true
-            # 컨테이너 실행 시 FAL_KEY도 환경변수로 넣어줍니다.
+            
+            # 서버에 데이터 폴더 생성 (없으면)
+            mkdir -p /home/ubuntu/ai-video-data/outputs
+            mkdir -p /home/ubuntu/ai-video-data/projects
+            mkdir -p /home/ubuntu/ai-video-data/temp
+            
+            # 볼륨 마운트: 서버의 폴더와 도커 내부 폴더 연결 (배포 후에도 데이터 유지)
             docker run -d --name ai-video-app \
               -p 8000:8000 \
+              -v /home/ubuntu/ai-video-data:/app/data \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               -e FAL_KEY=${{ secrets.FAL_KEY }} \
               ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
