@@ -1,42 +1,10 @@
 from typing import List, Optional, Callable, Dict, Any
 import os
 from pathlib import Path
-
-# ↓ 필요한 라이브러리
-import torch
-from diffusers import StableDiffusionPipeline
 import fal_client
 import requests
 
-# 전역 파이프라인 캐시
-_PIPE = None
 DEFAULT_FAL_MODEL = "fal-ai/flux/dev"
-
-
-def _get_pipe(model_id: str = "andite/anything-v5.0"):
-    """한 번만 로드해서 전역으로 쓰는 파이프라인"""
-    global _PIPE
-    if _PIPE is not None:
-        return _PIPE
-
-    # 여기서 from_pretrained 할 때 한 번만 다운로드되고 이후엔 캐시에서 불러옴
-    pipe = StableDiffusionPipeline.from_pretrained(
-        model_id,
-        torch_dtype=torch.float16,   # 8GB VRAM이면 반정도는 줄여주자
-        safety_checker=None
-    )
-
-    # GPU 있으면 올리고, 없으면 CPU로
-    if torch.cuda.is_available():
-        pipe = pipe.to("cuda")
-    else:
-        pipe = pipe.to("cpu")
-
-    # 메모리 절약
-    pipe.enable_attention_slicing()
-
-    _PIPE = pipe
-    return _PIPE
 
 
 def _parse_size(size_str: str):
@@ -62,41 +30,15 @@ def _download_to_path(url: str, output_dir: str, filename: str) -> str:
 def generate_images(
     prompts: List[str],
     *,
-    model: str = "andite/anything-v5.0",
-    size: str = "512x512",
+    model: str = DEFAULT_FAL_MODEL,
+    size: str = "portrait_16_9",
     output_dir: str = "../data/outputs"
 ) -> List[str]:
     """
-    실제로 diffusers를 사용해서 이미지 생성하는 버전
+    fal.ai만 사용해서 이미지 생성
     """
-    # fal.ai 모델을 명시적으로 요청한 경우
-    if model.startswith("fal") or "fal-ai" in model or "flux" in model:
-        generated = generate_images_with_fal(prompts, model=model, size=size, output_dir=output_dir)
-        return [item.get("path") or item.get("url") for item in generated]
-
-    os.makedirs(output_dir, exist_ok=True)
-    pipe = _get_pipe(model)
-
-    width, height = _parse_size(size)
-    saved_paths: List[str] = []
-
-    negative_prompt = "lowres, blurry, bad anatomy, bad hands, extra fingers, text, watermark"
-
-    for i, prompt in enumerate(prompts, start=1):
-        result = pipe(
-            prompt,
-            negative_prompt=negative_prompt,
-            width=width,
-            height=height,
-            num_inference_steps=25
-        )
-        image = result.images[0]
-
-        file_path = Path(output_dir) / f"image_{i:02d}.png"
-        image.save(str(file_path))
-        saved_paths.append(str(file_path))
-
-    return saved_paths
+    generated = generate_images_with_fal(prompts, model=model, size=size, output_dir=output_dir)
+    return [item.get("path") or item.get("url") for item in generated]
 
 
 def generate_images_with_fal(
@@ -160,57 +102,13 @@ def generate_images_with_progress(
     진행 상황 콜백을 지원하는 이미지 생성기.
     progress_callback(status, progress, message) 형태로 호출됨.
     """
-    # fal.ai 모델을 사용할 경우 전용 경로로 분기
-    if model.startswith("fal") or "fal-ai" in model or "flux" in model:
-        return generate_images_with_fal(
-            prompts,
-            progress_callback=progress_callback,
-            model=model or DEFAULT_FAL_MODEL,
-            size=size,
-            output_dir=output_dir
-        )
-
-    os.makedirs(output_dir, exist_ok=True)
-
-    # 모델 로드 단계
-    if progress_callback:
-        progress_callback("loading_model", 0.0, "모델 확인 중...")
-
-    pipe = _get_pipe(model)
-
-    if progress_callback:
-        progress_callback("loading_model", 100.0, "모델 준비 완료")
-
-    total = len(prompts)
-    saved_paths: List[Dict[str, Any]] = []
-    width, height = _parse_size(size)
-    negative_prompt = "lowres, blurry, bad anatomy, bad hands, extra fingers, text, watermark"
-
-    for i, prompt in enumerate(prompts, start=1):
-        if progress_callback:
-            progress = (i - 1) / total * 100
-            progress_callback("generating", progress, f"이미지 {i}/{total} 생성 중...")
-
-        result = pipe(
-            prompt,
-            negative_prompt=negative_prompt,
-            width=width,
-            height=height,
-            num_inference_steps=25
-        )
-        image = result.images[0]
-
-        file_path = Path(output_dir) / f"image_{i:02d}.png"
-        image.save(str(file_path))
-        saved_paths.append({"index": i - 1, "prompt": prompt, "path": str(file_path)})
-
-        if progress_callback:
-            progress_callback("generating", (i / total) * 100, f"이미지 {i}/{total} 생성 완료")
-
-    if progress_callback:
-        progress_callback("completed", 100.0, "모든 이미지 생성 완료")
-
-    return saved_paths
+    return generate_images_with_fal(
+        prompts,
+        progress_callback=progress_callback,
+        model=model or DEFAULT_FAL_MODEL,
+        size=size,
+        output_dir=output_dir
+    )
 
 
 def regenerate_single_image(
