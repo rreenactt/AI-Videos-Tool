@@ -4,7 +4,7 @@ WORKDIR /frontend
 COPY frontend/package*.json ./
 RUN npm install
 COPY frontend/ ./
-RUN npm run build
+RUN npx vite build
 
 FROM python:3.12-slim
 
