@@ -32,19 +32,26 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            # 1. 최신 이미지 가져오기
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
-            docker stop ai-video-app || true
-            docker rm ai-video-app || true
             
-            # 서버에 데이터 폴더 생성 (없으면)
+            # 2. 기존 컨테이너 중지 및 삭제 (이름 충돌 방지를 위해 두 이름 모두 정리)
+            docker stop ai-video-app ai-shorts-app || true
+            docker rm ai-video-app ai-shorts-app || true
+            
+            # 3. 안 쓰는 이미지 및 컨테이너 정리 (디스크 용량 확보)
+            docker system prune -f
+            
+            # 4. 서버에 데이터 폴더 생성 (없으면)
             mkdir -p /home/ubuntu/ai-video-data/outputs
-            mkdir -p /home/ubuntu/ai-video-data/projects
-            mkdir -p /home/ubuntu/ai-video-data/temp
+            mkdir -p /home/ubuntu/keys
             
-            # 볼륨 마운트: 서버의 폴더와 도커 내부 폴더 연결 (배포 후에도 데이터 유지)
+            # 5. 최종 실행 (Google TTS 설정 포함)
             docker run -d --name ai-video-app \
               -p 8000:8000 \
               -v /home/ubuntu/ai-video-data:/app/data \
+              -v /home/ubuntu/keys/google_creds.json:/app/google_creds.json \
+              -e GOOGLE_APPLICATION_CREDENTIALS=/app/google_creds.json \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               -e FAL_KEY=${{ secrets.FAL_KEY }} \
               ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest
