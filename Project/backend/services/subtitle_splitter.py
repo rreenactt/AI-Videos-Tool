@@ -2,12 +2,12 @@ import re
 from typing import List
 
 
-def split_subtitle_by_length(text: str, max_length: int = 11) -> List[str]:
+def split_subtitle_by_length(text: str, max_length: int = 12) -> List[str]:
 	"""자막을 최대 길이에 맞춰 어순에 맞게 분할
 	
 	Args:
 		text: 분할할 텍스트
-		max_length: 최대 글자 수 (기본 11글자)
+		max_length: 최대 글자 수 (기본 12글자)
 		
 	Returns:
 		분할된 텍스트 리스트
@@ -67,12 +67,12 @@ def split_subtitle_by_length(text: str, max_length: int = 11) -> List[str]:
 	return result if result else [text]
 
 
-def format_subtitle_lines(text: str, max_length: int = 11) -> str:
+def format_subtitle_lines(text: str, max_length: int = 12) -> str:
 	"""자막을 최대 길이에 맞춰 여러 줄로 포맷팅
 	
 	Args:
 		text: 포맷팅할 텍스트
-		max_length: 최대 글자 수 (기본 11글자)
+		max_length: 최대 글자 수 (기본 12글자)
 		
 	Returns:
 		줄바꿈이 포함된 텍스트

@@ -36,7 +36,8 @@ except ImportError:
 
 
 _SPEAKER_VOICE_CACHE: Dict[str, str] = {}
-_AVAILABLE_VOICES = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
+# Google Cloud TTS 한국어 음성 목록
+_AVAILABLE_VOICES = ["default", "female_a", "female_b", "male_a", "male_b", "narrator"]
 
 
 def _get_font_path() -> Optional[str]:
@@ -161,8 +162,8 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 	return CompositeVideoClip([bg_clip, subtitle_clip], size=video_size)
 
 
-def _get_voice_for_speaker(speaker: str, default_voice: str = "alloy") -> str:
-	"""화자 이름에 따라 고정된 TTS voice를 매핑
+def _get_voice_for_speaker(speaker: str, default_voice: str = "default") -> str:
+	"""화자 이름에 따라 고정된 Google TTS voice를 매핑
 	
 	같은 화자는 항상 같은 voice를 쓰도록 캐시합니다.
 	"""
@@ -171,9 +172,16 @@ def _get_voice_for_speaker(speaker: str, default_voice: str = "alloy") -> str:
 	key = speaker.strip().lower()
 	if key in _SPEAKER_VOICE_CACHE:
 		return _SPEAKER_VOICE_CACHE[key]
+	
+	# 나레이션은 특별 처리
+	if "나레이션" in key or "narration" in key or "narrator" in key:
+		_SPEAKER_VOICE_CACHE[key] = "narrator"
+		return "narrator"
+	
 	if not _AVAILABLE_VOICES:
 		_SPEAKER_VOICE_CACHE[key] = default_voice
 		return default_voice
+	
 	# 화자명을 기준으로 단순 해시 → 인덱스
 	idx = abs(hash(key)) % len(_AVAILABLE_VOICES)
 	voice = _AVAILABLE_VOICES[idx]
@@ -632,13 +640,15 @@ def compose_video(
 							subtitle_text = text
 							voice = tts_voice
 						
-						# TTS 생성
+						# TTS 생성 (Google Cloud TTS + SSML)
 						seg_output_path = os.path.join(audio_dir, f"audio_{i:03d}_{seg_idx:02d}.mp3")
 						try:
 							generate_tts(
 								text=text.strip(),
 								output_path=seg_output_path,
-								voice=voice
+								voice=voice,
+								use_ssml=True,  # GPT로 SSML 변환
+								emotion="neutral"
 							)
 							
 							if not os.path.exists(seg_output_path):
