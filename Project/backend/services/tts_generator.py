@@ -27,17 +27,37 @@ def _get_tts_client():
 	"""Google Cloud TTS 클라이언트 싱글톤"""
 	global _tts_client
 	if _tts_client is None:
-		# 환경변수에서 JSON 키 직접 읽기 (Docker 환경용)
+		print("\n🔧 Google Cloud TTS 클라이언트 초기화 중...")
+		
+		# GOOGLE_APPLICATION_CREDENTIALS 환경변수 확인
+		creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 		google_creds_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
-		if google_creds_json:
+		
+		if creds_path:
+			print(f"  📁 GOOGLE_APPLICATION_CREDENTIALS: {creds_path}")
+			if os.path.exists(creds_path):
+				print(f"  ✓ 파일 존재함 ({os.path.getsize(creds_path)} bytes)")
+			else:
+				print(f"  ✗ 파일 없음!")
+		elif google_creds_json:
+			print(f"  📄 GOOGLE_CREDENTIALS_JSON 환경변수 사용 ({len(google_creds_json)} chars)")
 			import tempfile
 			# 임시 파일에 credentials 저장
 			creds_file = tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False)
 			creds_file.write(google_creds_json)
 			creds_file.close()
 			os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = creds_file.name
+			print(f"  📁 임시 파일 생성: {creds_file.name}")
+		else:
+			print("  ⚠️  Google 인증 정보 없음!")
+			print("  GOOGLE_APPLICATION_CREDENTIALS 또는 GOOGLE_CREDENTIALS_JSON 필요")
 		
-		_tts_client = texttospeech.TextToSpeechClient()
+		try:
+			_tts_client = texttospeech.TextToSpeechClient()
+			print("  ✓ TTS 클라이언트 생성 완료\n")
+		except Exception as e:
+			print(f"  ✗ 클라이언트 생성 실패: {e}\n")
+			raise
 	return _tts_client
 
 
@@ -260,6 +280,37 @@ def generate_tts(
 			
 		except Exception as e:
 			last_error = e
+			error_str = str(e)
+			
+			# 상세 에러 로그 출력
+			print(f"\n{'='*60}")
+			print(f"❌ Google TTS 에러 (시도 {attempt+1}/{max_retries})")
+			print(f"{'='*60}")
+			print(f"에러 타입: {type(e).__name__}")
+			print(f"에러 메시지: {error_str}")
+			
+			# 403 에러 상세 안내
+			if "403" in error_str:
+				print("\n⚠️  403 에러 원인:")
+				print("  1. Google Cloud Console에서 'Cloud Text-to-Speech API' 활성화 필요")
+				print("  2. 서비스 계정에 'Cloud Text-to-Speech User' 역할 필요")
+				print("  3. 프로젝트에 결제(Billing) 설정 필요")
+				print("  4. GOOGLE_APPLICATION_CREDENTIALS 경로 확인 필요")
+				creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "설정안됨")
+				print(f"  현재 credentials 경로: {creds_path}")
+				if creds_path != "설정안됨" and os.path.exists(creds_path):
+					print(f"  ✓ 파일 존재함")
+				else:
+					print(f"  ✗ 파일 없음!")
+			
+			# 401 에러 상세 안내
+			if "401" in error_str:
+				print("\n⚠️  401 에러 원인:")
+				print("  - 인증 정보가 유효하지 않음")
+				print("  - 서비스 계정 키가 만료되었거나 잘못됨")
+			
+			print(f"{'='*60}\n")
+			
 			if os.path.exists(output_path):
 				try:
 					os.remove(output_path)
@@ -271,7 +322,7 @@ def generate_tts(
 				time.sleep(0.5)
 				continue
 	
-	raise Exception(f"TTS 생성 실패 ({max_retries}회 시도): {str(last_error)}")
+	raise Exception(f"TTS 생성 실패 ({max_retries}회 시도): {str(last_error)[:200]}")
 
 
 def generate_tts_segments(
