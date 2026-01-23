@@ -64,7 +64,7 @@ export default function App() {
       )}
 
       <header className="header-logo">
-        <img src="/auto-shorts-logo.png" alt="AUTO Shorts" className="main-logo" />
+        <img src="/auto-shorts.png" alt="AUTO Shorts" className="main-logo" />
       </header>
 
       <div className="shell">
