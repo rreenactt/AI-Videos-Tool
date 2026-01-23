@@ -148,8 +148,8 @@ def _create_subtitle_clip(subtitle_text: str, duration: float, video_size: Tuple
 	if not subtitle_clip:
 		return None
 	
-	# 자막을 화면 중앙에 배치
-	subtitle_y = (height - subtitle_clip.h) // 2
+	# 자막을 화면 상단 40% 위치에 배치 (기존 중앙에서 위로 이동)
+	subtitle_y = int(height * 0.40) - (subtitle_clip.h // 2)
 	subtitle_clip = subtitle_clip.set_position(('center', subtitle_y))
 	
 	# 반투명 배경 생성
@@ -217,7 +217,7 @@ def _create_single_video_clip(
 	img_clip = ImageClip(image_path, duration=duration)
 	video_size = (img_clip.w, img_clip.h)
 	
-	# 자막 클립들을 시간별로 생성
+	# 자막 클립들을 시간별로 생성 (12글자씩 분할하여 순차 표시)
 	subtitle_clips = []
 	current_time = 0
 	
@@ -226,22 +226,48 @@ def _create_single_video_clip(
 	
 	for subtitle_text, segment_duration in subtitle_segments:
 		if subtitle_text and segment_duration > 0:
-			try:
-				subtitle_clip = _create_subtitle_clip(
-					subtitle_text=subtitle_text,
-					duration=segment_duration,
-					video_size=video_size,
-					start_time=current_time
-				)
-				if subtitle_clip:
-					subtitle_clips.append(subtitle_clip)
-					print(f"  ✅ 자막: '{subtitle_text[:25]}...' ({current_time:.1f}~{current_time + segment_duration:.1f}초)")
-					subtitle_success_count += 1
-				else:
+			# 자막을 12글자 단위로 분할
+			from .subtitle_splitter import split_subtitle_by_length
+			sub_segments = split_subtitle_by_length(subtitle_text, max_length=12)
+			
+			if len(sub_segments) > 1:
+				# 여러 세그먼트로 분할된 경우: 시간을 균등 분배
+				sub_duration = segment_duration / len(sub_segments)
+				for sub_text in sub_segments:
+					try:
+						subtitle_clip = _create_subtitle_clip(
+							subtitle_text=sub_text,
+							duration=sub_duration,
+							video_size=video_size,
+							start_time=current_time
+						)
+						if subtitle_clip:
+							subtitle_clips.append(subtitle_clip)
+							print(f"  ✅ 자막: '{sub_text}' ({current_time:.1f}~{current_time + sub_duration:.1f}초)")
+							subtitle_success_count += 1
+						else:
+							subtitle_fail_count += 1
+					except Exception as e:
+						subtitle_fail_count += 1
+					current_time += sub_duration
+			else:
+				# 단일 세그먼트 (12글자 이하)
+				try:
+					subtitle_clip = _create_subtitle_clip(
+						subtitle_text=subtitle_text,
+						duration=segment_duration,
+						video_size=video_size,
+						start_time=current_time
+					)
+					if subtitle_clip:
+						subtitle_clips.append(subtitle_clip)
+						print(f"  ✅ 자막: '{subtitle_text}' ({current_time:.1f}~{current_time + segment_duration:.1f}초)")
+						subtitle_success_count += 1
+					else:
+						subtitle_fail_count += 1
+				except Exception as e:
 					subtitle_fail_count += 1
-			except Exception as e:
-				subtitle_fail_count += 1
-		current_time += segment_duration
+				current_time += segment_duration
 	
 	if subtitle_fail_count > 0 and subtitle_success_count == 0:
 		# 모든 자막이 실패한 경우에만 메시지 출력
@@ -632,12 +658,11 @@ def compose_video(
 					text = dialogue.get("text", "")
 					
 					if text:
-						# 화자별 음성 선택
-						if speaker and speaker.lower() != "narration":
-							subtitle_text = f"[{speaker}] {text}"
+						# 화자별 음성 선택 (자막에는 화자 표시 안함)
+						subtitle_text = text  # [나레이션] 등 표시 제거
+						if speaker and speaker.lower() not in ["narration", "나레이션"]:
 							voice = _get_voice_for_speaker(speaker, default_voice=tts_voice)
 						else:
-							subtitle_text = text
 							voice = tts_voice
 						
 						# TTS 생성 (Google Cloud TTS + SSML)

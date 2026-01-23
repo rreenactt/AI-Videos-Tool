@@ -63,12 +63,12 @@ def _get_tts_client():
 
 # 한국어 음성 목록 (Google Cloud TTS)
 KOREAN_VOICES = {
-	"default": "ko-KR-Neural2-A",  # 여성 (기본)
+	"default": "ko-KR-Neural2-C",  # 남성 (기본)
 	"female_a": "ko-KR-Neural2-A",  # 여성
 	"female_b": "ko-KR-Neural2-B",  # 여성
 	"male_a": "ko-KR-Neural2-C",    # 남성
 	"male_b": "ko-KR-Standard-A",   # 남성 (스탠다드)
-	"narrator": "ko-KR-Neural2-A",  # 나레이션용
+	"narrator": "ko-KR-Neural2-C",  # 나레이션용 (남성)
 }
 
 
@@ -153,7 +153,7 @@ SSML만 출력하세요 (다른 설명 없이):"""
 		response = openai_client.chat.completions.create(
 			model="gpt-4o-mini",
 			messages=[
-				{"role": "system", "content": "You are an SSML expert. Output only valid SSML, nothing else."},
+				{"role": "system", "content": "You are an SSML expert. Output only valid SSML, nothing else. Never duplicate the original text."},
 				{"role": "user", "content": prompt}
 			],
 			temperature=0.3,
@@ -167,6 +167,12 @@ SSML만 출력하세요 (다른 설명 없이):"""
 			ssml = f"<speak>{ssml}"
 		if not ssml.endswith("</speak>"):
 			ssml = f"{ssml}</speak>"
+		
+		# 텍스트 중복 체크 - 원본 텍스트가 2번 이상 포함되면 간단한 SSML 사용
+		clean_text = text.strip()
+		if ssml.count(clean_text) > 1:
+			print(f"  ⚠ SSML에 텍스트 중복 감지, 기본 SSML 사용")
+			return f"<speak>{clean_text}</speak>"
 		
 		return ssml
 		
