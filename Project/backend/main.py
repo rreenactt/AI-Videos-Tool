@@ -56,6 +56,8 @@ class VideoJobRequest(BaseModel):
 	fps: Optional[int] = 24
 	audio_path: Optional[str] = None
 	output_path: Optional[str] = "../data/outputs/final.mp4"
+	tts_type: Optional[str] = "google"  # "google" 또는 "gemini"
+	tts_style: Optional[str] = "유튜버"  # "유튜버", "나레이션", "캐릭터"
 
 
 class RegenerateImageRequest(BaseModel):
@@ -297,6 +299,13 @@ progress_store: dict[str, dict] = {}
 @app.get("/health")
 async def health():
 	return {"status": "ok"}
+
+
+@app.get("/api/tts/types")
+async def api_tts_types():
+	"""사용 가능한 TTS 타입 목록 반환"""
+	from backend.services.tts_generator import get_available_tts_types
+	return {"types": get_available_tts_types()}
 
 
 @app.get("/")
@@ -802,7 +811,9 @@ async def api_video(payload: VideoJobRequest):
 			output_path=output_path,
 			project_id=payload.project_id,
 			use_tts=True,
-			tts_voice="alloy"
+			tts_voice="default",
+			tts_type=payload.tts_type or "google",
+			tts_style=payload.tts_style or "유튜버"
 		)
 		
 		# 웹에서 접근 가능한 URL 생성

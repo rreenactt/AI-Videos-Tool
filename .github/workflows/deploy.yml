@@ -46,7 +46,7 @@ jobs:
             mkdir -p /home/ubuntu/ai-video-data/outputs
             mkdir -p /home/ubuntu/keys
             
-            # 5. 최종 실행 (Google TTS 설정 포함)
+            # 2. 새로운 설정으로 최종 실행
             docker run -d --name ai-video-app \
               -p 8000:8000 \
               -v /home/ubuntu/ai-video-data:/app/data \
@@ -54,4 +54,5 @@ jobs:
               -e GOOGLE_APPLICATION_CREDENTIALS=/app/google_creds.json \
               -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
               -e FAL_KEY=${{ secrets.FAL_KEY }} \
+              -e GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }} \
               ${{ secrets.DOCKERHUB_USERNAME }}/ai-video-tool:latest

@@ -47,7 +47,31 @@ export default function Project(){
   const [regenIndex, setRegenIndex] = useState(null)
   const [videoGenerating, setVideoGenerating] = useState(false)
   const [videoPath, setVideoPath] = useState('')
+  const [ttsType, setTtsType] = useState('google')  // 'google' 또는 'gemini'
+  const [ttsStyle, setTtsStyle] = useState('유튜버')  // '유튜버', '나레이션', '캐릭터'
+  const [ttsCollapsed, setTtsCollapsed] = useState(true)
   const selectedStyle = useMemo(() => stylePresets.find(s => s.key === selectedStyleKey) || stylePresets[0], [stylePresets, selectedStyleKey])
+  
+  const ttsPresets = useMemo(() => ([
+    { 
+      key: 'google', 
+      label: 'Google TTS', 
+      description: '안정적인 Google Neural2 음성',
+      features: ['SSML 지원', '안정적', '다양한 음성']
+    },
+    { 
+      key: 'gemini', 
+      label: 'Gemini AI TTS', 
+      description: 'AI 감정 표현, 유튜버 스타일',
+      features: ['감정 태그', 'GPT 대사 강화', '유튜버 스타일']
+    }
+  ]), [])
+  
+  const ttsStylePresets = useMemo(() => ([
+    { key: '유튜버', label: '유튜버', description: '하이텐션, 신나는 스타일' },
+    { key: '나레이션', label: '나레이션', description: '차분하고 전문적인 스타일' },
+    { key: '캐릭터', label: '캐릭터', description: '개성있는 캐릭터 연기' }
+  ]), [])
 
   // 백엔드에서 온 상대 경로(/media/...)를 절대 URL로 변환
   const resolveMediaUrl = useCallback((value) => {
@@ -279,7 +303,9 @@ export default function Project(){
         body: JSON.stringify({
           project_id: id,
           image_paths: imagePaths,
-          fps: 24
+          fps: 24,
+          tts_type: ttsType,
+          tts_style: ttsStyle
         })
       })
       
@@ -493,13 +519,94 @@ export default function Project(){
                 <div className="card project-card" style={{marginTop:12}}>
                   <div className="section-title">영상 생성</div>
                   <div className="help" style={{marginBottom:8}}>생성된 이미지들로 자막과 TTS가 포함된 영상을 만듭니다.</div>
+                  
+                  {/* TTS 선택 옵션 */}
+                  <div style={{marginBottom:16, padding:12, background:'rgba(0,0,0,0.03)', borderRadius:8}}>
+                    <div 
+                      className="style-header" 
+                      onClick={()=>setTtsCollapsed(!ttsCollapsed)}
+                      style={{cursor:'pointer', marginBottom: ttsCollapsed ? 0 : 12}}
+                    >
+                      <div style={{display:'flex',alignItems:'center',gap:10}}>
+                        <div className={`chevron ${ttsCollapsed?'collapsed':''}`}>▾</div>
+                        <div style={{fontWeight:700}}>🔊 TTS 음성 설정</div>
+                      </div>
+                      <div style={{display:'flex', alignItems:'center', gap:8}}>
+                        <span className="help">현재:</span>
+                        <span style={{fontWeight:600, color: ttsType === 'gemini' ? '#8b5cf6' : '#2563eb'}}>
+                          {ttsType === 'gemini' ? 'Gemini AI' : 'Google TTS'}
+                        </span>
+                        {ttsType === 'gemini' && (
+                          <span style={{fontSize:11, color:'#6b7280'}}>({ttsStyle})</span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    {!ttsCollapsed && (
+                      <div style={{display:'flex', flexDirection:'column', gap:12}}>
+                        {/* TTS 타입 선택 */}
+                        <div>
+                          <div className="help" style={{marginBottom:6}}>TTS 엔진 선택</div>
+                          <div style={{display:'flex', gap:8}}>
+                            {ttsPresets.map(preset => (
+                              <button
+                                key={preset.key}
+                                className={`btn ${ttsType === preset.key ? 'primary' : 'ghost'}`}
+                                onClick={() => setTtsType(preset.key)}
+                                style={{
+                                  flex:1, 
+                                  padding:'12px 16px', 
+                                  textAlign:'left',
+                                  border: ttsType === preset.key ? 'none' : '1px solid #e5e7eb'
+                                }}
+                              >
+                                <div style={{fontWeight:600, marginBottom:4}}>
+                                  {preset.key === 'gemini' ? '✨ ' : '🔊 '}{preset.label}
+                                </div>
+                                <div style={{fontSize:11, opacity:0.8}}>{preset.description}</div>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Gemini 스타일 선택 (Gemini 선택 시에만 표시) */}
+                        {ttsType === 'gemini' && (
+                          <div>
+                            <div className="help" style={{marginBottom:6}}>AI 음성 스타일</div>
+                            <div style={{display:'flex', gap:8}}>
+                              {ttsStylePresets.map(preset => (
+                                <button
+                                  key={preset.key}
+                                  className={`btn ${ttsStyle === preset.key ? 'primary' : 'ghost'}`}
+                                  onClick={() => setTtsStyle(preset.key)}
+                                  style={{
+                                    flex:1,
+                                    padding:'10px 12px',
+                                    textAlign:'center',
+                                    border: ttsStyle === preset.key ? 'none' : '1px solid #e5e7eb'
+                                  }}
+                                >
+                                  <div style={{fontWeight:600}}>{preset.label}</div>
+                                  <div style={{fontSize:10, opacity:0.7}}>{preset.description}</div>
+                                </button>
+                              ))}
+                            </div>
+                            <div className="help" style={{marginTop:8, padding:8, background:'rgba(139,92,246,0.1)', borderRadius:4, color:'#7c3aed'}}>
+                              💡 Gemini AI TTS는 GPT로 대사를 자동 강화하여 감정과 억양을 자연스럽게 표현합니다.
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  
                   <div className="actions" style={{display:'flex', gap:8, alignItems:'center'}}>
                     <button 
                       className="btn primary" 
                       onClick={generateVideo} 
                       disabled={videoGenerating || saved.length === 0 || saved.some(s => !s.path && !s.url)}
                     >
-                      {videoGenerating ? '영상 생성 중…' : '영상 생성 (자막 + TTS)'}
+                      {videoGenerating ? '영상 생성 중…' : `영상 생성 (${ttsType === 'gemini' ? 'Gemini AI' : 'Google'} TTS)`}
                     </button>
                   </div>
                   {videoGenerating && (

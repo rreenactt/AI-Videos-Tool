@@ -19,12 +19,17 @@ def split_subtitle_by_length(text: str, max_length: int = 12) -> List[str]:
 	# 한글, 영문, 숫자, 구두점을 모두 고려
 	parts = re.split(r'([\s,\.!?;:])', text)
 	
-	# 빈 문자열 제거 및 공백/구두점을 앞 단어와 결합
+	# 단어와 구분자를 묶어서 처리 (공백은 앞 단어에 포함, 구두점도 앞 단어에 포함)
 	cleaned_parts = []
 	for i, part in enumerate(parts):
-		if not part.strip():
+		if not part:  # 빈 문자열만 스킵
 			continue
-		if part in [' ', ',', '.', '!', '?', ';', ':']:
+		# 공백인 경우 앞 단어에 붙임
+		if part == ' ':
+			if cleaned_parts:
+				cleaned_parts[-1] += part
+		# 구두점인 경우 앞 단어에 붙임
+		elif part in [',', '.', '!', '?', ';', ':']:
 			if cleaned_parts:
 				cleaned_parts[-1] += part
 		else:

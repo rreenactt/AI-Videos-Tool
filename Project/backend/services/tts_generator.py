@@ -88,14 +88,30 @@ def split_text_for_subtitle(text: str, max_length: int = 12) -> List[str]:
 	# 공백, 구두점을 기준으로 분할
 	parts = re.split(r'([\s,\.!?;:~])', text)
 	
+	# 단어와 구분자를 묶어서 처리 (공백/구두점은 앞 단어에 포함)
+	cleaned_parts = []
+	for part in parts:
+		if not part:  # 빈 문자열만 스킵
+			continue
+		# 공백인 경우 앞 단어에 붙임
+		if part == ' ':
+			if cleaned_parts:
+				cleaned_parts[-1] += part
+		# 구두점인 경우 앞 단어에 붙임
+		elif part in [',', '.', '!', '?', ';', ':', '~']:
+			if cleaned_parts:
+				cleaned_parts[-1] += part
+		else:
+			cleaned_parts.append(part)
+	
+	if not cleaned_parts:
+		return [text] if text else []
+	
 	result = []
 	current = ""
 	
-	for part in parts:
-		if not part:
-			continue
-		
-		test = current + part
+	for part in cleaned_parts:
+		test = current + part if current else part
 		if len(test) <= max_length:
 			current = test
 		else:
@@ -385,3 +401,109 @@ def generate_tts_segments(
 			continue
 	
 	return results
+
+
+# ============================================================
+# 통합 TTS 함수 (Google TTS / Gemini TTS 선택)
+# ============================================================
+
+def generate_tts_unified(
+	text: str,
+	output_path: str,
+	tts_type: str = "google",
+	voice: str = "default",
+	emotion: str = "neutral",
+	style: str = "유튜버",
+	speaker: str = "",
+	enhance_with_gpt: bool = True,
+	max_retries: int = 2
+) -> str:
+	"""통합 TTS 함수 - Google TTS 또는 Gemini TTS 선택
+	
+	Args:
+		text: 변환할 텍스트
+		output_path: 출력 오디오 파일 경로 (.mp3)
+		tts_type: TTS 타입 ("google" 또는 "gemini")
+		voice: 음성 종류
+		emotion: 감정 (Gemini TTS용)
+		style: 스타일 (Gemini TTS용, 유튜버/나레이션/캐릭터)
+		speaker: 화자 이름
+		enhance_with_gpt: GPT로 대사 강화 여부 (Gemini TTS용)
+		max_retries: 최대 재시도 횟수
+		
+	Returns:
+		생성된 오디오 파일 경로
+	"""
+	if tts_type.lower() == "gemini":
+		# Gemini TTS 사용
+		try:
+			from .gemini_tts_generator import (
+				generate_gemini_tts_with_mp3,
+				get_emotion_from_speaker,
+				GEMINI_VOICES
+			)
+			
+			# 화자에서 감정 추론
+			if emotion == "neutral" and speaker:
+				emotion = get_emotion_from_speaker(speaker)
+			
+			# 나레이션인 경우 스타일 조정
+			if "나레이션" in speaker.lower() if speaker else False:
+				style = "나레이션"
+			
+			# Gemini 음성 매핑
+			gemini_voice = GEMINI_VOICES.get(voice, "Kore")
+			
+			return generate_gemini_tts_with_mp3(
+				text=text,
+				output_path=output_path,
+				voice=gemini_voice,
+				emotion=emotion,
+				style=style,
+				enhance_with_gpt=enhance_with_gpt,
+				max_retries=max_retries
+			)
+			
+		except ImportError as e:
+			print(f"  ⚠ Gemini TTS 모듈 로드 실패: {e}")
+			print(f"  → Google TTS로 폴백")
+			tts_type = "google"
+		except Exception as e:
+			print(f"  ⚠ Gemini TTS 실패: {e}")
+			print(f"  → Google TTS로 폴백")
+			tts_type = "google"
+	
+	# Google TTS 사용 (기본)
+	return generate_tts(
+		text=text,
+		output_path=output_path,
+		voice=voice,
+		use_ssml=True,
+		emotion=emotion,
+		max_retries=max_retries
+	)
+
+
+def get_available_tts_types() -> List[dict]:
+	"""사용 가능한 TTS 타입 목록 반환"""
+	types = [
+		{
+			"id": "google",
+			"name": "Google Cloud TTS",
+			"description": "안정적인 Google Neural2 음성",
+			"voices": list(KOREAN_VOICES.keys()),
+			"features": ["SSML 지원", "안정적", "다양한 음성"]
+		}
+	]
+	
+	# Gemini API 키가 있는지 확인
+	if os.getenv("GEMINI_API_KEY"):
+		types.append({
+			"id": "gemini",
+			"name": "Gemini 2.5 Flash TTS",
+			"description": "AI 기반 감정 표현, 유튜버 스타일",
+			"voices": ["Kore", "Puck", "Charon"],
+			"features": ["감정 태그", "지시어 인식", "GPT 대사 강화", "유튜버 스타일"]
+		})
+	
+	return types

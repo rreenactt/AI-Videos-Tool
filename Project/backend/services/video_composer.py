@@ -7,7 +7,7 @@ from moviepy.editor import (
 )
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
-from .tts_generator import generate_tts
+from .tts_generator import generate_tts, generate_tts_unified
 from .subtitle_splitter import format_subtitle_lines
 
 # config에서 ImageMagick 경로 가져오기
@@ -587,7 +587,9 @@ def compose_video(
 	output_path: str = "../data/outputs/final.mp4",
 	project_id: Optional[str] = None,
 	use_tts: bool = True,
-	tts_voice: str = "alloy"
+	tts_voice: str = "alloy",
+	tts_type: str = "google",
+	tts_style: str = "유튜버"
 ) -> Dict[str, Any]:
 	"""MoviePy를 사용하여 이미지들에 자막과 TTS를 추가하고 영상으로 합성
 	
@@ -602,10 +604,15 @@ def compose_video(
 		project_id: 프로젝트 ID (데이터 보관용)
 		use_tts: TTS 사용 여부
 		tts_voice: TTS 음성 종류
+		tts_type: TTS 타입 ("google" 또는 "gemini")
+		tts_style: TTS 스타일 ("유튜버", "나레이션", "캐릭터" - Gemini TTS용)
 		
 	Returns:
 		생성된 영상 파일 경로와 메타데이터
 	"""
+	
+	# TTS 타입 로그
+	print(f"\n🔊 TTS 설정: {tts_type.upper()} | 스타일: {tts_style} | 음성: {tts_voice}")
 	os.makedirs(os.path.dirname(output_path), exist_ok=True)
 	
 	# 프로젝트별 디렉토리 구조 설정
@@ -665,15 +672,18 @@ def compose_video(
 						else:
 							voice = tts_voice
 						
-						# TTS 생성 (Google Cloud TTS + SSML)
+						# TTS 생성 (Google TTS 또는 Gemini TTS)
 						seg_output_path = os.path.join(audio_dir, f"audio_{i:03d}_{seg_idx:02d}.mp3")
 						try:
-							generate_tts(
+							generate_tts_unified(
 								text=text.strip(),
 								output_path=seg_output_path,
+								tts_type=tts_type,
 								voice=voice,
-								use_ssml=True,  # GPT로 SSML 변환
-								emotion="neutral"
+								emotion="neutral",
+								style=tts_style,
+								speaker=speaker,
+								enhance_with_gpt=(tts_type == "gemini")
 							)
 							
 							if not os.path.exists(seg_output_path):
