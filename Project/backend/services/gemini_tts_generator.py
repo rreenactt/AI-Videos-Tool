@@ -151,6 +151,7 @@ def generate_gemini_tts(
 	voice: str = "default",
 	emotion: str = "neutral",
 	style: str = "유튜버",
+	speaking_rate: float = 1.0,
 	enhance_with_gpt: bool = True,
 	max_retries: int = 2
 ) -> str:
@@ -162,6 +163,7 @@ def generate_gemini_tts(
 		voice: 음성 종류 (GEMINI_VOICES 키)
 		emotion: 감정 (neutral, excited, whisper, laughing, thinking)
 		style: 스타일 (유튜버, 나레이션, 캐릭터, 다큐멘터리)
+		speaking_rate: 말 속도 (0.5~2.0, 기본 1.0)
 		enhance_with_gpt: GPT로 대사 강화 여부
 		max_retries: 최대 재시도 횟수
 		
@@ -190,6 +192,22 @@ def generate_gemini_tts(
 		emotion_tag = EMOTION_TAGS.get(emotion, "")
 		if emotion_tag:
 			enhanced_text = f"{emotion_tag} {text}"
+	
+	# 말 속도 지시어 추가 (Gemini는 텍스트 지시어로 속도 조절)
+	rate = max(0.5, min(2.0, speaking_rate))
+	if rate != 1.0:
+		if rate < 0.8:
+			speed_instruction = "(아주 천천히, 느긋하게) "
+		elif rate < 1.0:
+			speed_instruction = "(천천히) "
+		elif rate > 1.3:
+			speed_instruction = "(아주 빠르게, 급하게) "
+		elif rate > 1.0:
+			speed_instruction = "(빠르게) "
+		else:
+			speed_instruction = ""
+		enhanced_text = speed_instruction + enhanced_text
+		print(f"  🎚️ 속도: {rate}배 → {speed_instruction.strip()}")
 	
 	client = _get_gemini_client()
 	last_error = None
@@ -319,6 +337,7 @@ def generate_gemini_tts_with_mp3(
 	voice: str = "default",
 	emotion: str = "neutral",
 	style: str = "유튜버",
+	speaking_rate: float = 1.0,
 	enhance_with_gpt: bool = True,
 	max_retries: int = 2
 ) -> str:
@@ -330,6 +349,7 @@ def generate_gemini_tts_with_mp3(
 		voice: 음성 종류
 		emotion: 감정
 		style: 스타일
+		speaking_rate: 말 속도 (0.5~2.0, 기본 1.0)
 		enhance_with_gpt: GPT로 대사 강화 여부
 		max_retries: 최대 재시도 횟수
 		
@@ -345,6 +365,7 @@ def generate_gemini_tts_with_mp3(
 		voice=voice,
 		emotion=emotion,
 		style=style,
+		speaking_rate=speaking_rate,
 		enhance_with_gpt=enhance_with_gpt,
 		max_retries=max_retries
 	)

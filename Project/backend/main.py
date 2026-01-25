@@ -58,6 +58,7 @@ class VideoJobRequest(BaseModel):
 	output_path: Optional[str] = "../data/outputs/final.mp4"
 	tts_type: Optional[str] = "google"  # "google" 또는 "gemini"
 	tts_style: Optional[str] = "유튜버"  # "유튜버", "나레이션", "캐릭터"
+	tts_speed: Optional[float] = 1.0  # 0.5 ~ 2.0
 
 
 class RegenerateImageRequest(BaseModel):
@@ -813,7 +814,8 @@ async def api_video(payload: VideoJobRequest):
 			use_tts=True,
 			tts_voice="default",
 			tts_type=payload.tts_type or "google",
-			tts_style=payload.tts_style or "유튜버"
+			tts_style=payload.tts_style or "유튜버",
+			tts_speed=max(0.5, min(2.0, payload.tts_speed or 1.0))
 		)
 		
 		# 웹에서 접근 가능한 URL 생성

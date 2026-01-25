@@ -49,6 +49,7 @@ export default function Project(){
   const [videoPath, setVideoPath] = useState('')
   const [ttsType, setTtsType] = useState('google')  // 'google' 또는 'gemini'
   const [ttsStyle, setTtsStyle] = useState('유튜버')  // '유튜버', '나레이션', '캐릭터'
+  const [ttsSpeed, setTtsSpeed] = useState(1.0)  // 0.5 ~ 2.0
   const [ttsCollapsed, setTtsCollapsed] = useState(true)
   const selectedStyle = useMemo(() => stylePresets.find(s => s.key === selectedStyleKey) || stylePresets[0], [stylePresets, selectedStyleKey])
   
@@ -305,7 +306,8 @@ export default function Project(){
           image_paths: imagePaths,
           fps: 24,
           tts_type: ttsType,
-          tts_style: ttsStyle
+          tts_style: ttsStyle,
+          tts_speed: ttsSpeed
         })
       })
       
@@ -539,6 +541,9 @@ export default function Project(){
                         {ttsType === 'gemini' && (
                           <span style={{fontSize:11, color:'#6b7280'}}>({ttsStyle})</span>
                         )}
+                        {ttsSpeed !== 1.0 && (
+                          <span style={{fontSize:11, color:'#f59e0b', fontWeight:600}}>{ttsSpeed}x</span>
+                        )}
                       </div>
                     </div>
                     
@@ -596,6 +601,50 @@ export default function Project(){
                             </div>
                           </div>
                         )}
+                        
+                        {/* 말 속도 조절 */}
+                        <div>
+                          <div className="help" style={{marginBottom:6, display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                            <span>🎚️ 말 속도</span>
+                            <span style={{fontWeight:600, color: ttsSpeed !== 1.0 ? '#f59e0b' : '#6b7280'}}>
+                              {ttsSpeed}배속 {ttsSpeed < 1 ? '(느림)' : ttsSpeed > 1 ? '(빠름)' : '(기본)'}
+                            </span>
+                          </div>
+                          <div style={{display:'flex', alignItems:'center', gap:12}}>
+                            <span style={{fontSize:11, color:'#9ca3af'}}>0.5x</span>
+                            <input
+                              type="range"
+                              min="0.5"
+                              max="2.0"
+                              step="0.1"
+                              value={ttsSpeed}
+                              onChange={(e) => setTtsSpeed(parseFloat(e.target.value))}
+                              style={{
+                                flex:1,
+                                height:6,
+                                accentColor: ttsType === 'gemini' ? '#8b5cf6' : '#2563eb'
+                              }}
+                            />
+                            <span style={{fontSize:11, color:'#9ca3af'}}>2.0x</span>
+                          </div>
+                          <div style={{display:'flex', justifyContent:'center', gap:8, marginTop:8}}>
+                            {[0.75, 1.0, 1.25, 1.5].map(speed => (
+                              <button
+                                key={speed}
+                                className={`btn ${ttsSpeed === speed ? 'primary' : 'ghost'}`}
+                                onClick={() => setTtsSpeed(speed)}
+                                style={{
+                                  padding:'4px 12px',
+                                  fontSize:12,
+                                  minWidth:50,
+                                  border: ttsSpeed === speed ? 'none' : '1px solid #e5e7eb'
+                                }}
+                              >
+                                {speed}x
+                              </button>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>

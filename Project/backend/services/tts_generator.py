@@ -224,6 +224,7 @@ def generate_tts(
 	voice: str = "default",
 	use_ssml: bool = True,
 	emotion: str = "neutral",
+	speaking_rate: float = 1.0,
 	max_retries: int = 2
 ) -> str:
 	"""Google Cloud TTS를 사용하여 텍스트를 음성으로 변환
@@ -234,6 +235,7 @@ def generate_tts(
 		voice: 음성 종류 (KOREAN_VOICES 키 또는 직접 음성 ID)
 		use_ssml: SSML 사용 여부 (True면 GPT로 SSML 변환)
 		emotion: 감정 힌트 (use_ssml=True일 때 사용)
+		speaking_rate: 말 속도 (0.5~2.0, 기본 1.0)
 		max_retries: 최대 재시도 횟수
 		
 	Returns:
@@ -265,10 +267,11 @@ def generate_tts(
 		name=voice_name
 	)
 	
-	# 오디오 설정
+	# 오디오 설정 (말 속도 0.5~2.0 범위로 제한)
+	rate = max(0.5, min(2.0, speaking_rate))
 	audio_config = texttospeech.AudioConfig(
 		audio_encoding=texttospeech.AudioEncoding.MP3,
-		speaking_rate=1.0,
+		speaking_rate=rate,
 		pitch=0.0
 	)
 	
@@ -415,6 +418,7 @@ def generate_tts_unified(
 	emotion: str = "neutral",
 	style: str = "유튜버",
 	speaker: str = "",
+	speaking_rate: float = 1.0,
 	enhance_with_gpt: bool = True,
 	max_retries: int = 2
 ) -> str:
@@ -428,6 +432,7 @@ def generate_tts_unified(
 		emotion: 감정 (Gemini TTS용)
 		style: 스타일 (Gemini TTS용, 유튜버/나레이션/캐릭터)
 		speaker: 화자 이름
+		speaking_rate: 말 속도 (0.5~2.0, 기본 1.0)
 		enhance_with_gpt: GPT로 대사 강화 여부 (Gemini TTS용)
 		max_retries: 최대 재시도 횟수
 		
@@ -460,6 +465,7 @@ def generate_tts_unified(
 				voice=gemini_voice,
 				emotion=emotion,
 				style=style,
+				speaking_rate=speaking_rate,
 				enhance_with_gpt=enhance_with_gpt,
 				max_retries=max_retries
 			)
@@ -480,6 +486,7 @@ def generate_tts_unified(
 		voice=voice,
 		use_ssml=True,
 		emotion=emotion,
+		speaking_rate=speaking_rate,
 		max_retries=max_retries
 	)
 
