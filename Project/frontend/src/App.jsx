@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom'
 
 const API_BASE = import.meta.env.VITE_API_BASE || ''
 
+// Electron API 사용 가능 여부 확인
+const isElectron = typeof window !== 'undefined' && window.electronAPI
+
 export default function App() {
   const nav = useNavigate()
   const [home, setHome] = useState({ counts: {prompts:0, images:0, videos:0, projects:0}, lists: {prompts:[], images:[], videos:[], projects:[]} })
   const [error, setError] = useState('')
   const [showModeSelect, setShowModeSelect] = useState(false)
   const [selectedMode, setSelectedMode] = useState('story')
+  const [appVersion, setAppVersion] = useState('')
+  const [updateProgress, setUpdateProgress] = useState(null)
 
   const refreshHome = async () => {
     try {
@@ -19,7 +24,26 @@ export default function App() {
     } catch {}
   }
 
-  useEffect(() => { refreshHome() }, [])
+  useEffect(() => { 
+    refreshHome()
+    
+    // Electron 환경에서 앱 버전 가져오기
+    if (isElectron) {
+      window.electronAPI.getAppVersion().then(version => {
+        setAppVersion(version)
+      })
+      
+      // 메뉴에서 새 프로젝트 생성 이벤트 리스너
+      window.electronAPI.onMenuNewProject(() => {
+        startProject()
+      })
+      
+      // 업데이트 진행상황 리스너
+      window.electronAPI.onUpdateProgress((event, progress) => {
+        setUpdateProgress(progress)
+      })
+    }
+  }, [])
 
   const startProject = async () => {
     setShowModeSelect(true)
@@ -65,7 +89,32 @@ export default function App() {
 
       <header className="header-logo">
         <img src="/auto-shorts.png" alt="AUTO Shorts" className="main-logo" />
+        {isElectron && appVersion && (
+          <div style={{position:'absolute', top:8, right:24, fontSize:12, color:'#6b7280'}}>
+            Desktop v{appVersion}
+          </div>
+        )}
       </header>
+      
+      {/* 업데이트 진행상황 표시 */}
+      {updateProgress && (
+        <div style={{
+          position:'fixed', top:0, left:0, right:0, 
+          background:'#2563eb', color:'white', padding:'8px 16px', 
+          fontSize:12, zIndex:9999, textAlign:'center'
+        }}>
+          업데이트 다운로드 중... {Math.round(updateProgress.percent)}%
+          <div style={{
+            width:'100%', height:2, background:'rgba(255,255,255,0.3)', 
+            marginTop:4, borderRadius:1, overflow:'hidden'
+          }}>
+            <div style={{
+              width:`${updateProgress.percent}%`, height:'100%', 
+              background:'white', transition:'width 0.3s'
+            }} />
+          </div>
+        </div>
+      )}
 
       <div className="shell">
         {/* Projects grid */}
