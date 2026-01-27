@@ -51,6 +51,8 @@ export default function Project(){
   const [ttsStyle, setTtsStyle] = useState('유튜버')  // '유튜버', '나레이션', '캐릭터'
   const [ttsSpeed, setTtsSpeed] = useState(1.0)  // 0.5 ~ 2.0
   const [ttsCollapsed, setTtsCollapsed] = useState(true)
+  const [audioQuality, setAudioQuality] = useState('high')  // 'standard', 'high'
+  const [audioPadding, setAudioPadding] = useState(0.5)     // 오디오 패딩 시간
   const selectedStyle = useMemo(() => stylePresets.find(s => s.key === selectedStyleKey) || stylePresets[0], [stylePresets, selectedStyleKey])
   
   const ttsPresets = useMemo(() => ([
@@ -307,7 +309,11 @@ export default function Project(){
           fps: 24,
           tts_type: ttsType,
           tts_style: ttsStyle,
-          tts_speed: ttsSpeed
+          tts_speed: ttsSpeed,
+          audio_padding: audioPadding,  // 사용자 설정 패딩 시간
+          audio_fade_out: 0.2, // 0.2초 페이드아웃 효과
+          audio_quality: audioQuality, // 사용자 선택 품질
+          sync_mode: 'stretch'   // 오디오를 이미지 길이에 맞춰 조정
         })
       })
       
@@ -643,6 +649,69 @@ export default function Project(){
                                 {speed}x
                               </button>
                             ))}
+                          </div>
+                        </div>
+                        
+                        {/* 오디오 품질 설정 */}
+                        <div>
+                          <div className="help" style={{marginBottom:6}}>🎵 오디오 품질</div>
+                          <div style={{display:'flex', gap:8}}>
+                            <button
+                              className={`btn ${audioQuality === 'standard' ? 'primary' : 'ghost'}`}
+                              onClick={() => setAudioQuality('standard')}
+                              style={{
+                                flex:1,
+                                padding:'10px 12px',
+                                textAlign:'center',
+                                border: audioQuality === 'standard' ? 'none' : '1px solid #e5e7eb'
+                              }}
+                            >
+                              <div style={{fontWeight:600}}>표준</div>
+                              <div style={{fontSize:10, opacity:0.7}}>빠른 생성</div>
+                            </button>
+                            <button
+                              className={`btn ${audioQuality === 'high' ? 'primary' : 'ghost'}`}
+                              onClick={() => setAudioQuality('high')}
+                              style={{
+                                flex:1,
+                                padding:'10px 12px',
+                                textAlign:'center',
+                                border: audioQuality === 'high' ? 'none' : '1px solid #e5e7eb'
+                              }}
+                            >
+                              <div style={{fontWeight:600}}>고품질</div>
+                              <div style={{fontSize:10, opacity:0.7}}>노이즈 최소화</div>
+                            </button>
+                          </div>
+                        </div>
+                        
+                        {/* 오디오 패딩 설정 */}
+                        <div>
+                          <div className="help" style={{marginBottom:6, display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                            <span>🔇 무음 패딩</span>
+                            <span style={{fontWeight:600, color:'#6b7280'}}>
+                              {audioPadding}초
+                            </span>
+                          </div>
+                          <div style={{display:'flex', alignItems:'center', gap:12}}>
+                            <span style={{fontSize:11, color:'#9ca3af'}}>0초</span>
+                            <input
+                              type="range"
+                              min="0"
+                              max="2.0"
+                              step="0.1"
+                              value={audioPadding}
+                              onChange={(e) => setAudioPadding(parseFloat(e.target.value))}
+                              style={{
+                                flex:1,
+                                height:6,
+                                accentColor: '#22c55e'
+                              }}
+                            />
+                            <span style={{fontSize:11, color:'#9ca3af'}}>2초</span>
+                          </div>
+                          <div className="help" style={{marginTop:4, fontSize:11, color:'#6b7280'}}>
+                            💡 각 컷 끝에 추가할 무음 시간 (버벅임 방지)
                           </div>
                         </div>
                       </div>
