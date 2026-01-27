@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "main": "public/electron.js",
+  "main": "public/electron.cjs",
   "homepage": "./",
   "scripts": {
     "dev": "vite",
@@ -37,7 +37,7 @@
     },
     "files": [
       "dist/**/*",
-      "public/electron.js",
+      "public/electron.cjs",
       "public/preload.js",
       "node_modules/**/*"
     ],
